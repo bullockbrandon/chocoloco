@@ -1,20 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*  File:           Chocoloco.java
+    Project:        Capstone Project Team #2
+    University:     McMurry University
+    Course:         COSC-4360 Spring 2021
+    Instructor:     Mr. Brozovic
+    Programmer:     Jennifer Quintanilla
+    Created by:     Rich Brozovic
+    Created:        1/13/2021
+    Updated by:     Rich Brozovic
+    Updated:        1/14/2021
+    Compiler:       Apache NetBeans IDE for Java SE
+    Description:    Brief overview of purpose and contents of file
  */
-package program_name;
+package chocoloco;
 
 /**
  *
  * @author brozovir
  */
-public class Program_Name extends javax.swing.JFrame {
+public class Chocoloco extends javax.swing.JFrame {
 
     /**
      * Creates new form Program_Name
      */
-    public Program_Name() {
+    public Chocoloco() {
         initComponents();
     }
 
@@ -30,11 +38,11 @@ public class Program_Name extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Enter Team's Program Name");
+        setTitle("Chocoloco");
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Enter Team's Program Name");
+        jLabel1.setText("Chocoloco");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,20 +81,21 @@ public class Program_Name extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Program_Name.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Chocoloco.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Program_Name.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Chocoloco.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Program_Name.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Chocoloco.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Program_Name.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Chocoloco.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Program_Name().setVisible(true);
+                new Chocoloco().setVisible(true);
             }
         });
     }
