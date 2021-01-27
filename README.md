@@ -5,6 +5,6 @@ COSC-4360 2021 Course Project for Team 2
 #### Instructor: Mr. Rich Brozovic
 ### Students:
 1. Student: Jennifer Quintanilla
-2. Student: 
+2. Student: Brandon Bullock
 3. Student: 
 4. Student: 
