@@ -35,34 +35,98 @@ public class Chocoloco extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        system_name = new javax.swing.JLabel();
+        coursenum = new javax.swing.JLabel();
+        startprogram = new javax.swing.JButton();
+        exitprogram = new javax.swing.JButton();
+        studentname_Abe = new javax.swing.JLabel();
+        studentname_Brandon = new javax.swing.JLabel();
+        studentname_Sam = new javax.swing.JLabel();
+        studentname_Jen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Chocoloco");
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Chocoloco");
+        system_name.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
+        system_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        system_name.setText("ChocAn Information System");
+
+        coursenum.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        coursenum.setText("COSC-4360/SPRING");
+
+        startprogram.setText("Start");
+        startprogram.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startprogramActionPerformed(evt);
+            }
+        });
+
+        exitprogram.setText("Exit");
+        exitprogram.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitprogramActionPerformed(evt);
+            }
+        });
+
+        studentname_Abe.setText("Abe Salazar");
+
+        studentname_Brandon.setText("Brandon Bullock");
+
+        studentname_Sam.setText("Samuel O'Rear");
+
+        studentname_Jen.setText("Jennifer Quintanilla");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(214, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(186, 186, 186))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(system_name, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(coursenum)
+                    .addComponent(studentname_Abe)
+                    .addComponent(studentname_Brandon)
+                    .addComponent(studentname_Sam)
+                    .addComponent(startprogram)
+                    .addComponent(studentname_Jen)
+                    .addComponent(exitprogram))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel1)
-                .addContainerGap(499, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(system_name, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(coursenum, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(studentname_Abe)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentname_Brandon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentname_Sam)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(studentname_Jen)
+                .addGap(52, 52, 52)
+                .addComponent(startprogram)
+                .addGap(18, 18, 18)
+                .addComponent(exitprogram)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void exitprogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitprogramActionPerformed
+        System.out.println("\nProgram Exited\n");
+        System.exit(0);
+    }//GEN-LAST:event_exitprogramActionPerformed
+
+    private void startprogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startprogramActionPerformed
+
+       new SetDirectory().setVisible(true);
+    }//GEN-LAST:event_startprogramActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,6 +165,13 @@ public class Chocoloco extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel coursenum;
+    private javax.swing.JButton exitprogram;
+    private javax.swing.JButton startprogram;
+    private javax.swing.JLabel studentname_Abe;
+    private javax.swing.JLabel studentname_Brandon;
+    private javax.swing.JLabel studentname_Jen;
+    private javax.swing.JLabel studentname_Sam;
+    private javax.swing.JLabel system_name;
     // End of variables declaration//GEN-END:variables
 }
