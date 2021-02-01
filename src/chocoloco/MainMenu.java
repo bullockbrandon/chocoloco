@@ -45,6 +45,11 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         jButton1.setText("Manage Member");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Manage Provider");
 
@@ -96,6 +101,11 @@ public class MainMenu extends javax.swing.JFrame {
         System.out.println("\nProgram Exited\n");
         System.exit(0);
     }//GEN-LAST:event_exitprogramActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        manageMembers mm = new manageMembers(this,true);
+        mm.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

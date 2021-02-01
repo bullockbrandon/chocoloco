@@ -125,7 +125,7 @@ public class Chocoloco extends javax.swing.JFrame {
 
     private void startprogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startprogramActionPerformed
 
-       new SetDirectory().setVisible(true);
+       new MainMenu().setVisible(true);
     }//GEN-LAST:event_startprogramActionPerformed
 
     /**
