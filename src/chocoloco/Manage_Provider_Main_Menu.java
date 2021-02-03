@@ -142,10 +142,7 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_Man_Pro_Exit_btnActionPerformed
 
     private void Srch_Pro_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Srch_Pro_BtnActionPerformed
-        Search_Provider SearchforProvider = new Search_Provider(this,true);
-        SearchforProvider.setTitle("Let's Go Dialog");
-        SearchforProvider.setVisible(true);
-        System.out.println("SearchforProvider returned " + SearchforProvider.getReturnStatus());
+        
     }//GEN-LAST:event_Srch_Pro_BtnActionPerformed
 
     /**
