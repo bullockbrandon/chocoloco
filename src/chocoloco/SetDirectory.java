@@ -34,6 +34,7 @@ public class SetDirectory extends javax.swing.JFrame {
         exitprogram = new javax.swing.JButton();
         changedate = new javax.swing.JButton();
         changedirectory = new javax.swing.JButton();
+        entered_date = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +60,11 @@ public class SetDirectory extends javax.swing.JFrame {
         });
 
         changedate.setText("Change Date");
+        changedate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changedateActionPerformed(evt);
+            }
+        });
 
         changedirectory.setText("Change Directory");
 
@@ -69,20 +75,26 @@ public class SetDirectory extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(system_name)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(tomainmenu)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
-                        .addComponent(exitprogram))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(currentdate)
-                        .addGap(260, 260, 260)
-                        .addComponent(changedate))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(system_name)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tomainmenu)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
+                                .addComponent(exitprogram))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(currentdate)
+                                .addGap(7, 7, 7)
+                                .addComponent(entered_date, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(changedate)
+                                .addGap(33, 33, 33)))
+                        .addContainerGap(52, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(currentdirectory)
-                        .addGap(239, 239, 239)
-                        .addComponent(changedirectory)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(changedirectory)
+                        .addGap(74, 74, 74))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,12 +102,13 @@ public class SetDirectory extends javax.swing.JFrame {
                 .addComponent(system_name)
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(currentdate)
-                    .addComponent(changedate))
+                    .addComponent(changedate)
+                    .addComponent(entered_date, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(currentdate))
                 .addGap(63, 63, 63)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(currentdirectory)
-                    .addComponent(changedirectory))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(changedirectory)
+                    .addComponent(currentdirectory))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tomainmenu)
@@ -114,6 +127,14 @@ public class SetDirectory extends javax.swing.JFrame {
     private void tomainmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tomainmenuActionPerformed
        new MainMenu().setVisible(true);
     }//GEN-LAST:event_tomainmenuActionPerformed
+
+    private void changedateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changedateActionPerformed
+        date_dialog changedate = new date_dialog(this, true);
+        changedate.setTitle("Test");
+        changedate.setVisible(true);
+        System.out.printf("\nVariable directory_date = '%s'\n", directory_date);
+        System.out.println("test returned" + changedate.getReturnStatus());
+    }//GEN-LAST:event_changedateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,8 +177,11 @@ public class SetDirectory extends javax.swing.JFrame {
     private javax.swing.JButton changedirectory;
     private javax.swing.JLabel currentdate;
     private javax.swing.JLabel currentdirectory;
+    private javax.swing.JLabel entered_date;
     private javax.swing.JButton exitprogram;
     private javax.swing.JLabel system_name;
     private javax.swing.JButton tomainmenu;
     // End of variables declaration//GEN-END:variables
+
+    public static String directory_date = null; //global variable for use by app
 }

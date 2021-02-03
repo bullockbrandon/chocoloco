@@ -26,24 +26,32 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="system_name" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="2" attributes="0">
-                      <Component id="tomainmenu" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="352" max="32767" attributes="0"/>
-                      <Component id="exitprogram" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="2" attributes="0">
-                      <Component id="currentdate" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="260" pref="260" max="260" attributes="0"/>
-                      <Component id="changedate" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="system_name" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="2" attributes="0">
+                              <Component id="tomainmenu" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="352" max="32767" attributes="0"/>
+                              <Component id="exitprogram" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="2" attributes="0">
+                              <Component id="currentdate" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                              <Component id="entered_date" min="-2" pref="78" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="changedate" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="52" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="2" attributes="0">
                       <Component id="currentdirectory" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="239" pref="239" max="239" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="changedirectory" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="52" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -53,13 +61,14 @@
               <Component id="system_name" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="currentdate" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="changedate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="changedate" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="entered_date" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="currentdate" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="currentdirectory" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="changedirectory" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="changedirectory" min="-2" max="-2" attributes="0"/>
+                  <Component id="currentdirectory" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="76" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -110,11 +119,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Change Date"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="changedateActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="changedirectory">
       <Properties>
         <Property name="text" type="java.lang.String" value="Change Directory"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="entered_date">
     </Component>
   </SubComponents>
 </Form>
