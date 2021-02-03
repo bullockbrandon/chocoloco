@@ -44,7 +44,7 @@ public class Chocoloco extends javax.swing.JFrame {
         studentname_Sam = new javax.swing.JLabel();
         studentname_Jen = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Chocoloco");
 
         system_name.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
@@ -124,7 +124,6 @@ public class Chocoloco extends javax.swing.JFrame {
     }//GEN-LAST:event_exitprogramActionPerformed
 
     private void startprogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startprogramActionPerformed
-
        new MainMenu().setVisible(true);
     }//GEN-LAST:event_startprogramActionPerformed
 

@@ -9,13 +9,12 @@ package chocoloco;
  *
  * @author bullock.brandon
  */
-public class manageMembers extends javax.swing.JDialog {
+public class manageMembers extends javax.swing.JFrame {
 
     /**
      * Creates new form manageMembers
      */
-    public manageMembers(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public manageMembers() {
         initComponents();
     }
 
@@ -29,14 +28,24 @@ public class manageMembers extends javax.swing.JDialog {
     private void initComponents() {
 
         system_name = new javax.swing.JLabel();
+        jBtnMainMenu = new javax.swing.JButton();
         jBtnAddMember = new javax.swing.JButton();
+        jBtnDeleteMember = new javax.swing.JButton();
+        jBtnSearchMember = new javax.swing.JButton();
+        jBtnUpdateMember = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Mange Members");
-        setAlwaysOnTop(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Manage Members");
 
         system_name.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         system_name.setText("ChocAn Information System");
+
+        jBtnMainMenu.setText("Main Menu");
+        jBtnMainMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnMainMenuActionPerformed(evt);
+            }
+        });
 
         jBtnAddMember.setText("Add Member");
         jBtnAddMember.addActionListener(new java.awt.event.ActionListener() {
@@ -45,34 +54,95 @@ public class manageMembers extends javax.swing.JDialog {
             }
         });
 
+        jBtnDeleteMember.setText("Delete Member");
+        jBtnDeleteMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnDeleteMemberActionPerformed(evt);
+            }
+        });
+
+        jBtnSearchMember.setText("Search Member");
+        jBtnSearchMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSearchMemberActionPerformed(evt);
+            }
+        });
+
+        jBtnUpdateMember.setText("Update Member");
+        jBtnUpdateMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnUpdateMemberActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(system_name)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(system_name))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(jBtnMainMenu)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(jBtnAddMember)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBtnDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnAddMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(90, 90, 90)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBtnSearchMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnUpdateMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(107, 107, 107))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(system_name)
-                .addGap(51, 51, 51)
-                .addComponent(jBtnAddMember)
-                .addGap(0, 182, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnAddMember)
+                    .addComponent(jBtnUpdateMember))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnDeleteMember)
+                    .addComponent(jBtnSearchMember))
+                .addGap(28, 28, 28)
+                .addComponent(jBtnMainMenu)
+                .addGap(73, 73, 73))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBtnMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnMainMenuActionPerformed
+        this.dispose();
+        new MainMenu().setVisible(true);
+    }//GEN-LAST:event_jBtnMainMenuActionPerformed
+
     private void jBtnAddMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddMemberActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new manageMembers().setVisible(true);
     }//GEN-LAST:event_jBtnAddMemberActionPerformed
+
+    private void jBtnDeleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDeleteMemberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnDeleteMemberActionPerformed
+
+    private void jBtnSearchMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSearchMemberActionPerformed
+        this.dispose();
+        new searchMembers().setVisible(true);
+    }//GEN-LAST:event_jBtnSearchMemberActionPerformed
+
+    private void jBtnUpdateMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUpdateMemberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnUpdateMemberActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,23 +171,20 @@ public class manageMembers extends javax.swing.JDialog {
         }
         //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                manageMembers dialog = new manageMembers(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new manageMembers().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAddMember;
+    private javax.swing.JButton jBtnDeleteMember;
+    private javax.swing.JButton jBtnMainMenu;
+    private javax.swing.JButton jBtnSearchMember;
+    private javax.swing.JButton jBtnUpdateMember;
     private javax.swing.JLabel system_name;
     // End of variables declaration//GEN-END:variables
 }
