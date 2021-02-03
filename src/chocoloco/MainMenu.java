@@ -17,6 +17,10 @@ public class MainMenu extends javax.swing.JFrame {
         initComponents();
     }
 
+    MainMenu(Chocoloco aThis, boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -35,7 +39,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         jButton3.setText("jButton3");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Main Menu");
 
         exitprogram.setText("Exit");
         exitprogram.addActionListener(new java.awt.event.ActionListener() {
@@ -45,6 +50,11 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         jButton1.setText("Manage Member");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Manage Provider");
 
@@ -96,6 +106,11 @@ public class MainMenu extends javax.swing.JFrame {
         System.out.println("\nProgram Exited\n");
         System.exit(0);
     }//GEN-LAST:event_exitprogramActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+        new manageMembers().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

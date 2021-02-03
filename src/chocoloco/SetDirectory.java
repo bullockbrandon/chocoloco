@@ -36,7 +36,7 @@ public class SetDirectory extends javax.swing.JFrame {
         changedirectory = new javax.swing.JButton();
         entered_date = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         system_name.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         system_name.setText("ChocAn Information System");
