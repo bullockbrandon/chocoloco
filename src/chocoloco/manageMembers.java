@@ -123,7 +123,7 @@ public class manageMembers extends javax.swing.JFrame {
 
     private void jBtnMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnMainMenuActionPerformed
         this.dispose();
-        new MainMenu().setVisible(true);
+        //new MainMenu().setVisible(true);
     }//GEN-LAST:event_jBtnMainMenuActionPerformed
 
     private void jBtnAddMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddMemberActionPerformed
