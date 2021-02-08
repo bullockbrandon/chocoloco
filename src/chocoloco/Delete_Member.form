@@ -103,11 +103,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Main Menu"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MainActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Exit">
       <Properties>
         <Property name="text" type="java.lang.String" value="Exit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExitActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

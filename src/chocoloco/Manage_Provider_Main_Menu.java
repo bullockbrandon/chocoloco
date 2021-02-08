@@ -57,6 +57,11 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
         });
 
         View_Pro_btn.setText("View Provider");
+        View_Pro_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                View_Pro_btnActionPerformed(evt);
+            }
+        });
 
         Man_Pro_Exit_btn.setText("Exit");
         Man_Pro_Exit_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -66,6 +71,11 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
         });
 
         Man_Pro_MM_btn.setText("Main Menu");
+        Man_Pro_MM_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Man_Pro_MM_btnActionPerformed(evt);
+            }
+        });
 
         Srch_Pro_Btn.setText("Search for Provider");
         Srch_Pro_Btn.addActionListener(new java.awt.event.ActionListener() {
@@ -138,12 +148,24 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_Del_Pro_btnActionPerformed
 
     private void Man_Pro_Exit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Man_Pro_Exit_btnActionPerformed
-        // TODO add your handling code here:
+        System.out.println("\nProgram Exited\n");
+        System.exit(0);// TODO add your handling code here:
     }//GEN-LAST:event_Man_Pro_Exit_btnActionPerformed
 
     private void Srch_Pro_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Srch_Pro_BtnActionPerformed
-        
+        this.dispose();
+        new Search_Provider().setVisible(true);
     }//GEN-LAST:event_Srch_Pro_BtnActionPerformed
+
+    private void Man_Pro_MM_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Man_Pro_MM_btnActionPerformed
+        this.dispose();
+        new MainMenu().setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_Man_Pro_MM_btnActionPerformed
+
+    private void View_Pro_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_Pro_btnActionPerformed
+        this.dispose();
+        new ViewProvider().setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_View_Pro_btnActionPerformed
 
     /**
      * @param args the command line arguments

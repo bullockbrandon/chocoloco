@@ -46,8 +46,18 @@ public class Delete_Member extends javax.swing.JFrame {
         Delete_Canx.setText("Cancel");
 
         Main.setText("Main Menu");
+        Main.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MainActionPerformed(evt);
+            }
+        });
 
         Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,6 +106,16 @@ public class Delete_Member extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void MainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainActionPerformed
+        this.dispose();
+        new MainMenu().setVisible(true);
+    }//GEN-LAST:event_MainActionPerformed
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        System.out.println("\nProgram Exited\n");
+        System.exit(0);// TODO add your handling code here:
+    }//GEN-LAST:event_ExitActionPerformed
 
     /**
      * @param args the command line arguments

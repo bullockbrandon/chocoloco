@@ -73,15 +73,15 @@
                           </Group>
                       </Group>
                       <EmptySpace pref="11" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Main" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="Add_Mbr_Btn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="Add_Canx" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="Add_Mbr_Btn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="Add_Canx" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="11" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="Main" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Component id="Exit" min="-2" max="-2" attributes="0"/>
@@ -204,11 +204,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Main Menu"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MainActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Exit">
       <Properties>
         <Property name="text" type="java.lang.String" value="Exit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExitActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -78,8 +78,18 @@ public class Add_mbr extends javax.swing.JFrame {
         Add_Canx.setText("Cancel");
 
         Main.setText("Main Menu");
+        Main.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MainActionPerformed(evt);
+            }
+        });
 
         Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,13 +135,14 @@ public class Add_mbr extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Add_Status, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Main)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Add_Mbr_Btn)
-                                .addGap(18, 18, 18)
-                                .addComponent(Add_Canx)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)))
+                        .addComponent(Add_Mbr_Btn)
+                        .addGap(18, 18, 18)
+                        .addComponent(Add_Canx)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Main)
+                        .addGap(18, 18, 18)))
                 .addComponent(Exit)
                 .addContainerGap())
         );
@@ -183,6 +194,16 @@ public class Add_mbr extends javax.swing.JFrame {
     private void Add_StreetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_StreetActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Add_StreetActionPerformed
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        System.out.println("\nProgram Exited\n");
+        System.exit(0);
+    }//GEN-LAST:event_ExitActionPerformed
+
+    private void MainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainActionPerformed
+        this.dispose();
+        new MainMenu().setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_MainActionPerformed
 
     /**
      * @param args the command line arguments
