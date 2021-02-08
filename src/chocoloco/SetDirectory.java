@@ -125,7 +125,8 @@ public class SetDirectory extends javax.swing.JFrame {
     }//GEN-LAST:event_exitprogramActionPerformed
 
     private void tomainmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tomainmenuActionPerformed
-       new MainMenu().setVisible(true);
+        this.dispose();
+        new MainMenu().setVisible(true);
     }//GEN-LAST:event_tomainmenuActionPerformed
 
     private void changedateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changedateActionPerformed

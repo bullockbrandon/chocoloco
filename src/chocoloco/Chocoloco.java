@@ -3,7 +3,7 @@
     University:     McMurry University
     Course:         COSC-4360 Spring 2021
     Instructor:     Mr. Brozovic
-    Programmer:     Jennifer Quintanilla
+    Programmer:     Team 2
     Created by:     Rich Brozovic
     Created:        1/13/2021
     Updated by:     Rich Brozovic
@@ -124,7 +124,7 @@ public class Chocoloco extends javax.swing.JFrame {
     }//GEN-LAST:event_exitprogramActionPerformed
 
     private void startprogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startprogramActionPerformed
-       new SetDirectory().setVisible(true);
+       new MainMenu().setVisible(true);
     }//GEN-LAST:event_startprogramActionPerformed
 
     /**
