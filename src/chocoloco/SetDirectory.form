@@ -60,7 +60,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="system_name" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="changedate" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="entered_date" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="currentdate" alignment="1" min="-2" max="-2" attributes="0"/>
