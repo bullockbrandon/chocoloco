@@ -153,8 +153,7 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_Man_Pro_Exit_btnActionPerformed
 
     private void Srch_Pro_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Srch_Pro_BtnActionPerformed
-        this.dispose();
-        new Search_Provider().setVisible(true);
+
     }//GEN-LAST:event_Srch_Pro_BtnActionPerformed
 
     private void Man_Pro_MM_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Man_Pro_MM_btnActionPerformed
@@ -212,4 +211,5 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JButton Update_Pro_btn;
     private javax.swing.JButton View_Pro_btn;
     // End of variables declaration//GEN-END:variables
+
 }

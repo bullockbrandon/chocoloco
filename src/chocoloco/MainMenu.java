@@ -32,10 +32,12 @@ public class MainMenu extends javax.swing.JFrame {
 
         jButton3 = new javax.swing.JButton();
         exitprogram = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        manage_member = new javax.swing.JButton();
+        manage_provider = new javax.swing.JButton();
+        manage_service = new javax.swing.JButton();
+        view_reports = new javax.swing.JButton();
+        directory_options = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jButton3.setText("jButton3");
 
@@ -49,12 +51,15 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Manage Member");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        manage_member.setText("Manage Member");
+        manage_member.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                manage_memberActionPerformed(evt);
             }
         });
+
+
+        manage_provider.setText("Manage Provider");
 
         jButton2.setText("Manage Provider");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -63,9 +68,30 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Manage Service");
 
-        jButton6.setText("View Reports");
+        manage_service.setText("Manage Service");
+        manage_service.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manage_serviceActionPerformed(evt);
+            }
+        });
+
+        view_reports.setText("View Reports");
+        view_reports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                view_reportsActionPerformed(evt);
+            }
+        });
+
+        directory_options.setText("Directory Options");
+        directory_options.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                directory_optionsActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Main Menu");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,32 +100,45 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jButton6)))
-                .addGap(65, 65, 65))
+                        .addComponent(directory_options)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(manage_member)
+                            .addComponent(manage_provider))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(manage_service)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(view_reports)))
+                        .addGap(65, 65, 65))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(173, 173, 173)
                 .addComponent(exitprogram)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(154, 154, 154))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(86, 86, 86)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton5))
+                    .addComponent(manage_member)
+                    .addComponent(manage_service))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                    .addComponent(manage_provider)
+                    .addComponent(view_reports))
+                .addGap(26, 26, 26)
+                .addComponent(directory_options)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(exitprogram)
                 .addGap(32, 32, 32))
         );
@@ -112,10 +151,22 @@ public class MainMenu extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitprogramActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void manage_memberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manage_memberActionPerformed
         this.dispose();
         new manageMembers().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_manage_memberActionPerformed
+
+    private void directory_optionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_directory_optionsActionPerformed
+       new SetDirectory().setVisible(true);
+    }//GEN-LAST:event_directory_optionsActionPerformed
+
+    private void view_reportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_reportsActionPerformed
+       new ViewReports().setVisible(true);
+    }//GEN-LAST:event_view_reportsActionPerformed
+
+    private void manage_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manage_serviceActionPerformed
+       new ManageService().setVisible(true);
+    }//GEN-LAST:event_manage_serviceActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.dispose();
@@ -158,12 +209,14 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton directory_options;
     private javax.swing.JButton exitprogram;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton manage_member;
+    private javax.swing.JButton manage_provider;
+    private javax.swing.JButton manage_service;
+    private javax.swing.JButton view_reports;
     // End of variables declaration//GEN-END:variables
 
 }
