@@ -123,16 +123,17 @@ public class manageMembers extends javax.swing.JFrame {
 
     private void jBtnMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnMainMenuActionPerformed
         this.dispose();
-        new MainMenu().setVisible(true);
+        //new MainMenu().setVisible(true);
     }//GEN-LAST:event_jBtnMainMenuActionPerformed
 
     private void jBtnAddMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddMemberActionPerformed
         this.dispose();
-        new manageMembers().setVisible(true);
+        new Add_mbr().setVisible(true);
     }//GEN-LAST:event_jBtnAddMemberActionPerformed
 
     private void jBtnDeleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDeleteMemberActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new searchMembers().setVisible(true);
     }//GEN-LAST:event_jBtnDeleteMemberActionPerformed
 
     private void jBtnSearchMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSearchMemberActionPerformed
@@ -141,7 +142,8 @@ public class manageMembers extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnSearchMemberActionPerformed
 
     private void jBtnUpdateMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUpdateMemberActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new searchMembers().setVisible(true);
     }//GEN-LAST:event_jBtnUpdateMemberActionPerformed
 
     /**

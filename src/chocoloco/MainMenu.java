@@ -58,7 +58,16 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+
         manage_provider.setText("Manage Provider");
+
+        jButton2.setText("Manage Provider");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
 
         manage_service.setText("Manage Service");
         manage_service.addActionListener(new java.awt.event.ActionListener() {
@@ -158,6 +167,11 @@ public class MainMenu extends javax.swing.JFrame {
     private void manage_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manage_serviceActionPerformed
        new ManageService().setVisible(true);
     }//GEN-LAST:event_manage_serviceActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+        new Manage_Provider_Main_Menu().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
