@@ -33,7 +33,7 @@ public class MainMenu extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         exitprogram = new javax.swing.JButton();
         manage_member = new javax.swing.JButton();
-        manage_provider = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         manage_service = new javax.swing.JButton();
         view_reports = new javax.swing.JButton();
         directory_options = new javax.swing.JButton();
@@ -58,16 +58,12 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-
-        manage_provider.setText("Manage Provider");
-
         jButton2.setText("Manage Provider");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-
 
         manage_service.setText("Manage Service");
         manage_service.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +102,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(manage_member)
-                            .addComponent(manage_provider))
+                            .addComponent(jButton2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(manage_service)
@@ -134,7 +130,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(manage_service))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(manage_provider)
+                    .addComponent(jButton2)
                     .addComponent(view_reports))
                 .addGap(26, 26, 26)
                 .addComponent(directory_options)
@@ -211,10 +207,10 @@ public class MainMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton directory_options;
     private javax.swing.JButton exitprogram;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton manage_member;
-    private javax.swing.JButton manage_provider;
     private javax.swing.JButton manage_service;
     private javax.swing.JButton view_reports;
     // End of variables declaration//GEN-END:variables

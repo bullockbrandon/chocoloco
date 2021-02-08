@@ -81,8 +81,8 @@ public class confirmDelete extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnconDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnconDeleteActionPerformed
-        this.dispose();
-        new viewMembers().setVisible(true);
+        //jLabelMsg.setText("Member Deleted");
+        //jTextCourse.grabFocus();
     }//GEN-LAST:event_jBtnconDeleteActionPerformed
 
     private void jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelActionPerformed
