@@ -206,7 +206,8 @@ public class viewMembers extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnUpdateActionPerformed
 
     private void jBtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDeleteActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new confirmDelete().setVisible(true);
     }//GEN-LAST:event_jBtnDeleteActionPerformed
 
     /**
