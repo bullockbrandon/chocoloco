@@ -149,7 +149,7 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
 
     private void Man_Pro_Exit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Man_Pro_Exit_btnActionPerformed
         System.out.println("\nProgram Exited\n");
-        System.exit(0);// TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_Man_Pro_Exit_btnActionPerformed
 
     private void Srch_Pro_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Srch_Pro_BtnActionPerformed
@@ -159,12 +159,12 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
 
     private void Man_Pro_MM_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Man_Pro_MM_btnActionPerformed
         this.dispose();
-        new MainMenu().setVisible(true);// TODO add your handling code here:
+        new MainMenu().setVisible(true);
     }//GEN-LAST:event_Man_Pro_MM_btnActionPerformed
 
     private void View_Pro_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_Pro_btnActionPerformed
         this.dispose();
-        new ViewProvider().setVisible(true);// TODO add your handling code here:
+        new ViewProvider().setVisible(true);
     }//GEN-LAST:event_View_Pro_btnActionPerformed
 
     /**

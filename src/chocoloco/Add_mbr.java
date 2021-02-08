@@ -202,7 +202,7 @@ public class Add_mbr extends javax.swing.JFrame {
 
     private void MainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainActionPerformed
         this.dispose();
-        new MainMenu().setVisible(true);// TODO add your handling code here:
+        new MainMenu().setVisible(true);
     }//GEN-LAST:event_MainActionPerformed
 
     /**
