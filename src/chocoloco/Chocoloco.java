@@ -124,7 +124,8 @@ public class Chocoloco extends javax.swing.JFrame {
     }//GEN-LAST:event_exitprogramActionPerformed
 
     private void startprogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startprogramActionPerformed
-       new MainMenu().setVisible(true);
+       this.dispose();
+        new MainMenu().setVisible(true);
     }//GEN-LAST:event_startprogramActionPerformed
 
     /**
@@ -157,7 +158,7 @@ public class Chocoloco extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+            public void run() {                
                 new Chocoloco().setVisible(true);
             }
         });
