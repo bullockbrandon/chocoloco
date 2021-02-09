@@ -153,15 +153,18 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_manage_memberActionPerformed
 
     private void directory_optionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_directory_optionsActionPerformed
-       new SetDirectory().setVisible(true);
+       this.dispose();
+        new SetDirectory().setVisible(true);
     }//GEN-LAST:event_directory_optionsActionPerformed
 
     private void view_reportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_reportsActionPerformed
-       new ViewReports().setVisible(true);
+       this.dispose();
+        new ViewReports().setVisible(true);
     }//GEN-LAST:event_view_reportsActionPerformed
 
     private void manage_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manage_serviceActionPerformed
-       new ManageService().setVisible(true);
+       this.dispose();
+        new ManageService().setVisible(true);
     }//GEN-LAST:event_manage_serviceActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

@@ -126,7 +126,8 @@ public class ViewReports extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void main_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_main_menuActionPerformed
-       new MainMenu().setVisible(true);
+       this.dispose();
+        new MainMenu().setVisible(true);
     }//GEN-LAST:event_main_menuActionPerformed
 
     private void exit_programActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_programActionPerformed

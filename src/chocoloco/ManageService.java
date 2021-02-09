@@ -117,7 +117,8 @@ public class ManageService extends javax.swing.JFrame {
     }//GEN-LAST:event_exit_programActionPerformed
 
     private void main_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_main_menuActionPerformed
-       new MainMenu().setVisible(true);
+       this.dispose();
+        new MainMenu().setVisible(true);
     }//GEN-LAST:event_main_menuActionPerformed
 
     /**
