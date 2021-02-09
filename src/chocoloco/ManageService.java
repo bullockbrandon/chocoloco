@@ -38,6 +38,11 @@ public class ManageService extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         add_service.setText("Add Service");
+        add_service.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_serviceActionPerformed(evt);
+            }
+        });
 
         delete_service.setText("Delete Service");
 
@@ -56,6 +61,11 @@ public class ManageService extends javax.swing.JFrame {
         });
 
         view_service.setText("View Service");
+        view_service.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                view_serviceActionPerformed(evt);
+            }
+        });
 
         update_service.setText("Update Service");
 
@@ -120,6 +130,16 @@ public class ManageService extends javax.swing.JFrame {
        this.dispose();
         new MainMenu().setVisible(true);
     }//GEN-LAST:event_main_menuActionPerformed
+
+    private void add_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_serviceActionPerformed
+        this.dispose();
+        new AddService().setVisible(true);
+    }//GEN-LAST:event_add_serviceActionPerformed
+
+    private void view_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_serviceActionPerformed
+        this.dispose();
+        new ViewService().setVisible(true);
+    }//GEN-LAST:event_view_serviceActionPerformed
 
     /**
      * @param args the command line arguments

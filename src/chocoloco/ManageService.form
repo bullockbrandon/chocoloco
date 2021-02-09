@@ -84,6 +84,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Add Service"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_serviceActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="delete_service">
       <Properties>
@@ -110,6 +113,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="View Service"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_serviceActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="update_service">
       <Properties>
