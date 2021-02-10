@@ -30,12 +30,12 @@ public class Add_mbr extends javax.swing.JFrame {
         Add_Mbr_Lbl = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        AddressLbl = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         Add_Name = new javax.swing.JTextField();
-        Add_Street = new javax.swing.JTextField();
+        MbrAddr = new javax.swing.JTextField();
         Add_State = new javax.swing.JTextField();
         Add_Zip = new javax.swing.JTextField();
         Add_Status = new javax.swing.JTextField();
@@ -53,7 +53,7 @@ public class Add_mbr extends javax.swing.JFrame {
 
         jLabel3.setText("Name:");
 
-        jLabel4.setText("Street:");
+        AddressLbl.setText("Address:");
 
         jLabel5.setText("State:");
 
@@ -67,9 +67,9 @@ public class Add_mbr extends javax.swing.JFrame {
             }
         });
 
-        Add_Street.addActionListener(new java.awt.event.ActionListener() {
+        MbrAddr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Add_StreetActionPerformed(evt);
+                MbrAddrActionPerformed(evt);
             }
         });
 
@@ -114,9 +114,9 @@ public class Add_mbr extends javax.swing.JFrame {
                                 .addComponent(Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel4)
+                                .addComponent(AddressLbl)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Add_Street, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
+                                .addComponent(MbrAddr, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel5)
@@ -161,8 +161,8 @@ public class Add_mbr extends javax.swing.JFrame {
                     .addComponent(Add_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(Add_Street, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AddressLbl)
+                    .addComponent(MbrAddr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -191,9 +191,9 @@ public class Add_mbr extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Add_NameActionPerformed
 
-    private void Add_StreetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_StreetActionPerformed
+    private void MbrAddrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MbrAddrActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Add_StreetActionPerformed
+    }//GEN-LAST:event_MbrAddrActionPerformed
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         System.out.println("\nProgram Exited\n");
@@ -247,14 +247,14 @@ public class Add_mbr extends javax.swing.JFrame {
     private javax.swing.JTextField Add_Name;
     private javax.swing.JTextField Add_State;
     private javax.swing.JTextField Add_Status;
-    private javax.swing.JTextField Add_Street;
     private javax.swing.JTextField Add_Zip;
+    private javax.swing.JLabel AddressLbl;
     private javax.swing.JButton Exit;
     private javax.swing.JButton Main;
+    private javax.swing.JTextField MbrAddr;
     private javax.swing.JTextField Mbr_Nmbr;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
