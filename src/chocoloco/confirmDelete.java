@@ -30,6 +30,7 @@ public class confirmDelete extends javax.swing.JFrame {
         system_name = new javax.swing.JLabel();
         jBtnconDelete = new javax.swing.JButton();
         jBtnCancel = new javax.swing.JButton();
+        jLabelConfirm = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,12 +44,14 @@ public class confirmDelete extends javax.swing.JFrame {
             }
         });
 
-        jBtnCancel.setText("Cancel");
+        jBtnCancel.setText("Back");
         jBtnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnCancelActionPerformed(evt);
             }
         });
+
+        jLabelConfirm.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -64,6 +67,10 @@ public class confirmDelete extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(149, 149, 149))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,15 +81,16 @@ public class confirmDelete extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnconDelete)
                     .addComponent(jBtnCancel))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnconDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnconDeleteActionPerformed
-        //jLabelMsg.setText("Member Deleted");
-        //jTextCourse.grabFocus();
+        jLabelConfirm.setText("Member Deleted");
     }//GEN-LAST:event_jBtnconDeleteActionPerformed
 
     private void jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelActionPerformed
@@ -128,6 +136,7 @@ public class confirmDelete extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancel;
     private javax.swing.JButton jBtnconDelete;
+    private javax.swing.JLabel jLabelConfirm;
     private javax.swing.JLabel system_name;
     // End of variables declaration//GEN-END:variables
 }
