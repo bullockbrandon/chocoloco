@@ -17,7 +17,7 @@ import javax.swing.KeyStroke;
  *
  * @author ispre
  */
-public class date_dialog extends javax.swing.JDialog {
+public class SearchService extends javax.swing.JDialog {
 
     /**
      * A return status code - returned if Cancel button has been pressed
@@ -29,9 +29,9 @@ public class date_dialog extends javax.swing.JDialog {
     public static final int RET_OK = 1;
 
     /**
-     * Creates new form date_dialog
+     * Creates new form SearchService
      */
-    public date_dialog(java.awt.Frame parent, boolean modal) {
+    public SearchService(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
 
@@ -65,9 +65,8 @@ public class date_dialog extends javax.swing.JDialog {
 
         okButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
-        enterdatefield = new javax.swing.JTextField();
-        date_prompt = new javax.swing.JLabel();
-        date_warning = new javax.swing.JLabel();
+        search_service = new javax.swing.JLabel();
+        enter_serviceid = new javax.swing.JTextField();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -89,32 +88,31 @@ public class date_dialog extends javax.swing.JDialog {
             }
         });
 
-        date_prompt.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        date_prompt.setText("Please enter date");
+        search_service.setText("Search Service");
 
-        date_warning.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        enter_serviceid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enter_serviceidActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
-                .addComponent(cancelButton)
-                .addGap(53, 53, 53))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(date_warning)
-                .addGap(126, 126, 126))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(145, 145, 145)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(date_prompt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(enterdatefield))
-                    .addContainerGap(120, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(search_service)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(250, Short.MAX_VALUE)
+                        .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cancelButton))
+                    .addComponent(enter_serviceid, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {cancelButton, okButton});
@@ -122,20 +120,15 @@ public class date_dialog extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(148, Short.MAX_VALUE)
-                .addComponent(date_warning)
-                .addGap(118, 118, 118)
+                .addContainerGap()
+                .addComponent(search_service)
+                .addGap(102, 102, 102)
+                .addComponent(enter_serviceid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelButton)
                     .addComponent(okButton))
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(28, 28, 28)
-                    .addComponent(date_prompt)
-                    .addGap(50, 50, 50)
-                    .addComponent(enterdatefield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(180, Short.MAX_VALUE)))
         );
 
         getRootPane().setDefaultButton(okButton);
@@ -144,19 +137,18 @@ public class date_dialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        String data = enterdatefield.getText();
-        if (data.length() != 0){
-            SetDirectory.directory_date = data;
-            doClose(RET_OK);
-        }
-        else {
-            date_warning.setText("Please enter a date!");
-            enterdatefield.grabFocus();
-        }
+        //whatever id is entered, have to search for that file
+        //then load all the data from that file into the service variables
+        //once changed other forms will save updated data into the same file.
+        
+        this.dispose();
+        new ManageService().setVisible(true);
+        doClose(RET_OK);
     }//GEN-LAST:event_okButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        SetDirectory.directory_date = null;
+        this.dispose();
+        new ManageService().setVisible(true);
         doClose(RET_CANCEL);
     }//GEN-LAST:event_cancelButtonActionPerformed
 
@@ -166,6 +158,10 @@ public class date_dialog extends javax.swing.JDialog {
     private void closeDialog(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_closeDialog
         doClose(RET_CANCEL);
     }//GEN-LAST:event_closeDialog
+
+    private void enter_serviceidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enter_serviceidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enter_serviceidActionPerformed
     
     private void doClose(int retStatus) {
         returnStatus = retStatus;
@@ -190,20 +186,20 @@ public class date_dialog extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(date_dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SearchService.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(date_dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SearchService.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(date_dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SearchService.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(date_dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SearchService.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                date_dialog dialog = new date_dialog(new javax.swing.JFrame(), true);
+                SearchService dialog = new SearchService(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -217,10 +213,9 @@ public class date_dialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
-    private javax.swing.JLabel date_prompt;
-    private javax.swing.JLabel date_warning;
-    private javax.swing.JTextField enterdatefield;
+    private javax.swing.JTextField enter_serviceid;
     private javax.swing.JButton okButton;
+    private javax.swing.JLabel search_service;
     // End of variables declaration//GEN-END:variables
 
     private int returnStatus = RET_CANCEL;
