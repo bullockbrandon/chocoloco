@@ -41,7 +41,7 @@ public class ViewProvider extends javax.swing.JFrame {
         jBtnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("View Proviider");
+        setTitle("View Provider");
 
         jLblNumber.setText("Number");
 
@@ -66,6 +66,11 @@ public class ViewProvider extends javax.swing.JFrame {
         jBtnUpdate.setText("Update");
 
         jBtnCancel.setText("Cancel");
+        jBtnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,6 +133,11 @@ public class ViewProvider extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelActionPerformed
+     this.dispose();
+        new MainMenu().setVisible(true);   // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnCancelActionPerformed
 
     /**
      * @param args the command line arguments
