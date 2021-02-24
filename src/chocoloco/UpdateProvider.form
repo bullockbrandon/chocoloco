@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <Component id="jLblUpdateProvider" min="-2" pref="240" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jBtnMainMenu" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLblNumber" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="jLblName" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="jLblStreet" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="jLblCity" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="jLblState" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="jLblZipcode" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jTxtNumber" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTxtName" pref="105" max="32767" attributes="0"/>
+                              <Component id="jTxtStreet" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTxtCity" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTxtState" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTxtZipcode" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jBtnBack" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="98" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLblUpdateProvider" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLblNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxtNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLblName" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxtName" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLblStreet" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxtStreet" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLblCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxtCity" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLblState" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxtState" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLblZipcode" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxtZipcode" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="33" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jBtnMainMenu" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnBack" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLblUpdateProvider">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Update Provider"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblNumber">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Number"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTxtNumber">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="999999999"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTxtName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Provider Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblStreet">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Street"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTxtStreet">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1214 Main St"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblCity">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="City"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTxtCity">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Abilene"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblState">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="State"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTxtState">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Texas"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblZipcode">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Zip Code"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTxtZipcode">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="79646"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnMainMenu">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Main Menu"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnMainMenuActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnBack">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Back"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnBackActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

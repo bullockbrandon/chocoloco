@@ -28,54 +28,76 @@
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jBtnUpdate" min="-2" pref="73" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="jBtnviewMainMenu" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="jBtnCancel" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="jLblNumber" min="-2" pref="86" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLblTxtNumber" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLblName" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
-                          <Component id="jLblStreet" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                          <Component id="jLblState" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                          <Component id="jLblZipCode" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                  <Component id="jLblviewProvider" alignment="0" min="-2" pref="340" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLblZipCode" min="-2" pref="64" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jTxtZipCode" min="-2" pref="97" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jTxtName" pref="97" max="32767" attributes="0"/>
-                          <Component id="jTxtStreet" max="32767" attributes="0"/>
-                          <Component id="jTxtState" max="32767" attributes="0"/>
-                          <Component id="jTxtZipCode" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLblState" min="-2" pref="64" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jTxtState" min="-2" pref="97" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLblName" min="-2" pref="73" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jTxtName" min="-2" pref="97" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLblStreet" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                              <Component id="jLblCity" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="27" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jTxtCity" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTxtStreet" min="-2" pref="97" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="134" max="32767" attributes="0"/>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLblviewProvider" min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLblNumber" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLblTxtNumber" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLblName" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="jTxtName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLblName" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLblStreet" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jTxtStreet" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLblCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxtCity" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLblState" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="jTxtState" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
@@ -85,12 +107,12 @@
                   <Component id="jLblZipCode" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="jTxtZipCode" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="45" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jBtnUpdate" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="jBtnCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnviewMainMenu" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -133,7 +155,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTxtState">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Tx"/>
+        <Property name="text" type="java.lang.String" value="Texas"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLblZipCode">
@@ -146,14 +168,39 @@
         <Property name="text" type="java.lang.String" value="79697"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnUpdate">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Update"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="jBtnCancel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cancel"/>
+        <Property name="text" type="java.lang.String" value="Back"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnCancelActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblviewProvider">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="View Provider"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnviewMainMenu">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Main Menu"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnviewMainMenuActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblCity">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="City"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTxtCity">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Abilene"/>
       </Properties>
     </Component>
   </SubComponents>

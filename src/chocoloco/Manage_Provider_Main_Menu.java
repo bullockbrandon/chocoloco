@@ -41,6 +41,11 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
         Man_Pro_MM_lbl.setText("Manage Provider Main Menu");
 
         Add_Pro_btn.setText("Add Provider");
+        Add_Pro_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Add_Pro_btnActionPerformed(evt);
+            }
+        });
 
         Update_Pro_btn.setText("Update Provider");
         Update_Pro_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -140,11 +145,13 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Update_Pro_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_Pro_btnActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new UpdateProvider().setVisible(true);
     }//GEN-LAST:event_Update_Pro_btnActionPerformed
 
     private void Del_Pro_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Del_Pro_btnActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new AddProvider().setVisible(true);
     }//GEN-LAST:event_Del_Pro_btnActionPerformed
 
     private void Man_Pro_Exit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Man_Pro_Exit_btnActionPerformed
@@ -153,7 +160,8 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_Man_Pro_Exit_btnActionPerformed
 
     private void Srch_Pro_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Srch_Pro_BtnActionPerformed
-
+        this.dispose();
+        new Search_Provider().setVisible(true);
     }//GEN-LAST:event_Srch_Pro_BtnActionPerformed
 
     private void Man_Pro_MM_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Man_Pro_MM_btnActionPerformed
@@ -165,6 +173,11 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
         this.dispose();
         new ViewProvider().setVisible(true);
     }//GEN-LAST:event_View_Pro_btnActionPerformed
+
+    private void Add_Pro_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_Pro_btnActionPerformed
+        this.dispose();
+        new AddProvider().setVisible(true);
+    }//GEN-LAST:event_Add_Pro_btnActionPerformed
 
     /**
      * @param args the command line arguments

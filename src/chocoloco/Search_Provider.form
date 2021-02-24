@@ -26,20 +26,8 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                              <Component id="Srch_Pro_lbl" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Pro_ID_lbl" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Srch_Pro_Input" min="-2" pref="105" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Srch_Pro_btn" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="Srch_Pro_lbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="148" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -51,6 +39,26 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jLblnumberOrName" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLblProviderName" max="32767" attributes="0"/>
+                          <Component id="Pro_ID_lbl" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="Srch_Pro_Input" pref="105" max="32767" attributes="0"/>
+                          <Component id="jTxtproviderName" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="Srch_Pro_btn" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -58,13 +66,20 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="Srch_Pro_lbl" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="jLblnumberOrName" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Pro_ID_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Srch_Pro_Input" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Srch_Pro_btn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="142" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLblProviderName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTxtproviderName" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="116" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Exit" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Main" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -82,7 +97,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Pro_ID_lbl">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Provider:"/>
+        <Property name="text" type="java.lang.String" value="Provider Number :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="Srch_Pro_Input">
@@ -110,6 +125,18 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Srch_Pro_btnActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblProviderName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Provider Name :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTxtproviderName">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLblnumberOrName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Enter Provider Name or Number"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

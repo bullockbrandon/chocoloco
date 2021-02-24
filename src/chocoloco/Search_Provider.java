@@ -33,12 +33,15 @@ public class Search_Provider extends javax.swing.JFrame {
         Exit = new javax.swing.JButton();
         Main = new javax.swing.JButton();
         Srch_Pro_btn = new javax.swing.JButton();
+        jLblProviderName = new javax.swing.JLabel();
+        jTxtproviderName = new javax.swing.JTextField();
+        jLblnumberOrName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Srch_Pro_lbl.setText("Search for a Provider");
 
-        Pro_ID_lbl.setText("Provider:");
+        Pro_ID_lbl.setText("Provider Number :");
 
         Exit.setText("Exit");
         Exit.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +64,10 @@ public class Search_Provider extends javax.swing.JFrame {
             }
         });
 
+        jLblProviderName.setText("Provider Name :");
+
+        jLblnumberOrName.setText("Enter Provider Name or Number");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -68,17 +75,8 @@ public class Search_Provider extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(140, 140, 140)
-                                .addComponent(Srch_Pro_lbl))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(Pro_ID_lbl)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Srch_Pro_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Srch_Pro_btn)))
+                        .addGap(140, 140, 140)
+                        .addComponent(Srch_Pro_lbl)
                         .addGap(0, 148, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -86,18 +84,39 @@ public class Search_Provider extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Exit)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLblnumberOrName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLblProviderName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Pro_ID_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Srch_Pro_Input, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                            .addComponent(jTxtproviderName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Srch_Pro_btn)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Srch_Pro_lbl)
-                .addGap(76, 76, 76)
+                .addGap(44, 44, 44)
+                .addComponent(jLblnumberOrName)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Pro_ID_lbl)
                     .addComponent(Srch_Pro_Input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Srch_Pro_btn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLblProviderName)
+                    .addComponent(jTxtproviderName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Exit)
                     .addComponent(Main))
@@ -163,5 +182,8 @@ public class Search_Provider extends javax.swing.JFrame {
     private javax.swing.JTextField Srch_Pro_Input;
     private javax.swing.JButton Srch_Pro_btn;
     private javax.swing.JLabel Srch_Pro_lbl;
+    private javax.swing.JLabel jLblProviderName;
+    private javax.swing.JLabel jLblnumberOrName;
+    private javax.swing.JTextField jTxtproviderName;
     // End of variables declaration//GEN-END:variables
 }
