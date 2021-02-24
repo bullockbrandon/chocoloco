@@ -45,6 +45,11 @@ public class ManageService extends javax.swing.JFrame {
         });
 
         delete_service.setText("Delete Service");
+        delete_service.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_serviceActionPerformed(evt);
+            }
+        });
 
         main_menu.setText("Main Menu");
         main_menu.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +73,11 @@ public class ManageService extends javax.swing.JFrame {
         });
 
         update_service.setText("Update Service");
+        update_service.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_serviceActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Manage Service");
@@ -137,9 +147,20 @@ public class ManageService extends javax.swing.JFrame {
     }//GEN-LAST:event_add_serviceActionPerformed
 
     private void view_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_serviceActionPerformed
+        //actually needs to go through SearchService first
         this.dispose();
         new ViewService().setVisible(true);
     }//GEN-LAST:event_view_serviceActionPerformed
+
+    private void update_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_serviceActionPerformed
+         //       this.dispose();
+        //new SearchService().setVisible(true);
+    }//GEN-LAST:event_update_serviceActionPerformed
+
+    private void delete_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_serviceActionPerformed
+        //       this.dispose();
+        //new SearchService().setVisible(true);
+    }//GEN-LAST:event_delete_serviceActionPerformed
 
     /**
      * @param args the command line arguments

@@ -5,6 +5,8 @@
  */
 package chocoloco;
 
+import com.github.lgooddatepicker.components.DatePicker;
+
 /**
  *
  * @author ispre
@@ -34,6 +36,7 @@ public class SetDirectory extends javax.swing.JFrame {
         exitprogram = new javax.swing.JButton();
         changedate = new javax.swing.JButton();
         changedirectory = new javax.swing.JButton();
+        directory_datePicker = new com.github.lgooddatepicker.components.DatePicker();
         entered_date = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -67,6 +70,11 @@ public class SetDirectory extends javax.swing.JFrame {
         });
 
         changedirectory.setText("Change Directory");
+        changedirectory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changedirectoryActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,16 +88,18 @@ public class SetDirectory extends javax.swing.JFrame {
                             .addComponent(system_name)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(tomainmenu)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
-                                .addComponent(exitprogram))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(currentdate)
-                                .addGap(7, 7, 7)
-                                .addComponent(entered_date, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(exitprogram))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(currentdate)
+                                .addGap(9, 9, 9)
+                                .addComponent(entered_date, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                                .addComponent(directory_datePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(changedate)
                                 .addGap(33, 33, 33)))
-                        .addContainerGap(52, Short.MAX_VALUE))
+                        .addContainerGap(15, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(currentdirectory)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -102,14 +112,17 @@ public class SetDirectory extends javax.swing.JFrame {
                 .addComponent(system_name)
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(changedate)
-                    .addComponent(entered_date, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(currentdate, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(63, 63, 63)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(changedate)
+                        .addComponent(directory_datePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(currentdate)
+                        .addComponent(entered_date, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(changedirectory)
                     .addComponent(currentdirectory))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tomainmenu)
                     .addComponent(exitprogram))
@@ -130,13 +143,19 @@ public class SetDirectory extends javax.swing.JFrame {
     }//GEN-LAST:event_tomainmenuActionPerformed
 
     private void changedateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changedateActionPerformed
-        date_dialog changedate = new date_dialog(this, true);
-        changedate.setTitle("Test");
-        changedate.setVisible(true);
-        System.out.printf("\nVariable directory_date = '%s'\n", directory_date);
-        System.out.println("test returned" + changedate.getReturnStatus());
+        //DatePicker current_date;
+        current_date = directory_datePicker;
+        DatePicker entered_date;
+        entered_date = current_date;
+        System.out.println("\n current_date" +current_date);
     }//GEN-LAST:event_changedateActionPerformed
 
+    private void changedirectoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changedirectoryActionPerformed
+        this.dispose();
+        new FileChooser().setVisible(true);
+    }//GEN-LAST:event_changedirectoryActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -178,11 +197,12 @@ public class SetDirectory extends javax.swing.JFrame {
     private javax.swing.JButton changedirectory;
     private javax.swing.JLabel currentdate;
     private javax.swing.JLabel currentdirectory;
+    private com.github.lgooddatepicker.components.DatePicker directory_datePicker;
     private javax.swing.JLabel entered_date;
     private javax.swing.JButton exitprogram;
     private javax.swing.JLabel system_name;
     private javax.swing.JButton tomainmenu;
     // End of variables declaration//GEN-END:variables
 
-    public static String directory_date = null; //global variable for use by app
+    public static DatePicker current_date = null; //global variable for use by app
 }
