@@ -128,7 +128,7 @@ public class manageMembers extends javax.swing.JFrame {
 
     private void jBtnAddMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddMemberActionPerformed
         this.dispose();
-        new Add_mbr().setVisible(true);
+        new addMember().setVisible(true);
     }//GEN-LAST:event_jBtnAddMemberActionPerformed
 
     private void jBtnDeleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDeleteMemberActionPerformed
