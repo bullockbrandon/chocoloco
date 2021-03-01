@@ -5,7 +5,7 @@
  */
 package chocoloco;
 
-import com.github.lgooddatepicker.components.DatePicker;
+//import com.github.lgooddatepicker.components.DatePicker;
 
 /**
  *
@@ -36,7 +36,6 @@ public class SetDirectory extends javax.swing.JFrame {
         exitprogram = new javax.swing.JButton();
         changedate = new javax.swing.JButton();
         changedirectory = new javax.swing.JButton();
-        directory_datePicker = new com.github.lgooddatepicker.components.DatePicker();
         entered_date = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -94,12 +93,10 @@ public class SetDirectory extends javax.swing.JFrame {
                                 .addComponent(currentdate)
                                 .addGap(9, 9, 9)
                                 .addComponent(entered_date, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                                .addComponent(directory_datePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
                                 .addComponent(changedate)
                                 .addGap(33, 33, 33)))
-                        .addContainerGap(15, Short.MAX_VALUE))
+                        .addContainerGap(20, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(currentdirectory)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -112,9 +109,7 @@ public class SetDirectory extends javax.swing.JFrame {
                 .addComponent(system_name)
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(changedate)
-                        .addComponent(directory_datePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(changedate)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(currentdate)
                         .addComponent(entered_date, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -144,10 +139,10 @@ public class SetDirectory extends javax.swing.JFrame {
 
     private void changedateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changedateActionPerformed
         //DatePicker current_date;
-        current_date = directory_datePicker;
-        DatePicker entered_date;
-        entered_date = current_date;
-        System.out.println("\n current_date" +current_date);
+//        current_date = directory_datePicker;
+//        DatePicker entered_date;
+//        entered_date = current_date;
+//        System.out.println("\n current_date" +current_date);
     }//GEN-LAST:event_changedateActionPerformed
 
     private void changedirectoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changedirectoryActionPerformed
@@ -197,12 +192,11 @@ public class SetDirectory extends javax.swing.JFrame {
     private javax.swing.JButton changedirectory;
     private javax.swing.JLabel currentdate;
     private javax.swing.JLabel currentdirectory;
-    private com.github.lgooddatepicker.components.DatePicker directory_datePicker;
     private javax.swing.JLabel entered_date;
     private javax.swing.JButton exitprogram;
     private javax.swing.JLabel system_name;
     private javax.swing.JButton tomainmenu;
     // End of variables declaration//GEN-END:variables
 
-    public static DatePicker current_date = null; //global variable for use by app
+    //public static DatePicker current_date = null; //global variable for use by app
 }

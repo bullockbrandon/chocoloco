@@ -38,14 +38,12 @@
                               <Component id="currentdate" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Component id="entered_date" min="-2" pref="94" max="-2" attributes="0"/>
-                              <EmptySpace pref="122" max="32767" attributes="0"/>
-                              <Component id="directory_datePicker" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace pref="172" max="32767" attributes="0"/>
                               <Component id="changedate" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="2" attributes="0">
                       <Component id="currentdirectory" min="-2" max="-2" attributes="0"/>
@@ -63,10 +61,7 @@
               <Component id="system_name" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="changedate" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="directory_datePicker" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="changedate" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                       <Component id="currentdate" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="entered_date" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
@@ -137,8 +132,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="changedirectoryActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="com.github.lgooddatepicker.components.DatePicker" name="directory_datePicker">
     </Component>
     <Component class="javax.swing.JLabel" name="entered_date">
     </Component>
