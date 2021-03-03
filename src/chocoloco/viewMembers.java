@@ -234,7 +234,7 @@ public class viewMembers extends javax.swing.JFrame {
 
     private void jBtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackActionPerformed
         this.dispose();
-        new searchMembers().setVisible(true);
+        new manageMembers().setVisible(true);
     }//GEN-LAST:event_jBtnBackActionPerformed
 
     private void memberIDBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberIDBoxActionPerformed
