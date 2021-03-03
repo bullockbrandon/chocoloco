@@ -138,6 +138,7 @@ public class searchMembers extends javax.swing.JFrame {
                 
                 
                 new viewMembers(memberID, memberName, memberAddress, memberCity, memberState, memberZip, memberStatus).setVisible(true);
+                this.dispose();
                 
             } else JOptionPane.showMessageDialog(null, "Member not found!");
             
