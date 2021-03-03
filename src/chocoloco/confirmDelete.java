@@ -5,6 +5,12 @@
  */
 package chocoloco;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author bullock.brandon
@@ -16,6 +22,11 @@ public class confirmDelete extends javax.swing.JFrame {
      */
     public confirmDelete() {
         initComponents();
+    }
+    public confirmDelete(String a) {
+        initComponents();
+        
+        memberIDBox.setText(a);
     }
 
     /**
@@ -31,6 +42,8 @@ public class confirmDelete extends javax.swing.JFrame {
         jBtnconDelete = new javax.swing.JButton();
         jBtnCancel = new javax.swing.JButton();
         jLabelConfirm = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        memberIDBox = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,7 +57,7 @@ public class confirmDelete extends javax.swing.JFrame {
             }
         });
 
-        jBtnCancel.setText("Back");
+        jBtnCancel.setText("Cancel");
         jBtnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnCancelActionPerformed(evt);
@@ -53,14 +66,14 @@ public class confirmDelete extends javax.swing.JFrame {
 
         jLabelConfirm.setForeground(new java.awt.Color(255, 0, 0));
 
+        jLabel1.setText("Member ID: ");
+
+        memberIDBox.setEditable(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(system_name)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(jBtnconDelete)
@@ -71,13 +84,28 @@ public class confirmDelete extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(149, 149, 149))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(system_name))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(memberIDBox, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(system_name)
-                .addGap(79, 79, 79)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(memberIDBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnconDelete)
                     .addComponent(jBtnCancel))
@@ -90,7 +118,22 @@ public class confirmDelete extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnconDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnconDeleteActionPerformed
-        jLabelConfirm.setText("Member Deleted");
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            
+            String deleteData = "delete from members where memberID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(deleteData);
+            pstmt.setInt(1, Integer.parseInt(memberIDBox.getText()));
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Member Deleted");
+            conn.close();
+            
+            new manageMembers().setVisible(true);
+            this.dispose();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_jBtnconDeleteActionPerformed
 
     private void jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelActionPerformed
@@ -136,7 +179,9 @@ public class confirmDelete extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancel;
     private javax.swing.JButton jBtnconDelete;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelConfirm;
+    private javax.swing.JTextField memberIDBox;
     private javax.swing.JLabel system_name;
     // End of variables declaration//GEN-END:variables
 }

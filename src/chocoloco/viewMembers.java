@@ -279,7 +279,27 @@ public class viewMembers extends javax.swing.JFrame {
     }//GEN-LAST:event_memberAddressBoxActionPerformed
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
-        // TODO add your handling code here:
+    try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            
+            String getData = "select * from members where memberID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(getData);
+            pstmt.setInt(1, Integer.parseInt(memberIDBox.getText()));
+            
+            ResultSet rs = pstmt.executeQuery();   
+            if (rs.next()){
+                String memberID = rs.getString("memberID");
+                
+                new confirmDelete(memberID).setVisible(true);
+                this.dispose();
+                
+            } else JOptionPane.showMessageDialog(null, "Member not found!");
+            
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_deleteBtnActionPerformed
 
     /**
