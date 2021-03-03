@@ -8,6 +8,7 @@ package chocoloco;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -219,8 +220,33 @@ public class updateMembers extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackActionPerformed
-        this.dispose();
-        new manageMembers().setVisible(true);
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            
+            String getData = "select * from members where memberID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(getData);
+            pstmt.setInt(1, Integer.parseInt(memberIDBox.getText()));
+            
+            ResultSet rs = pstmt.executeQuery();   
+            if (rs.next()){
+                String memberID = rs.getString("memberID");
+                String memberName = rs.getString("memberName");
+                String memberAddress = rs.getString("memberAddress");
+                String memberCity = rs.getString("memberCity");
+                String memberState = rs.getString ("memberState");
+                String memberZip = rs.getString("memberZip");
+                String memberStatus = rs.getString("memberStatus");
+                
+                new viewMembers(memberID, memberName, memberAddress, memberCity, memberState, memberZip, memberStatus).setVisible(true);
+                this.dispose();
+                
+            } else JOptionPane.showMessageDialog(null, "Member not found!");
+            
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_jBtnBackActionPerformed
 
     private void memberIDBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberIDBoxActionPerformed
