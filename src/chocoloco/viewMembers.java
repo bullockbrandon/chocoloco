@@ -14,8 +14,20 @@ public class viewMembers extends javax.swing.JFrame {
     /**
      * Creates new form viewMembers
      */
-    public viewMembers() {
+    public viewMembers(){
         initComponents();
+    }
+    
+    public viewMembers(String a, String b, String c, String d, String e, String f, String g) {
+        initComponents();
+        
+        memberIDBox.setText(a);
+        memberNameBox.setText(b);
+        memberAddressBox.setText(c);
+        memberCityBox.setText(d);
+        memberStateBox.setText(e);
+        memberZipBox.setText(f);
+        memberStatusBox.setText(g);
     }
 
     /**
@@ -27,69 +39,40 @@ public class viewMembers extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        system_name = new javax.swing.JLabel();
-        jLabelmID = new javax.swing.JLabel();
-        jTextFieldmID = new javax.swing.JTextField();
-        jLabelmID1 = new javax.swing.JLabel();
-        jTextFieldmStatus = new javax.swing.JTextField();
-        jLabelmName = new javax.swing.JLabel();
-        jTextFieldmName = new javax.swing.JTextField();
-        jLabelmStreet = new javax.swing.JLabel();
-        jTextFieldmStreet = new javax.swing.JTextField();
+        memberZipBox = new javax.swing.JTextField();
         jLabelmState = new javax.swing.JLabel();
-        jTextFieldmState = new javax.swing.JTextField();
-        jLabelmZip = new javax.swing.JLabel();
-        jTextFieldmZip = new javax.swing.JTextField();
+        jLabelmID = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        memberCityBox = new javax.swing.JTextField();
         jBtnBack = new javax.swing.JButton();
-        jBtnDelete = new javax.swing.JButton();
-        jBtnUpdate = new javax.swing.JButton();
+        memberIDBox = new javax.swing.JTextField();
+        updateBtn = new javax.swing.JButton();
+        jLabelmID1 = new javax.swing.JLabel();
+        jLabelmName = new javax.swing.JLabel();
+        memberNameBox = new javax.swing.JTextField();
+        jLabelmZip = new javax.swing.JLabel();
+        jLabelmStreet = new javax.swing.JLabel();
+        system_name = new javax.swing.JLabel();
+        memberAddressBox = new javax.swing.JTextField();
+        deleteBtn = new javax.swing.JButton();
+        memberStateBox = new javax.swing.JTextField();
+        memberStatusBox = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        system_name.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        system_name.setText("ChocAn Information System");
-
-        jLabelmID.setText("Member ID:");
-        jLabelmID.setMaximumSize(new java.awt.Dimension(60, 60));
-        jLabelmID.setMinimumSize(new java.awt.Dimension(60, 70));
-
-        jTextFieldmID.setEditable(false);
-        jTextFieldmID.setText("1010101");
-
-        jLabelmID1.setText("Status:");
-        jLabelmID1.setMaximumSize(new java.awt.Dimension(60, 60));
-        jLabelmID1.setMinimumSize(new java.awt.Dimension(60, 70));
-
-        jTextFieldmStatus.setEditable(false);
-        jTextFieldmStatus.setText("ACTIVE");
-
-        jLabelmName.setText("  Name:");
-        jLabelmName.setMaximumSize(new java.awt.Dimension(60, 60));
-        jLabelmName.setMinimumSize(new java.awt.Dimension(60, 70));
-
-        jTextFieldmName.setEditable(false);
-        jTextFieldmName.setText("John Deer");
-
-        jLabelmStreet.setText("Street:");
-        jLabelmStreet.setMaximumSize(new java.awt.Dimension(60, 60));
-        jLabelmStreet.setMinimumSize(new java.awt.Dimension(60, 70));
-
-        jTextFieldmStreet.setEditable(false);
-        jTextFieldmStreet.setText("1234 Main St");
+        memberZipBox.setEditable(false);
 
         jLabelmState.setText(" State:");
         jLabelmState.setMaximumSize(new java.awt.Dimension(60, 60));
         jLabelmState.setMinimumSize(new java.awt.Dimension(60, 70));
 
-        jTextFieldmState.setEditable(false);
-        jTextFieldmState.setText("TX");
+        jLabelmID.setText("Member ID:");
+        jLabelmID.setMaximumSize(new java.awt.Dimension(60, 60));
+        jLabelmID.setMinimumSize(new java.awt.Dimension(60, 70));
 
-        jLabelmZip.setText("Zip Code:");
-        jLabelmZip.setMaximumSize(new java.awt.Dimension(60, 60));
-        jLabelmZip.setMinimumSize(new java.awt.Dimension(60, 70));
+        jLabel1.setText("City:");
 
-        jTextFieldmZip.setEditable(false);
-        jTextFieldmZip.setText("79697");
+        memberCityBox.setEditable(false);
 
         jBtnBack.setText("Back");
         jBtnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -98,19 +81,63 @@ public class viewMembers extends javax.swing.JFrame {
             }
         });
 
-        jBtnDelete.setText("Delete");
-        jBtnDelete.addActionListener(new java.awt.event.ActionListener() {
+        memberIDBox.setEditable(false);
+        memberIDBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnDeleteActionPerformed(evt);
+                memberIDBoxActionPerformed(evt);
             }
         });
 
-        jBtnUpdate.setText("Update");
-        jBtnUpdate.addActionListener(new java.awt.event.ActionListener() {
+        updateBtn.setText("Update");
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnUpdateActionPerformed(evt);
+                updateBtnActionPerformed(evt);
             }
         });
+
+        jLabelmID1.setText("Status:");
+        jLabelmID1.setMaximumSize(new java.awt.Dimension(60, 60));
+        jLabelmID1.setMinimumSize(new java.awt.Dimension(60, 70));
+
+        jLabelmName.setText("  Name:");
+        jLabelmName.setMaximumSize(new java.awt.Dimension(60, 60));
+        jLabelmName.setMinimumSize(new java.awt.Dimension(60, 70));
+
+        memberNameBox.setEditable(false);
+        memberNameBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                memberNameBoxActionPerformed(evt);
+            }
+        });
+
+        jLabelmZip.setText("Zip Code:");
+        jLabelmZip.setMaximumSize(new java.awt.Dimension(60, 60));
+        jLabelmZip.setMinimumSize(new java.awt.Dimension(60, 70));
+
+        jLabelmStreet.setText("Address:");
+        jLabelmStreet.setMaximumSize(new java.awt.Dimension(60, 60));
+        jLabelmStreet.setMinimumSize(new java.awt.Dimension(60, 70));
+
+        system_name.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        system_name.setText("ChocAn Information System");
+
+        memberAddressBox.setEditable(false);
+        memberAddressBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                memberAddressBoxActionPerformed(evt);
+            }
+        });
+
+        deleteBtn.setText("Delete");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
+
+        memberStateBox.setEditable(false);
+
+        memberStatusBox.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,44 +146,45 @@ public class viewMembers extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(system_name)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabelmStreet, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelmState, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGap(43, 43, 43)
-                                    .addComponent(jLabelmName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(11, 11, 11)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(13, 13, 13)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jTextFieldmStreet, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextFieldmName, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(12, 12, 12)
-                                    .addComponent(jTextFieldmState, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabelmZip, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextFieldmZip, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jBtnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jBtnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jBtnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(25, 25, 25)
-                            .addComponent(jLabelmID, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextFieldmID, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(29, 29, 29)
-                            .addComponent(jLabelmID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(19, 19, 19)
-                            .addComponent(jTextFieldmStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelmName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelmID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelmStreet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(memberNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(memberAddressBox, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(memberIDBox, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabelmID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(memberStatusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(memberCityBox, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelmState, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(memberStateBox, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelmZip, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(memberZipBox, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(jBtnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(system_name))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -164,32 +192,34 @@ public class viewMembers extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(system_name)
-                .addGap(30, 30, 30)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelmID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldmID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(memberIDBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelmID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldmStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(memberStatusBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelmName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldmName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(memberNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelmStreet, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldmStreet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(memberAddressBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelmState, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldmState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelmZip, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldmZip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(memberZipBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(memberCityBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(memberStateBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateBtn)
                     .addComponent(jBtnBack)
-                    .addComponent(jBtnDelete)
-                    .addComponent(jBtnUpdate))
-                .addContainerGap(58, Short.MAX_VALUE))
+                    .addComponent(deleteBtn))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         pack();
@@ -200,15 +230,25 @@ public class viewMembers extends javax.swing.JFrame {
         new searchMembers().setVisible(true);
     }//GEN-LAST:event_jBtnBackActionPerformed
 
-    private void jBtnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUpdateActionPerformed
-        this.dispose();
-        new updateMembers().setVisible(true);
-    }//GEN-LAST:event_jBtnUpdateActionPerformed
+    private void memberIDBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberIDBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_memberIDBoxActionPerformed
 
-    private void jBtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDeleteActionPerformed
-        this.dispose();
-        new confirmDelete().setVisible(true);
-    }//GEN-LAST:event_jBtnDeleteActionPerformed
+    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+
+    }//GEN-LAST:event_updateBtnActionPerformed
+
+    private void memberNameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberNameBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_memberNameBoxActionPerformed
+
+    private void memberAddressBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberAddressBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_memberAddressBoxActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,27 +280,28 @@ public class viewMembers extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new viewMembers().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deleteBtn;
     private javax.swing.JButton jBtnBack;
-    private javax.swing.JButton jBtnDelete;
-    private javax.swing.JButton jBtnUpdate;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelmID;
     private javax.swing.JLabel jLabelmID1;
     private javax.swing.JLabel jLabelmName;
     private javax.swing.JLabel jLabelmState;
     private javax.swing.JLabel jLabelmStreet;
     private javax.swing.JLabel jLabelmZip;
-    private javax.swing.JTextField jTextFieldmID;
-    private javax.swing.JTextField jTextFieldmName;
-    private javax.swing.JTextField jTextFieldmState;
-    private javax.swing.JTextField jTextFieldmStatus;
-    private javax.swing.JTextField jTextFieldmStreet;
-    private javax.swing.JTextField jTextFieldmZip;
+    private javax.swing.JTextField memberAddressBox;
+    private javax.swing.JTextField memberCityBox;
+    private javax.swing.JTextField memberIDBox;
+    private javax.swing.JTextField memberNameBox;
+    private javax.swing.JTextField memberStateBox;
+    private javax.swing.JTextField memberStatusBox;
+    private javax.swing.JTextField memberZipBox;
     private javax.swing.JLabel system_name;
+    private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
 }

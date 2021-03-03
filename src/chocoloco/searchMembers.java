@@ -5,6 +5,12 @@
  */
 package chocoloco;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author bullock.brandon
@@ -29,7 +35,7 @@ public class searchMembers extends javax.swing.JFrame {
 
         system_name = new javax.swing.JLabel();
         jBtnBack = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        searchBox = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jBtnSearch = new javax.swing.JButton();
 
@@ -45,10 +51,9 @@ public class searchMembers extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("1010101");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        searchBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                searchBoxActionPerformed(evt);
             }
         });
 
@@ -82,7 +87,7 @@ public class searchMembers extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(135, 135, 135))))
         );
         layout.setVerticalGroup(
@@ -92,7 +97,7 @@ public class searchMembers extends javax.swing.JFrame {
                 .addComponent(system_name)
                 .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -109,13 +114,38 @@ public class searchMembers extends javax.swing.JFrame {
         new manageMembers().setVisible(true);
     }//GEN-LAST:event_jBtnBackActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void searchBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_searchBoxActionPerformed
 
     private void jBtnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSearchActionPerformed
-        this.dispose();
-        new viewMembers().setVisible(true);
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            
+            String getData = "select * from members where memberID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(getData);
+            pstmt.setInt(1, Integer.parseInt(searchBox.getText()));
+            
+            ResultSet rs = pstmt.executeQuery();   
+            if (rs.next()){
+                String memberID = rs.getString("memberID");
+                String memberName = rs.getString("memberName");
+                String memberAddress = rs.getString("memberAddress");
+                String memberCity = rs.getString("memberCity");
+                String memberState = rs.getString ("memberState");
+                String memberZip = rs.getString("memberZip");
+                String memberStatus = rs.getString("memberStatus");
+                
+                
+                new viewMembers(memberID, memberName, memberAddress, memberCity, memberState, memberZip, memberStatus).setVisible(true);
+                
+            } else JOptionPane.showMessageDialog(null, "Member not found!");
+            
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_jBtnSearchActionPerformed
 
     /**
@@ -157,7 +187,7 @@ public class searchMembers extends javax.swing.JFrame {
     private javax.swing.JButton jBtnBack;
     private javax.swing.JButton jBtnSearch;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField searchBox;
     private javax.swing.JLabel system_name;
     // End of variables declaration//GEN-END:variables
 }

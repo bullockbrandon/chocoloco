@@ -42,7 +42,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabelmState" min="-2" pref="37" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="stateBox" min="-2" max="-2" attributes="0"/>
+                          <Component id="stateBox" min="-2" pref="43" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabelmZip" min="-2" pref="59" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
