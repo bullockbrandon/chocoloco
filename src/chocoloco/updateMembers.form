@@ -23,62 +23,55 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="system_name" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                      <Component id="jBtnUpdate" min="-2" max="-2" attributes="0"/>
+                      <Component id="confirmUpdate" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Component id="jBtnBack" min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jLabelmID" min="-2" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="memberCityBox" min="-2" pref="54" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextFieldmID" min="-2" pref="80" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jLabelmID1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jComboBoxStatus" max="32767" attributes="0"/>
+                          <Component id="jLabelmState" min="-2" pref="37" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="memberStateBox" min="-2" pref="49" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelmZip" min="-2" pref="59" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="memberZipBox" min="-2" pref="60" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                  <Component id="jLabelmState" min="-2" pref="43" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldmState" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jLabelmZip" min="-2" pref="55" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextFieldmZip" min="-2" pref="55" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                          <Component id="jLabelmName" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabelmStreet" min="-2" pref="43" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextFieldmName" min="-2" pref="160" max="-2" attributes="0"/>
-                                      <Component id="jTextFieldmStreet" min="-2" pref="160" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="jLabelmName" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelmID" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelmStreet" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="memberIDBox" min="-2" pref="83" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabelmID1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="memberStatusBox" min="-2" pref="85" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="memberNameBox" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
+                              <Component id="memberAddressBox" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="18" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -90,31 +83,33 @@
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelmID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldmID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="memberIDBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelmID1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBoxStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="memberStatusBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelmName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="jTextFieldmName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="memberNameBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelmStreet" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="jTextFieldmStreet" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="memberAddressBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelmState" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="jTextFieldmState" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelmZip" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="jTextFieldmZip" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="memberZipBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="memberCityBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="memberStateBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jBtnBack" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jBtnUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="confirmUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
@@ -122,12 +117,17 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="system_name">
+    <Component class="javax.swing.JTextField" name="memberZipBox">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelmState">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="36" style="0"/>
+        <Property name="text" type="java.lang.String" value=" State:"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[60, 60]"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ChocAn Information System"/>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[60, 70]"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelmID">
@@ -141,11 +141,96 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldmID">
+    <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-        <Property name="text" type="java.lang.String" value="1010101"/>
+        <Property name="text" type="java.lang.String" value="City:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="memberCityBox">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="memberStateBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="49">
+            <StringItem index="0" value="AL"/>
+            <StringItem index="1" value="AK"/>
+            <StringItem index="2" value="AZ"/>
+            <StringItem index="3" value="AR"/>
+            <StringItem index="4" value="CA"/>
+            <StringItem index="5" value="CO"/>
+            <StringItem index="6" value="CT"/>
+            <StringItem index="7" value="DE"/>
+            <StringItem index="8" value="FL"/>
+            <StringItem index="9" value="GA"/>
+            <StringItem index="10" value="HI"/>
+            <StringItem index="11" value="ID"/>
+            <StringItem index="12" value="IL"/>
+            <StringItem index="13" value="IN"/>
+            <StringItem index="14" value="IA"/>
+            <StringItem index="15" value="KS"/>
+            <StringItem index="16" value="KY"/>
+            <StringItem index="17" value="LA"/>
+            <StringItem index="18" value="ME"/>
+            <StringItem index="19" value="MD"/>
+            <StringItem index="20" value="MA"/>
+            <StringItem index="21" value="MI"/>
+            <StringItem index="22" value="MN"/>
+            <StringItem index="23" value="MS"/>
+            <StringItem index="24" value="MO"/>
+            <StringItem index="25" value="NE"/>
+            <StringItem index="26" value="NV"/>
+            <StringItem index="27" value="NH"/>
+            <StringItem index="28" value="NJ"/>
+            <StringItem index="29" value="NM"/>
+            <StringItem index="30" value="NY"/>
+            <StringItem index="31" value="NC"/>
+            <StringItem index="32" value="ND"/>
+            <StringItem index="33" value="OH"/>
+            <StringItem index="34" value="OK"/>
+            <StringItem index="35" value="OR"/>
+            <StringItem index="36" value="PA"/>
+            <StringItem index="37" value="RI"/>
+            <StringItem index="38" value="SC"/>
+            <StringItem index="39" value="SD"/>
+            <StringItem index="40" value="TN"/>
+            <StringItem index="41" value="TX"/>
+            <StringItem index="42" value="UT"/>
+            <StringItem index="43" value="VT"/>
+            <StringItem index="44" value="VA"/>
+            <StringItem index="45" value="WA"/>
+            <StringItem index="46" value="WV"/>
+            <StringItem index="47" value="WI"/>
+            <StringItem index="48" value="WY"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnBack">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Back"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnBackActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="memberIDBox">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="memberIDBoxActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="confirmUpdate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Confirm Update"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmUpdateActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelmID1">
       <Properties>
@@ -158,6 +243,22 @@
         </Property>
       </Properties>
     </Component>
+    <Component class="javax.swing.JComboBox" name="memberStatusBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="ACTIVE"/>
+            <StringItem index="1" value="INACTIVE"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="memberStatusBoxActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
     <Component class="javax.swing.JLabel" name="jLabelmName">
       <Properties>
         <Property name="text" type="java.lang.String" value="  Name:"/>
@@ -169,42 +270,10 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldmName">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="John Deer"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelmStreet">
-      <Properties>
-        <Property name="text" type="java.lang.String" value=" Street:"/>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[60, 60]"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[60, 70]"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldmStreet">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="1234 Main St"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelmState">
-      <Properties>
-        <Property name="text" type="java.lang.String" value=" State:"/>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[60, 60]"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[60, 70]"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldmState">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="TX"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="memberNameBox">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="memberNameBoxActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelmZip">
       <Properties>
@@ -217,42 +286,29 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldmZip">
+    <Component class="javax.swing.JLabel" name="jLabelmStreet">
       <Properties>
-        <Property name="text" type="java.lang.String" value="79697"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jBtnBack">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Back"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnBackActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="jBtnUpdate">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Confirm Update"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnUpdateActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBoxStatus">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
-            <StringItem index="0" value="ACTIVE"/>
-            <StringItem index="1" value="INACTIVE"/>
-          </StringArray>
+        <Property name="text" type="java.lang.String" value="Address:"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[60, 60]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[60, 70]"/>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="system_name">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="36" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="ChocAn Information System"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="memberAddressBox">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxStatusActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="memberAddressBoxActionPerformed"/>
       </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

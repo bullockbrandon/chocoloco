@@ -136,7 +136,6 @@ public class searchMembers extends javax.swing.JFrame {
                 String memberZip = rs.getString("memberZip");
                 String memberStatus = rs.getString("memberStatus");
                 
-                
                 new viewMembers(memberID, memberName, memberAddress, memberCity, memberState, memberZip, memberStatus).setVisible(true);
                 this.dispose();
                 
