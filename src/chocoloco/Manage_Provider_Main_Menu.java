@@ -172,7 +172,8 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_View_Pro_btnActionPerformed
 
     private void Add_Pro_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_Pro_btnActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new AddProvider().setVisible(true);
     }//GEN-LAST:event_Add_Pro_btnActionPerformed
 
     /**
