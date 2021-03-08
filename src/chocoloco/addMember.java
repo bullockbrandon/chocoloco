@@ -9,31 +9,20 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author bullock.brandon
  */
-public class updateMembers extends javax.swing.JFrame {
+public class addMember extends javax.swing.JFrame {
 
     /**
-     * Creates new form viewMembers
+     * Creates new form addMember
      */
-    public updateMembers() {
+    public addMember() {
         initComponents();
-    }
-    
-    public updateMembers(String a, String b, String c, String d, String e, String f, String g) {
-        initComponents();
-        
-        memberIDBox.setText(a);
-        memberNameBox.setText(b);
-        memberAddressBox.setText(c);
-        memberCityBox.setText(d);
-        memberStateBox.setSelectedItem(e);
-        memberZipBox.setText(f);
-        memberStatusBox.setSelectedItem(g);
     }
 
     /**
@@ -45,37 +34,36 @@ public class updateMembers extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        memberZipBox = new javax.swing.JTextField();
-        jLabelmState = new javax.swing.JLabel();
-        jLabelmID = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        memberCityBox = new javax.swing.JTextField();
-        memberStateBox = new javax.swing.JComboBox<>();
-        jBtnBack = new javax.swing.JButton();
-        memberIDBox = new javax.swing.JTextField();
-        confirmUpdate = new javax.swing.JButton();
-        jLabelmID1 = new javax.swing.JLabel();
-        memberStatusBox = new javax.swing.JComboBox<>();
-        jLabelmName = new javax.swing.JLabel();
-        memberNameBox = new javax.swing.JTextField();
         jLabelmZip = new javax.swing.JLabel();
-        jLabelmStreet = new javax.swing.JLabel();
         system_name = new javax.swing.JLabel();
-        memberAddressBox = new javax.swing.JTextField();
+        memberZip = new javax.swing.JTextField();
+        jLabelmID = new javax.swing.JLabel();
+        jBtnBack = new javax.swing.JButton();
+        memberID = new javax.swing.JTextField();
+        addMemberBtn = new javax.swing.JButton();
+        jLabelmID1 = new javax.swing.JLabel();
+        statusBox = new javax.swing.JComboBox<>();
+        jLabelmName = new javax.swing.JLabel();
+        memberName = new javax.swing.JTextField();
+        jLabelmStreet = new javax.swing.JLabel();
+        memberAddress = new javax.swing.JTextField();
+        jLabelmState = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        memberCity = new javax.swing.JTextField();
+        stateBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelmState.setText(" State:");
-        jLabelmState.setMaximumSize(new java.awt.Dimension(60, 60));
-        jLabelmState.setMinimumSize(new java.awt.Dimension(60, 70));
+        jLabelmZip.setText("Zip Code:");
+        jLabelmZip.setMaximumSize(new java.awt.Dimension(60, 60));
+        jLabelmZip.setMinimumSize(new java.awt.Dimension(60, 70));
+
+        system_name.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        system_name.setText("ChocAn Information System");
 
         jLabelmID.setText("Member ID:");
         jLabelmID.setMaximumSize(new java.awt.Dimension(60, 60));
         jLabelmID.setMinimumSize(new java.awt.Dimension(60, 70));
-
-        jLabel1.setText("City:");
-
-        memberStateBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" }));
 
         jBtnBack.setText("Back");
         jBtnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -84,17 +72,16 @@ public class updateMembers extends javax.swing.JFrame {
             }
         });
 
-        memberIDBox.setEnabled(false);
-        memberIDBox.addActionListener(new java.awt.event.ActionListener() {
+        memberID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                memberIDBoxActionPerformed(evt);
+                memberIDActionPerformed(evt);
             }
         });
 
-        confirmUpdate.setText("Confirm Update");
-        confirmUpdate.addActionListener(new java.awt.event.ActionListener() {
+        addMemberBtn.setText("Add Member");
+        addMemberBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmUpdateActionPerformed(evt);
+                addMemberBtnActionPerformed(evt);
             }
         });
 
@@ -102,10 +89,10 @@ public class updateMembers extends javax.swing.JFrame {
         jLabelmID1.setMaximumSize(new java.awt.Dimension(60, 60));
         jLabelmID1.setMinimumSize(new java.awt.Dimension(60, 70));
 
-        memberStatusBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTIVE", "INACTIVE" }));
-        memberStatusBox.addActionListener(new java.awt.event.ActionListener() {
+        statusBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTIVE", "INACTIVE" }));
+        statusBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                memberStatusBoxActionPerformed(evt);
+                statusBoxActionPerformed(evt);
             }
         });
 
@@ -113,28 +100,29 @@ public class updateMembers extends javax.swing.JFrame {
         jLabelmName.setMaximumSize(new java.awt.Dimension(60, 60));
         jLabelmName.setMinimumSize(new java.awt.Dimension(60, 70));
 
-        memberNameBox.addActionListener(new java.awt.event.ActionListener() {
+        memberName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                memberNameBoxActionPerformed(evt);
+                memberNameActionPerformed(evt);
             }
         });
-
-        jLabelmZip.setText("Zip Code:");
-        jLabelmZip.setMaximumSize(new java.awt.Dimension(60, 60));
-        jLabelmZip.setMinimumSize(new java.awt.Dimension(60, 70));
 
         jLabelmStreet.setText("Address:");
         jLabelmStreet.setMaximumSize(new java.awt.Dimension(60, 60));
         jLabelmStreet.setMinimumSize(new java.awt.Dimension(60, 70));
 
-        system_name.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        system_name.setText("ChocAn Information System");
-
-        memberAddressBox.addActionListener(new java.awt.event.ActionListener() {
+        memberAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                memberAddressBoxActionPerformed(evt);
+                memberAddressActionPerformed(evt);
             }
         });
+
+        jLabelmState.setText(" State:");
+        jLabelmState.setMaximumSize(new java.awt.Dimension(60, 60));
+        jLabelmState.setMinimumSize(new java.awt.Dimension(60, 70));
+
+        jLabel1.setText("City:");
+
+        stateBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,7 +134,7 @@ public class updateMembers extends javax.swing.JFrame {
                     .addComponent(system_name)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(92, 92, 92)
-                        .addComponent(confirmUpdate)
+                        .addComponent(addMemberBtn)
                         .addGap(45, 45, 45)
                         .addComponent(jBtnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -154,15 +142,15 @@ public class updateMembers extends javax.swing.JFrame {
                             .addGap(79, 79, 79)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(memberCityBox, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(memberCity, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabelmState, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(memberStateBox, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(stateBox, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabelmZip, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(memberZipBox, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(memberZip, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(44, 44, 44)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -172,13 +160,13 @@ public class updateMembers extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(memberIDBox, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(memberID, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
                                     .addComponent(jLabelmID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
-                                    .addComponent(memberStatusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(memberNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(memberAddressBox, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(statusBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(memberName, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(memberAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(45, 45, 45))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -190,29 +178,29 @@ public class updateMembers extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelmID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(memberIDBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(memberID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelmID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(memberStatusBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(statusBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelmName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(memberNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(memberName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelmStreet, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(memberAddressBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(memberAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelmState, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelmZip, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(memberZipBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(memberZip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(memberCityBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(memberStateBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(memberCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stateBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnBack)
-                    .addComponent(confirmUpdate))
+                    .addComponent(addMemberBtn))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
 
@@ -220,73 +208,62 @@ public class updateMembers extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackActionPerformed
-        try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
-            
-            String getData = "select * from members where memberID = ?";
-            PreparedStatement pstmt = conn.prepareStatement(getData);
-            pstmt.setInt(1, Integer.parseInt(memberIDBox.getText()));
-            
-            ResultSet rs = pstmt.executeQuery();   
-            if (rs.next()){
-                String memberID = rs.getString("memberID");
-                String memberName = rs.getString("memberName");
-                String memberAddress = rs.getString("memberAddress");
-                String memberCity = rs.getString("memberCity");
-                String memberState = rs.getString ("memberState");
-                String memberZip = rs.getString("memberZip");
-                String memberStatus = rs.getString("memberStatus");
-                
-                new viewMembers(memberID, memberName, memberAddress, memberCity, memberState, memberZip, memberStatus).setVisible(true);
-                this.dispose();
-                
-            } else JOptionPane.showMessageDialog(null, "Member not found!");
-            
-            conn.close();
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
+        this.dispose();
+        new manageMembers().setVisible(true);
     }//GEN-LAST:event_jBtnBackActionPerformed
 
-    private void memberIDBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberIDBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_memberIDBoxActionPerformed
-
-    private void confirmUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmUpdateActionPerformed
+    private void addMemberBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMemberBtnActionPerformed
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
-
-            String updateData = "update members set memberName = ?, memberAddress = ?, memberCity = ?, memberState = ?, memberZip = ?, memberStatus = ? where memberID = ?";
-            PreparedStatement pstmt = conn.prepareStatement(updateData);
-            pstmt.setString(1, memberNameBox.getText());
-            pstmt.setString(2, memberAddressBox.getText());
-            pstmt.setString(3, memberCityBox.getText());
-            pstmt.setString(4, memberStateBox.getSelectedItem().toString());
-            pstmt.setInt(5, Integer.parseInt(memberZipBox.getText()));
-            pstmt.setString(6, memberStatusBox.getSelectedItem().toString());
-            pstmt.setInt(7, Integer.parseInt(memberIDBox.getText()));
-
-            pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Member Updated");
-            conn.close();
+            
+            String addData = "insert into members values (?, ?, ? , ?, ?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(addData);
+            
+            String checkData = "select * from members where memberID = '"+ memberID.getText() +"'";
+            ResultSet rs = pstmt.executeQuery(checkData);
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "memberID already exist");
+            } else {
+                pstmt.setInt(1, Integer.parseInt(memberID.getText()));
+                pstmt.setString(2, memberName.getText());
+                pstmt.setString(3, memberAddress.getText());
+                pstmt.setString(4, memberCity.getText());
+                pstmt.setString(5, stateBox.getSelectedItem().toString());
+                pstmt.setInt(6, Integer.parseInt(memberZip.getText()));
+                pstmt.setString(7, statusBox.getSelectedItem().toString());
+            
+                pstmt.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Member Added");
+                conn.close();
+            
+                memberID.setText("");
+                memberName.setText("");
+                memberAddress.setText("");
+                memberCity.setText("");
+                memberZip.setText("");
+                
+            }
         }
-        catch(Exception e){
+        catch(SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }
-    }//GEN-LAST:event_confirmUpdateActionPerformed
+    }//GEN-LAST:event_addMemberBtnActionPerformed
 
-    private void memberStatusBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberStatusBoxActionPerformed
+    private void memberIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_memberStatusBoxActionPerformed
+    }//GEN-LAST:event_memberIDActionPerformed
 
-    private void memberNameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberNameBoxActionPerformed
+    private void memberAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberAddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_memberNameBoxActionPerformed
+    }//GEN-LAST:event_memberAddressActionPerformed
 
-    private void memberAddressBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberAddressBoxActionPerformed
+    private void memberNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_memberAddressBoxActionPerformed
+    }//GEN-LAST:event_memberNameActionPerformed
+
+    private void statusBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statusBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,27 +282,26 @@ public class updateMembers extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(updateMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(updateMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(updateMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(updateMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new updateMembers().setVisible(true);
+                new addMember().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton confirmUpdate;
+    private javax.swing.JButton addMemberBtn;
     private javax.swing.JButton jBtnBack;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelmID;
@@ -334,13 +310,13 @@ public class updateMembers extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelmState;
     private javax.swing.JLabel jLabelmStreet;
     private javax.swing.JLabel jLabelmZip;
-    private javax.swing.JTextField memberAddressBox;
-    private javax.swing.JTextField memberCityBox;
-    private javax.swing.JTextField memberIDBox;
-    private javax.swing.JTextField memberNameBox;
-    private javax.swing.JComboBox<String> memberStateBox;
-    private javax.swing.JComboBox<String> memberStatusBox;
-    private javax.swing.JTextField memberZipBox;
+    private javax.swing.JTextField memberAddress;
+    private javax.swing.JTextField memberCity;
+    private javax.swing.JTextField memberID;
+    private javax.swing.JTextField memberName;
+    private javax.swing.JTextField memberZip;
+    private javax.swing.JComboBox<String> stateBox;
+    private javax.swing.JComboBox<String> statusBox;
     private javax.swing.JLabel system_name;
     // End of variables declaration//GEN-END:variables
 }
