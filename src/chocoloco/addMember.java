@@ -8,6 +8,7 @@ package chocoloco;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -216,23 +217,31 @@ public class addMember extends javax.swing.JFrame {
             
             String addData = "insert into members values (?, ?, ? , ?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(addData);
-            pstmt.setInt(1, Integer.parseInt(memberID.getText()));
-            pstmt.setString(2, memberName.getText());
-            pstmt.setString(3, memberAddress.getText());
-            pstmt.setString(4, memberCity.getText());
-            pstmt.setString(5, stateBox.getSelectedItem().toString());
-            pstmt.setInt(6, Integer.parseInt(memberZip.getText()));
-            pstmt.setString(7, statusBox.getSelectedItem().toString());
             
-            pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Member Added");
-            conn.close();
+            String checkData = "select * from members where memberID = '"+ memberID.getText() +"'";
+            ResultSet rs = pstmt.executeQuery(checkData);
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "memberID already exist");
+            } else {
+                pstmt.setInt(1, Integer.parseInt(memberID.getText()));
+                pstmt.setString(2, memberName.getText());
+                pstmt.setString(3, memberAddress.getText());
+                pstmt.setString(4, memberCity.getText());
+                pstmt.setString(5, stateBox.getSelectedItem().toString());
+                pstmt.setInt(6, Integer.parseInt(memberZip.getText()));
+                pstmt.setString(7, statusBox.getSelectedItem().toString());
             
-            memberID.setText("");
-            memberName.setText("");
-            memberAddress.setText("");
-            memberCity.setText("");
-            memberZip.setText("");
+                pstmt.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Member Added");
+                conn.close();
+            
+                memberID.setText("");
+                memberName.setText("");
+                memberAddress.setText("");
+                memberCity.setText("");
+                memberZip.setText("");
+                
+            }
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
