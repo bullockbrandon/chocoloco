@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -243,7 +244,7 @@ public class addMember extends javax.swing.JFrame {
                 
             }
         }
-        catch(Exception e){
+        catch(SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_addMemberBtnActionPerformed
