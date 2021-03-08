@@ -153,7 +153,7 @@ public class ManageService extends javax.swing.JFrame {
     }//GEN-LAST:event_view_serviceActionPerformed
 
     private void update_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_serviceActionPerformed
-         //       this.dispose();
+                //this.dispose();
         //new SearchService().setVisible(true);
     }//GEN-LAST:event_update_serviceActionPerformed
 

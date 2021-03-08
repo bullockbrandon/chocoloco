@@ -221,7 +221,7 @@ public class updateMembers extends javax.swing.JFrame {
 
     private void jBtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
             
             String getData = "select * from members where memberID = ?";
             PreparedStatement pstmt = conn.prepareStatement(getData);
@@ -255,7 +255,7 @@ public class updateMembers extends javax.swing.JFrame {
 
     private void confirmUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmUpdateActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
 
             String updateData = "update members set memberName = ?, memberAddress = ?, memberCity = ?, memberState = ?, memberZip = ?, memberStatus = ? where memberID = ?";
             PreparedStatement pstmt = conn.prepareStatement(updateData);

@@ -41,6 +41,11 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
         Man_Pro_MM_lbl.setText("Manage Provider Main Menu");
 
         Add_Pro_btn.setText("Add Provider");
+        Add_Pro_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Add_Pro_btnActionPerformed(evt);
+            }
+        });
 
         Update_Pro_btn.setText("Update Provider");
         Update_Pro_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +170,10 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
         this.dispose();
         new ViewProvider().setVisible(true);
     }//GEN-LAST:event_View_Pro_btnActionPerformed
+
+    private void Add_Pro_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_Pro_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Add_Pro_btnActionPerformed
 
     /**
      * @param args the command line arguments

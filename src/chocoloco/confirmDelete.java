@@ -119,7 +119,7 @@ public class confirmDelete extends javax.swing.JFrame {
 
     private void jBtnconDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnconDeleteActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
             
             String deleteData = "delete from members where memberID = ?";
             PreparedStatement pstmt = conn.prepareStatement(deleteData);
@@ -138,7 +138,7 @@ public class confirmDelete extends javax.swing.JFrame {
 
     private void jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
             
             String getData = "select * from members where memberID = ?";
             PreparedStatement pstmt = conn.prepareStatement(getData);

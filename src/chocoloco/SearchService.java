@@ -66,7 +66,8 @@ public class SearchService extends javax.swing.JDialog {
         okButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
         search_service = new javax.swing.JLabel();
-        enter_serviceid = new javax.swing.JTextField();
+        searchBox = new javax.swing.JTextField();
+        service_number = new javax.swing.JLabel();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -90,11 +91,15 @@ public class SearchService extends javax.swing.JDialog {
 
         search_service.setText("Search Service");
 
-        enter_serviceid.addActionListener(new java.awt.event.ActionListener() {
+        searchBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enter_serviceidActionPerformed(evt);
+                searchBoxActionPerformed(evt);
             }
         });
+
+        service_number.setText("Service Number:");
+        service_number.setMaximumSize(new java.awt.Dimension(60, 60));
+        service_number.setMinimumSize(new java.awt.Dimension(60, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,9 +115,15 @@ public class SearchService extends javax.swing.JDialog {
                         .addContainerGap(250, Short.MAX_VALUE)
                         .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cancelButton))
-                    .addComponent(enter_serviceid, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(cancelButton)))
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(112, 112, 112)
+                    .addComponent(service_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(90, Short.MAX_VALUE)))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {cancelButton, okButton});
@@ -122,13 +133,18 @@ public class SearchService extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(search_service)
-                .addGap(102, 102, 102)
-                .addComponent(enter_serviceid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 241, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelButton)
                     .addComponent(okButton))
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(140, 140, 140)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(service_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(140, Short.MAX_VALUE)))
         );
 
         getRootPane().setDefaultButton(okButton);
@@ -159,9 +175,9 @@ public class SearchService extends javax.swing.JDialog {
         doClose(RET_CANCEL);
     }//GEN-LAST:event_closeDialog
 
-    private void enter_serviceidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enter_serviceidActionPerformed
+    private void searchBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enter_serviceidActionPerformed
+    }//GEN-LAST:event_searchBoxActionPerformed
     
     private void doClose(int retStatus) {
         returnStatus = retStatus;
@@ -213,9 +229,10 @@ public class SearchService extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
-    private javax.swing.JTextField enter_serviceid;
     private javax.swing.JButton okButton;
+    private javax.swing.JTextField searchBox;
     private javax.swing.JLabel search_service;
+    private javax.swing.JLabel service_number;
     // End of variables declaration//GEN-END:variables
 
     private int returnStatus = RET_CANCEL;
