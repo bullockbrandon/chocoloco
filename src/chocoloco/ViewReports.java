@@ -53,6 +53,11 @@ public class ViewReports extends javax.swing.JFrame {
         });
 
         print_member.setText("Print Member Report");
+        print_member.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                print_memberActionPerformed(evt);
+            }
+        });
 
         print_service.setText("Print Services Report");
 
@@ -134,6 +139,11 @@ public class ViewReports extends javax.swing.JFrame {
         System.out.println("\nProgram Exited\n");
         System.exit(0);
     }//GEN-LAST:event_exit_programActionPerformed
+
+    private void print_memberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_memberActionPerformed
+        this.dispose();
+        new printMembers().setVisible(true);
+    }//GEN-LAST:event_print_memberActionPerformed
 
     /**
      * @param args the command line arguments
