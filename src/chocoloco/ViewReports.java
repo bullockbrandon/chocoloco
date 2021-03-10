@@ -27,10 +27,7 @@ public class ViewReports extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        send_provider = new javax.swing.JButton();
-        send_accounting = new javax.swing.JButton();
         print_accounting = new javax.swing.JButton();
-        exit_program = new javax.swing.JButton();
         print_member = new javax.swing.JButton();
         print_service = new javax.swing.JButton();
         print_provider = new javax.swing.JButton();
@@ -39,18 +36,7 @@ public class ViewReports extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        send_provider.setText("Send Provider Report");
-
-        send_accounting.setText("Send Accounting Report");
-
         print_accounting.setText("Print Accounting Report");
-
-        exit_program.setText("Exit");
-        exit_program.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exit_programActionPerformed(evt);
-            }
-        });
 
         print_member.setText("Print Member Report");
         print_member.addActionListener(new java.awt.event.ActionListener() {
@@ -62,6 +48,11 @@ public class ViewReports extends javax.swing.JFrame {
         print_service.setText("Print Services Report");
 
         print_provider.setText("Print Provider Report");
+        print_provider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                print_providerActionPerformed(evt);
+            }
+        });
 
         main_menu.setText("Main Menu");
         main_menu.addActionListener(new java.awt.event.ActionListener() {
@@ -80,51 +71,41 @@ public class ViewReports extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(main_menu)
-                                .addGap(109, 109, 109)
-                                .addComponent(exit_program))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(send_provider)
-                                .addGap(20, 20, 20)
-                                .addComponent(print_member))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(send_accounting)
-                                .addGap(6, 6, 6)
-                                .addComponent(print_service))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(print_accounting)
-                                .addGap(8, 8, 8)
-                                .addComponent(print_provider))))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(jLabel1)))
-                .addGap(80, 80, 80))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(print_member, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(print_service, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(62, 62, 62)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(print_accounting)
+                            .addComponent(print_provider, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(main_menu)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(send_provider)
-                    .addComponent(print_member))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(send_accounting)
-                    .addComponent(print_service))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(print_accounting)
-                    .addComponent(print_provider))
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(main_menu)
-                    .addComponent(exit_program))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(print_provider, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(print_member, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(print_service, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(print_accounting, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(main_menu)
+                .addGap(48, 48, 48))
         );
 
         pack();
@@ -135,15 +116,15 @@ public class ViewReports extends javax.swing.JFrame {
         new MainMenu().setVisible(true);
     }//GEN-LAST:event_main_menuActionPerformed
 
-    private void exit_programActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_programActionPerformed
-        System.out.println("\nProgram Exited\n");
-        System.exit(0);
-    }//GEN-LAST:event_exit_programActionPerformed
-
     private void print_memberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_memberActionPerformed
-        this.dispose();
         new printMembers().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_print_memberActionPerformed
+
+    private void print_providerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_providerActionPerformed
+        new printProviders().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_print_providerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,14 +162,11 @@ public class ViewReports extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton exit_program;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton main_menu;
     private javax.swing.JButton print_accounting;
     private javax.swing.JButton print_member;
     private javax.swing.JButton print_provider;
     private javax.swing.JButton print_service;
-    private javax.swing.JButton send_accounting;
-    private javax.swing.JButton send_provider;
     // End of variables declaration//GEN-END:variables
 }
