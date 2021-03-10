@@ -24,9 +24,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Group type="102" alignment="2" attributes="0">
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="2" attributes="0">
                           <Component id="system_name" alignment="2" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="2" attributes="0">
@@ -38,20 +38,21 @@
                               <Component id="currentdate" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Component id="entered_date" min="-2" pref="94" max="-2" attributes="0"/>
-                              <EmptySpace pref="122" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="directory_datePicker" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="changedate" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="choose_folder" alignment="2" min="-2" pref="668" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="2" attributes="0">
+                  <Group type="102" attributes="0">
                       <Component id="currentdirectory" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="changedirectory" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -72,12 +73,14 @@
                       <Component id="entered_date" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="changedirectory" min="-2" max="-2" attributes="0"/>
                   <Component id="currentdirectory" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="158" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="choose_folder" min="-2" pref="337" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="tomainmenu" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="exitprogram" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -90,10 +93,10 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="system_name">
       <Properties>
+        <Property name="text" type="java.lang.String" value="ChocAn Information System"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="36" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ChocAn Information System"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="currentdate">
@@ -141,6 +144,11 @@
     <Component class="com.github.lgooddatepicker.components.DatePicker" name="directory_datePicker">
     </Component>
     <Component class="javax.swing.JLabel" name="entered_date">
+    </Component>
+    <Component class="javax.swing.JFileChooser" name="choose_folder">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="choose_folderActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
