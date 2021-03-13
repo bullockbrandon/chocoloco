@@ -32,9 +32,7 @@ public class printProviders extends javax.swing.JFrame {
             String displayData = "select * from providers";
             PreparedStatement pstmt = conn.prepareStatement(displayData);
             ResultSet rs = pstmt.executeQuery();
-            pReportTable.setModel(DbUtils.resultSetToTableModel(rs));
-            
-                
+            pReportTable.setModel(DbUtils.resultSetToTableModel(rs));               
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
