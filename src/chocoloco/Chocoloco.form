@@ -29,11 +29,7 @@
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="system_name" alignment="2" min="-2" pref="500" max="-2" attributes="0"/>
                   <Component id="coursenum" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="studentname_Abe" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="studentname_Brandon" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="studentname_Sam" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="startprogram" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="studentname_Jen" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="exitprogram" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="19" max="32767" attributes="0"/>
@@ -45,17 +41,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="system_name" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Component id="coursenum" min="-2" pref="40" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="studentname_Abe" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="studentname_Brandon" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="studentname_Sam" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="studentname_Jen" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
               <Component id="startprogram" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="exitprogram" min="-2" max="-2" attributes="0"/>
@@ -97,26 +85,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitprogramActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="studentname_Abe">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Abe Salazar"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="studentname_Brandon">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Brandon Bullock"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="studentname_Sam">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Samuel O&apos;Rear"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="studentname_Jen">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Jennifer Quintanilla"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

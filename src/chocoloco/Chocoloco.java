@@ -39,10 +39,6 @@ public class Chocoloco extends javax.swing.JFrame {
         coursenum = new javax.swing.JLabel();
         startprogram = new javax.swing.JButton();
         exitprogram = new javax.swing.JButton();
-        studentname_Abe = new javax.swing.JLabel();
-        studentname_Brandon = new javax.swing.JLabel();
-        studentname_Sam = new javax.swing.JLabel();
-        studentname_Jen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Chocoloco");
@@ -68,14 +64,6 @@ public class Chocoloco extends javax.swing.JFrame {
             }
         });
 
-        studentname_Abe.setText("Abe Salazar");
-
-        studentname_Brandon.setText("Brandon Bullock");
-
-        studentname_Sam.setText("Samuel O'Rear");
-
-        studentname_Jen.setText("Jennifer Quintanilla");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -85,11 +73,7 @@ public class Chocoloco extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(system_name, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(coursenum)
-                    .addComponent(studentname_Abe)
-                    .addComponent(studentname_Brandon)
-                    .addComponent(studentname_Sam)
                     .addComponent(startprogram)
-                    .addComponent(studentname_Jen)
                     .addComponent(exitprogram))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
@@ -98,17 +82,9 @@ public class Chocoloco extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(system_name, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(36, 36, 36)
                 .addComponent(coursenum, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(studentname_Abe)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(studentname_Brandon)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(studentname_Sam)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(studentname_Jen)
-                .addGap(52, 52, 52)
+                .addGap(107, 107, 107)
                 .addComponent(startprogram)
                 .addGap(18, 18, 18)
                 .addComponent(exitprogram)
@@ -168,10 +144,6 @@ public class Chocoloco extends javax.swing.JFrame {
     private javax.swing.JLabel coursenum;
     private javax.swing.JButton exitprogram;
     private javax.swing.JButton startprogram;
-    private javax.swing.JLabel studentname_Abe;
-    private javax.swing.JLabel studentname_Brandon;
-    private javax.swing.JLabel studentname_Jen;
-    private javax.swing.JLabel studentname_Sam;
     private javax.swing.JLabel system_name;
     // End of variables declaration//GEN-END:variables
 }
