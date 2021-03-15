@@ -24,32 +24,24 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Component id="id" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="confirm_update" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="provider" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="number" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="phone" pref="81" max="32767" attributes="0"/>
-                          <Component id="provider_name" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="number" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Component id="phone" min="-2" pref="81" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="name" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="service_name" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="id" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="service_id" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="service_id" alignment="1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="110" max="32767" attributes="0"/>
+              <EmptySpace pref="108" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="cancel" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
@@ -86,15 +78,10 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="provider" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="provider_name" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="id" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="service_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="id" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <EmptySpace pref="73" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="confirm_update" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cancel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -118,11 +105,6 @@
     <Component class="javax.swing.JLabel" name="fee">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fee:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="provider">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Provider:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="id">
@@ -161,11 +143,12 @@
     </Component>
     <Component class="javax.swing.JTextField" name="service_name">
     </Component>
-    <Component class="javax.swing.JTextField" name="provider_name">
-    </Component>
     <Component class="javax.swing.JTextField" name="service_fee">
     </Component>
     <Component class="javax.swing.JTextField" name="service_id">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="service_idActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

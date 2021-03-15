@@ -30,14 +30,12 @@ public class AddService extends javax.swing.JFrame {
         number = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
         fee = new javax.swing.JLabel();
-        provider = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
         confirm_update = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
         add_service = new javax.swing.JLabel();
         phone = new javax.swing.JTextField();
         service_name = new javax.swing.JTextField();
-        provider_name = new javax.swing.JTextField();
         service_fee = new javax.swing.JTextField();
         service_id = new javax.swing.JTextField();
 
@@ -48,8 +46,6 @@ public class AddService extends javax.swing.JFrame {
         name.setText("Name:");
 
         fee.setText("Fee:");
-
-        provider.setText("Provider:");
 
         id.setText("ID:");
 
@@ -76,31 +72,32 @@ public class AddService extends javax.swing.JFrame {
             }
         });
 
+        service_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                service_idActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
+                .addComponent(id)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(confirm_update)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(provider)
-                            .addComponent(number, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(phone, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                            .addComponent(provider_name)))
+                        .addComponent(number)
+                        .addGap(13, 13, 13)
+                        .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(name)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(service_name))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(id)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(service_id)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                    .addComponent(service_id, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cancel)
                     .addGroup(layout.createSequentialGroup()
@@ -130,13 +127,9 @@ public class AddService extends javax.swing.JFrame {
                     .addComponent(service_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(provider)
-                    .addComponent(provider_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(id)
-                    .addComponent(service_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                    .addComponent(service_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(id))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirm_update)
                     .addComponent(cancel))
@@ -160,15 +153,18 @@ public class AddService extends javax.swing.JFrame {
         //do for all fields.
         phone_var = phone.toString();
         service_name_var = service_name.toString();
-        provider_name_var = provider_name.toString();
-        service_id_var = service_id.toString();
+       service_id_var = service_id.toString();
         service_fee_var = service_fee.toString();
         
-       System.out.println("\n phone: " +phone_var);
+       System.out.println("\n phone: " +service_id_var);
         this.dispose();
         new ViewService().setVisible(true);
         
     }//GEN-LAST:event_confirm_updateActionPerformed
+
+    private void service_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_service_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_service_idActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,8 +210,6 @@ public class AddService extends javax.swing.JFrame {
     private javax.swing.JLabel name;
     private javax.swing.JLabel number;
     private javax.swing.JTextField phone;
-    private javax.swing.JLabel provider;
-    private javax.swing.JTextField provider_name;
     private javax.swing.JTextField service_fee;
     private javax.swing.JTextField service_id;
     private javax.swing.JTextField service_name;

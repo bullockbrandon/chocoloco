@@ -73,7 +73,10 @@
                           <Component id="manage_service" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="view_reports" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="test_visit" min="-2" max="-2" attributes="0"/>
+                                  <Component id="view_reports" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
@@ -108,8 +111,13 @@
                   <Component id="view_reports" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Component id="directory_options" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="directory_options" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="test_visit" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
+
               <Component id="exitprogram" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
           </Group>
@@ -172,6 +180,14 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Main Menu"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="test_visit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Test Visit"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="test_visitActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

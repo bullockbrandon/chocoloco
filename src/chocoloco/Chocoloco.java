@@ -24,6 +24,8 @@ public class Chocoloco extends javax.swing.JFrame {
      */
     public Chocoloco() {
         initComponents();
+       // setMinimumSize(new Dimension(700,400).getSize());
+//setExtendedState(MAXIMIZED_BOTH);/*To see your application starts maximized!*/
     }
 
     /**
@@ -42,6 +44,11 @@ public class Chocoloco extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Chocoloco");
+        addWindowStateListener(new java.awt.event.WindowStateListener() {
+            public void windowStateChanged(java.awt.event.WindowEvent evt) {
+                formWindowStateChanged(evt);
+            }
+        });
 
         system_name.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
         system_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -69,17 +76,20 @@ public class Chocoloco extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(system_name, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(coursenum)
                     .addComponent(startprogram)
+
                     .addComponent(exitprogram))
                 .addContainerGap(19, Short.MAX_VALUE))
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+
                 .addContainerGap()
                 .addComponent(system_name, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
@@ -87,8 +97,8 @@ public class Chocoloco extends javax.swing.JFrame {
                 .addGap(107, 107, 107)
                 .addComponent(startprogram)
                 .addGap(18, 18, 18)
-                .addComponent(exitprogram)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(exitprogram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(34, 34, 34))
         );
 
         pack();
@@ -100,9 +110,14 @@ public class Chocoloco extends javax.swing.JFrame {
     }//GEN-LAST:event_exitprogramActionPerformed
 
     private void startprogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startprogramActionPerformed
-       this.dispose();
-        new MainMenu().setVisible(true);
+      //splashscreen goes to SetDirectory before MainMenu
+        this.dispose();
+        new SetDirectory().setVisible(true);
     }//GEN-LAST:event_startprogramActionPerformed
+
+    private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowStateChanged
 
     /**
      * @param args the command line arguments
