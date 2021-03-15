@@ -38,7 +38,14 @@ public class MainMenu extends javax.swing.JFrame {
         view_reports = new javax.swing.JButton();
         directory_options = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+
         test_visit = new javax.swing.JButton();
+
 
         jButton3.setText("jButton3");
 
@@ -90,12 +97,31 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Main Menu");
 
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Help");
+
+        jMenuItem1.setText("About");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         test_visit.setText("Test Visit");
         test_visit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 test_visitActionPerformed(evt);
             }
         });
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,10 +169,12 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(view_reports))
                 .addGap(26, 26, 26)
+
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(directory_options)
                     .addComponent(test_visit))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+
                 .addComponent(exitprogram)
                 .addGap(32, 32, 32))
         );
@@ -184,11 +212,18 @@ public class MainMenu extends javax.swing.JFrame {
         new Manage_Provider_Main_Menu().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new AboutUs().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     private void test_visitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_test_visitActionPerformed
         // TODO add your handling code here:
                 this.dispose();
         new Test_Visit().setVisible(true);
     }//GEN-LAST:event_test_visitActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -231,6 +266,10 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JButton manage_member;
     private javax.swing.JButton manage_service;
     private javax.swing.JButton test_visit;

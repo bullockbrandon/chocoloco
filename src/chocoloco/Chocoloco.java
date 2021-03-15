@@ -41,10 +41,6 @@ public class Chocoloco extends javax.swing.JFrame {
         coursenum = new javax.swing.JLabel();
         startprogram = new javax.swing.JButton();
         exitprogram = new javax.swing.JButton();
-        studentname_Abe = new javax.swing.JLabel();
-        studentname_Brandon = new javax.swing.JLabel();
-        studentname_Sam = new javax.swing.JLabel();
-        studentname_Jen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Chocoloco");
@@ -75,14 +71,6 @@ public class Chocoloco extends javax.swing.JFrame {
             }
         });
 
-        studentname_Abe.setText("Abe Salazar");
-
-        studentname_Brandon.setText("Brandon Bullock");
-
-        studentname_Sam.setText("Samuel O'Rear");
-
-        studentname_Jen.setText("Jennifer Quintanilla");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -93,30 +81,21 @@ public class Chocoloco extends javax.swing.JFrame {
                     .addComponent(system_name, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(coursenum)
                     .addComponent(startprogram)
-                    .addComponent(exitprogram)
-                    .addComponent(studentname_Abe)
-                    .addComponent(studentname_Brandon)
-                    .addComponent(studentname_Sam)
-                    .addComponent(studentname_Jen))
-                .addGap(8, 8, 8))
+
+                    .addComponent(exitprogram))
+                .addContainerGap(19, Short.MAX_VALUE))
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(system_name, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                .addGap(6, 6, 6)
-                .addComponent(coursenum, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                .addGap(11, 11, 11)
-                .addComponent(studentname_Abe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(6, 6, 6)
-                .addComponent(studentname_Brandon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(6, 6, 6)
-                .addComponent(studentname_Sam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(6, 6, 6)
-                .addComponent(studentname_Jen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(52, 52, 52)
-                .addComponent(startprogram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+
+                .addContainerGap()
+                .addComponent(system_name, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(coursenum, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(107, 107, 107)
+                .addComponent(startprogram)
                 .addGap(18, 18, 18)
                 .addComponent(exitprogram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(34, 34, 34))
@@ -180,10 +159,6 @@ public class Chocoloco extends javax.swing.JFrame {
     private javax.swing.JLabel coursenum;
     private javax.swing.JButton exitprogram;
     private javax.swing.JButton startprogram;
-    private javax.swing.JLabel studentname_Abe;
-    private javax.swing.JLabel studentname_Brandon;
-    private javax.swing.JLabel studentname_Jen;
-    private javax.swing.JLabel studentname_Sam;
     private javax.swing.JLabel system_name;
     // End of variables declaration//GEN-END:variables
 }
