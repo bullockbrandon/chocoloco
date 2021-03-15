@@ -160,7 +160,7 @@ public class UpdateService extends javax.swing.JFrame {
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
 
-           String updateData = "update services set service_fee = ?, service_name = ? where service_number = ?";
+            String updateData = "update services set service_fee = ?, service_name = ? where service_number = ?";
             PreparedStatement pstmt = conn.prepareStatement(updateData);
             pstmt.setString(1, service_fee.getText());
             pstmt.setString(2, service_name.getText());
