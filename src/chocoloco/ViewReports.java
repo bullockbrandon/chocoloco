@@ -46,6 +46,11 @@ public class ViewReports extends javax.swing.JFrame {
         });
 
         print_service.setText("Print Services Report");
+        print_service.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                print_serviceActionPerformed(evt);
+            }
+        });
 
         print_provider.setText("Print Provider Report");
         print_provider.addActionListener(new java.awt.event.ActionListener() {
@@ -125,6 +130,11 @@ public class ViewReports extends javax.swing.JFrame {
         new printProviders().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_print_providerActionPerformed
+
+    private void print_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_serviceActionPerformed
+        new printServices().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_print_serviceActionPerformed
 
     /**
      * @param args the command line arguments

@@ -95,6 +95,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Print Services Report"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="print_serviceActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="print_provider">
       <Properties>
