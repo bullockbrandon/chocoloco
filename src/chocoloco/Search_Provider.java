@@ -5,6 +5,12 @@
  */
 package chocoloco;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author salazar.abraham
@@ -38,7 +44,7 @@ public class Search_Provider extends javax.swing.JFrame {
 
         Srch_Pro_lbl.setText("Search for a Provider");
 
-        Pro_ID_lbl.setText("Provider:");
+        Pro_ID_lbl.setText("Provider ID:");
 
         Exit.setText("Exit");
         Exit.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +85,7 @@ public class Search_Provider extends javax.swing.JFrame {
                                 .addComponent(Srch_Pro_Input, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Srch_Pro_btn)))
-                        .addGap(0, 148, Short.MAX_VALUE))
+                        .addGap(0, 142, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(Main)
@@ -109,6 +115,33 @@ public class Search_Provider extends javax.swing.JFrame {
 
     private void Srch_Pro_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Srch_Pro_btnActionPerformed
         // TODO add your handling code here:
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
+            
+            String getData = "select * from providers where providerID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(getData);
+            pstmt.setInt(1, Integer.parseInt(Srch_Pro_Input.getText()));
+            
+            ResultSet rs = pstmt.executeQuery();   
+            if (rs.next()){
+                String memberID = rs.getString("memberID");
+                String memberName = rs.getString("memberName");
+                String memberAddress = rs.getString("memberAddress");
+                String memberCity = rs.getString("memberCity");
+                String memberState = rs.getString ("memberState");
+                String memberZip = rs.getString("memberZip");
+                String memberStatus = rs.getString("memberStatus");
+                
+                new viewMembers(memberID, memberName, memberAddress, memberCity, memberState, memberZip, memberStatus).setVisible(true);
+                this.dispose();
+                
+            } else JOptionPane.showMessageDialog(null, "Member not found!");
+            
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_Srch_Pro_btnActionPerformed
 
     private void MainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainActionPerformed

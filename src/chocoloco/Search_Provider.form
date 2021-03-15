@@ -40,7 +40,7 @@
                               <Component id="Srch_Pro_btn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="148" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="142" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -82,7 +82,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Pro_ID_lbl">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Provider:"/>
+        <Property name="text" type="java.lang.String" value="Provider ID:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="Srch_Pro_Input">

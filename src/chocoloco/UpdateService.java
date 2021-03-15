@@ -5,6 +5,11 @@
  */
 package chocoloco;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ispre
@@ -18,6 +23,13 @@ public class UpdateService extends javax.swing.JFrame {
         initComponents();
     }
 
+    public UpdateService(String a, String b, String c) {
+        initComponents();
+        
+        service_number.setText(a);
+        service_fee.setText(b);
+        service_name.setText(c);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,35 +40,20 @@ public class UpdateService extends javax.swing.JFrame {
     private void initComponents() {
 
         fee = new javax.swing.JLabel();
-        provider = new javax.swing.JLabel();
-        id = new javax.swing.JLabel();
-        confirm_update = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
         number = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        phone = new javax.swing.JTextField();
+        service_number = new javax.swing.JTextField();
         service_name = new javax.swing.JTextField();
-        provider_name = new javax.swing.JTextField();
         service_fee = new javax.swing.JTextField();
-        service_id = new javax.swing.JTextField();
+        confirmUpdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         fee.setText("Fee:");
 
-        provider.setText("Provider:");
-
-        id.setText("ID:");
-
-        confirm_update.setText("Confirm");
-        confirm_update.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirm_updateActionPerformed(evt);
-            }
-        });
-
-        cancel.setText("Cancel");
+        cancel.setText("Back");
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelActionPerformed(evt);
@@ -70,30 +67,30 @@ public class UpdateService extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Update Service");
 
+        confirmUpdate.setText("Confirm Update");
+        confirmUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(confirm_update)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(provider)
-                            .addComponent(number, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(phone, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                            .addComponent(provider_name)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(name)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(service_name))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(id)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(service_id)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(number)
+                            .addGap(7, 7, 7)
+                            .addComponent(service_number, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(name)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(service_name)))
+                    .addComponent(confirmUpdate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cancel)
@@ -116,24 +113,16 @@ public class UpdateService extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(number)
                     .addComponent(fee)
-                    .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(service_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(service_fee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name)
                     .addComponent(service_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(provider)
-                    .addComponent(provider_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(id)
-                    .addComponent(service_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(confirm_update)
-                    .addComponent(cancel))
+                    .addComponent(cancel)
+                    .addComponent(confirmUpdate))
                 .addContainerGap())
         );
 
@@ -141,19 +130,50 @@ public class UpdateService extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-       this.dispose();
-        new ViewService().setVisible(true);
+       try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
+            
+            String getData = "select * from services where service_number = ?";
+            PreparedStatement pstmt = conn.prepareStatement(getData);
+            pstmt.setInt(1, Integer.parseInt(service_number.getText()));
+            
+            ResultSet rs = pstmt.executeQuery();   
+            if (rs.next()){
+                String service_number = rs.getString("service_number");
+                String service_fee = rs.getString("service_fee");
+                String service_name = rs.getString("service_name");
+                
+                
+                new ViewService(service_number, service_fee,service_name).setVisible(true);
+                this.dispose();
+                
+            } else JOptionPane.showMessageDialog(null, "Service not found!");
+            
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_cancelActionPerformed
 
-    private void confirm_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_updateActionPerformed
-        //same as add memeber but want to update already saved info,
-        //do for all text boxes
-        AddService.phone_var = phone.toString();
-        AddService.service_name_var = service_name.toString();
-        AddService.provider_name_var = provider_name.toString();
-        AddService.service_id_var = service_id.toString();
-        AddService.service_fee_var = service_fee.toString();
-    }//GEN-LAST:event_confirm_updateActionPerformed
+    private void confirmUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmUpdateActionPerformed
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
+
+            String updateData = "update services set service_number = ?, service_fee = ?, service_name = ?";
+            PreparedStatement pstmt = conn.prepareStatement(updateData);
+            pstmt.setString(1, service_number.getText());
+            pstmt.setString(2, service_fee.getText());
+            pstmt.setString(3, service_name.getText());            
+
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Service Updated");
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_confirmUpdateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,17 +212,13 @@ public class UpdateService extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel;
-    private javax.swing.JButton confirm_update;
+    private javax.swing.JButton confirmUpdate;
     private javax.swing.JLabel fee;
-    private javax.swing.JLabel id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel name;
     private javax.swing.JLabel number;
-    private javax.swing.JTextField phone;
-    private javax.swing.JLabel provider;
-    private javax.swing.JTextField provider_name;
     private javax.swing.JTextField service_fee;
-    private javax.swing.JTextField service_id;
     private javax.swing.JTextField service_name;
+    private javax.swing.JTextField service_number;
     // End of variables declaration//GEN-END:variables
 }

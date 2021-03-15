@@ -36,7 +36,7 @@
                           <Group type="102" alignment="2" attributes="0">
                               <Component id="delete_service" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="75" pref="75" max="75" attributes="0"/>
-                              <Component id="view_service" min="-2" max="-2" attributes="0"/>
+                              <Component id="search_service" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="2" attributes="0">
                               <Component id="add_service" min="-2" max="-2" attributes="0"/>
@@ -67,7 +67,7 @@
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="delete_service" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="view_service" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="search_service" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="74" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -112,12 +112,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exit_programActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="view_service">
+    <Component class="javax.swing.JButton" name="search_service">
       <Properties>
-        <Property name="text" type="java.lang.String" value="View Service"/>
+        <Property name="text" type="java.lang.String" value="Search Service"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="view_serviceActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="search_serviceActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="update_service">

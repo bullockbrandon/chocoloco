@@ -25,29 +25,20 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="confirm_update" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="provider" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="number" alignment="0" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="number" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <Component id="service_number" min="-2" pref="97" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="phone" pref="97" max="32767" attributes="0"/>
-                          <Component id="provider_name" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="name" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="service_name" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="name" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="service_name" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="id" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="service_id" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="confirmUpdate" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="100" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -76,7 +67,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="number" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fee" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="phone" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="service_number" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="service_fee" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -84,20 +75,10 @@
                   <Component id="name" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="service_name" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace pref="111" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="provider" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="provider_name" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="id" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="service_id" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="confirm_update" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="confirmUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -110,27 +91,9 @@
         <Property name="text" type="java.lang.String" value="Fee:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="provider">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Provider:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="id">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="ID:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="confirm_update">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Confirm"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirm_updateActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="cancel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cancel"/>
+        <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelActionPerformed"/>
@@ -154,15 +117,19 @@
         <Property name="text" type="java.lang.String" value="Update Service"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="phone">
+    <Component class="javax.swing.JTextField" name="service_number">
     </Component>
     <Component class="javax.swing.JTextField" name="service_name">
     </Component>
-    <Component class="javax.swing.JTextField" name="provider_name">
-    </Component>
     <Component class="javax.swing.JTextField" name="service_fee">
     </Component>
-    <Component class="javax.swing.JTextField" name="service_id">
+    <Component class="javax.swing.JButton" name="confirmUpdate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Confirm Update"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmUpdateActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
