@@ -27,60 +27,50 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Man_Pro_MM_lbl = new javax.swing.JLabel();
-        Add_Pro_btn = new javax.swing.JButton();
-        Update_Pro_btn = new javax.swing.JButton();
-        Del_Pro_btn = new javax.swing.JButton();
-        View_Pro_btn = new javax.swing.JButton();
-        Man_Pro_Exit_btn = new javax.swing.JButton();
-        Man_Pro_MM_btn = new javax.swing.JButton();
-        Srch_Pro_Btn = new javax.swing.JButton();
+        system_name = new javax.swing.JLabel();
+        jBtnMainMenu = new javax.swing.JButton();
+        jBtnAddProvider = new javax.swing.JButton();
+        jBtnDeleteProvider = new javax.swing.JButton();
+        jBtnSearchProvider = new javax.swing.JButton();
+        jBtnUpdateProvider = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Man_Pro_MM_lbl.setText("Manage Provider Main Menu");
+        system_name.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        system_name.setText("ChocAn Information System");
 
-        Add_Pro_btn.setText("Add Provider");
-
-        Update_Pro_btn.setText("Update Provider");
-        Update_Pro_btn.addActionListener(new java.awt.event.ActionListener() {
+        jBtnMainMenu.setText("Main Menu");
+        jBtnMainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Update_Pro_btnActionPerformed(evt);
+                jBtnMainMenuActionPerformed(evt);
             }
         });
 
-        Del_Pro_btn.setText("Delete Provider");
-        Del_Pro_btn.addActionListener(new java.awt.event.ActionListener() {
+        jBtnAddProvider.setText("Add Provider");
+        jBtnAddProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Del_Pro_btnActionPerformed(evt);
+                jBtnAddProviderActionPerformed(evt);
             }
         });
 
-        View_Pro_btn.setText("View Provider");
-        View_Pro_btn.addActionListener(new java.awt.event.ActionListener() {
+        jBtnDeleteProvider.setText("Delete Provider");
+        jBtnDeleteProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                View_Pro_btnActionPerformed(evt);
+                jBtnDeleteProviderActionPerformed(evt);
             }
         });
 
-        Man_Pro_Exit_btn.setText("Exit");
-        Man_Pro_Exit_btn.addActionListener(new java.awt.event.ActionListener() {
+        jBtnSearchProvider.setText("Search Provider");
+        jBtnSearchProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Man_Pro_Exit_btnActionPerformed(evt);
+                jBtnSearchProviderActionPerformed(evt);
             }
         });
 
-        Man_Pro_MM_btn.setText("Main Menu");
-        Man_Pro_MM_btn.addActionListener(new java.awt.event.ActionListener() {
+        jBtnUpdateProvider.setText("Update Provider");
+        jBtnUpdateProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Man_Pro_MM_btnActionPerformed(evt);
-            }
-        });
-
-        Srch_Pro_Btn.setText("Search for Provider");
-        Srch_Pro_Btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Srch_Pro_BtnActionPerformed(evt);
+                jBtnUpdateProviderActionPerformed(evt);
             }
         });
 
@@ -89,82 +79,71 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(Man_Pro_MM_lbl)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Man_Pro_MM_btn)
-                .addGap(18, 18, 18)
-                .addComponent(Man_Pro_Exit_btn)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(system_name))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(jBtnMainMenu)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBtnDeleteProvider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnAddProvider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Srch_Pro_Btn)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Add_Pro_btn)
-                            .addComponent(Del_Pro_btn))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Update_Pro_btn)
-                            .addComponent(View_Pro_btn))
-                        .addGap(85, 85, 85))))
+                    .addComponent(jBtnSearchProvider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnUpdateProvider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(107, 107, 107))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Man_Pro_MM_lbl)
-                .addGap(41, 41, 41)
+                .addComponent(system_name)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Add_Pro_btn)
-                    .addComponent(Update_Pro_btn))
-                .addGap(18, 18, 18)
+                    .addComponent(jBtnAddProvider)
+                    .addComponent(jBtnUpdateProvider))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Del_Pro_btn)
-                    .addComponent(View_Pro_btn))
-                .addGap(18, 18, 18)
-                .addComponent(Srch_Pro_Btn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Man_Pro_Exit_btn)
-                    .addComponent(Man_Pro_MM_btn))
-                .addContainerGap())
+                    .addComponent(jBtnDeleteProvider)
+                    .addComponent(jBtnSearchProvider))
+                .addGap(28, 28, 28)
+                .addComponent(jBtnMainMenu)
+                .addGap(73, 73, 73))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Update_Pro_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_Pro_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Update_Pro_btnActionPerformed
-
-    private void Del_Pro_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Del_Pro_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Del_Pro_btnActionPerformed
-
-    private void Man_Pro_Exit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Man_Pro_Exit_btnActionPerformed
-        System.out.println("\nProgram Exited\n");
-        System.exit(0);
-    }//GEN-LAST:event_Man_Pro_Exit_btnActionPerformed
-
-    private void Srch_Pro_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Srch_Pro_BtnActionPerformed
-
-    }//GEN-LAST:event_Srch_Pro_BtnActionPerformed
-
-    private void Man_Pro_MM_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Man_Pro_MM_btnActionPerformed
+    private void jBtnMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnMainMenuActionPerformed
         this.dispose();
         new MainMenu().setVisible(true);
-    }//GEN-LAST:event_Man_Pro_MM_btnActionPerformed
+    }//GEN-LAST:event_jBtnMainMenuActionPerformed
 
-    private void View_Pro_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_Pro_btnActionPerformed
+    private void jBtnAddProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddProviderActionPerformed
         this.dispose();
-        new ViewProvider().setVisible(true);
-    }//GEN-LAST:event_View_Pro_btnActionPerformed
+        new addProviders().setVisible(true);
+    }//GEN-LAST:event_jBtnAddProviderActionPerformed
+
+    private void jBtnDeleteProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDeleteProviderActionPerformed
+        this.dispose();
+        new searchProviders().setVisible(true);
+    }//GEN-LAST:event_jBtnDeleteProviderActionPerformed
+
+    private void jBtnSearchProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSearchProviderActionPerformed
+        this.dispose();
+        new searchProviders().setVisible(true);
+    }//GEN-LAST:event_jBtnSearchProviderActionPerformed
+
+    private void jBtnUpdateProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUpdateProviderActionPerformed
+        this.dispose();
+        new searchProviders().setVisible(true);
+    }//GEN-LAST:event_jBtnUpdateProviderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,14 +181,12 @@ public class Manage_Provider_Main_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Add_Pro_btn;
-    private javax.swing.JButton Del_Pro_btn;
-    private javax.swing.JButton Man_Pro_Exit_btn;
-    private javax.swing.JButton Man_Pro_MM_btn;
-    private javax.swing.JLabel Man_Pro_MM_lbl;
-    private javax.swing.JButton Srch_Pro_Btn;
-    private javax.swing.JButton Update_Pro_btn;
-    private javax.swing.JButton View_Pro_btn;
+    private javax.swing.JButton jBtnAddProvider;
+    private javax.swing.JButton jBtnDeleteProvider;
+    private javax.swing.JButton jBtnMainMenu;
+    private javax.swing.JButton jBtnSearchProvider;
+    private javax.swing.JButton jBtnUpdateProvider;
+    private javax.swing.JLabel system_name;
     // End of variables declaration//GEN-END:variables
 
 }

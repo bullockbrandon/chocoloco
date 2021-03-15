@@ -23,38 +23,32 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-              <Component id="Man_Pro_MM_lbl" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="Man_Pro_MM_btn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="Man_Pro_Exit_btn" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="system_name" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                      <Component id="jBtnMainMenu" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="Srch_Pro_Btn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Add_Pro_btn" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Del_Pro_btn" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Update_Pro_btn" min="-2" max="-2" attributes="0"/>
-                          <Component id="View_Pro_btn" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jBtnDeleteProvider" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jBtnAddProvider" alignment="0" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jBtnSearchProvider" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jBtnUpdateProvider" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -62,86 +56,71 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="Man_Pro_MM_lbl" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Component id="system_name" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Add_Pro_btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Update_Pro_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnAddProvider" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnUpdateProvider" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace pref="45" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Del_Pro_btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="View_Pro_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnDeleteProvider" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBtnSearchProvider" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="Srch_Pro_Btn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="95" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Man_Pro_Exit_btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Man_Pro_MM_btn" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <Component id="jBtnMainMenu" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="Man_Pro_MM_lbl">
+    <Component class="javax.swing.JLabel" name="system_name">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Manage Provider Main Menu"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="36" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="ChocAn Information System"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="Add_Pro_btn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Add Provider"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="Update_Pro_btn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Update Provider"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Update_Pro_btnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="Del_Pro_btn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Delete Provider"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Del_Pro_btnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="View_Pro_btn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="View Provider"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="View_Pro_btnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="Man_Pro_Exit_btn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Exit"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Man_Pro_Exit_btnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="Man_Pro_MM_btn">
+    <Component class="javax.swing.JButton" name="jBtnMainMenu">
       <Properties>
         <Property name="text" type="java.lang.String" value="Main Menu"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Man_Pro_MM_btnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnMainMenuActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Srch_Pro_Btn">
+    <Component class="javax.swing.JButton" name="jBtnAddProvider">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Search for Provider"/>
+        <Property name="text" type="java.lang.String" value="Add Provider"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Srch_Pro_BtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnAddProviderActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnDeleteProvider">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delete Provider"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnDeleteProviderActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnSearchProvider">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search Provider"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnSearchProviderActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnUpdateProvider">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Update Provider"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnUpdateProviderActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
