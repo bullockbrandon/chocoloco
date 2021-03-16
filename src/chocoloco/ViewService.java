@@ -219,7 +219,7 @@ public class ViewService extends javax.swing.JFrame {
             if (rs.next()){
                 String service_number = rs.getString("service_number");
 
-                new confirmDelete(service_number).setVisible(true);
+                new deleteSevices(service_number).setVisible(true);
                 this.dispose();
 
             } else JOptionPane.showMessageDialog(null, "Service not found!");
