@@ -31,7 +31,7 @@ public class ManageService extends javax.swing.JFrame {
         delete_service = new javax.swing.JButton();
         main_menu = new javax.swing.JButton();
         exit_program = new javax.swing.JButton();
-        view_service = new javax.swing.JButton();
+        search_service = new javax.swing.JButton();
         update_service = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -65,10 +65,10 @@ public class ManageService extends javax.swing.JFrame {
             }
         });
 
-        view_service.setText("View Service");
-        view_service.addActionListener(new java.awt.event.ActionListener() {
+        search_service.setText("Search Service");
+        search_service.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                view_serviceActionPerformed(evt);
+                search_serviceActionPerformed(evt);
             }
         });
 
@@ -98,7 +98,7 @@ public class ManageService extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(delete_service)
                                 .addGap(75, 75, 75)
-                                .addComponent(view_service))
+                                .addComponent(search_service))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(add_service)
                                 .addGap(87, 87, 87)
@@ -120,7 +120,7 @@ public class ManageService extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(delete_service)
-                    .addComponent(view_service))
+                    .addComponent(search_service))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(main_menu)
@@ -146,19 +146,21 @@ public class ManageService extends javax.swing.JFrame {
         new AddService().setVisible(true);
     }//GEN-LAST:event_add_serviceActionPerformed
 
-    private void view_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_serviceActionPerformed
+    private void search_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_serviceActionPerformed
         //actually needs to go through SearchService first
         this.dispose();
-        new ViewService().setVisible(true);
-    }//GEN-LAST:event_view_serviceActionPerformed
+        new SearchService().setVisible(true);
+    }//GEN-LAST:event_search_serviceActionPerformed
 
     private void update_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_serviceActionPerformed
-         //       this.dispose();
+        this.dispose();
+        new SearchService().setVisible(true);
         //new SearchService().setVisible(true);
     }//GEN-LAST:event_update_serviceActionPerformed
 
     private void delete_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_serviceActionPerformed
-        //       this.dispose();
+        this.dispose();
+        new SearchService().setVisible(true);        //       this.dispose();
         //new SearchService().setVisible(true);
     }//GEN-LAST:event_delete_serviceActionPerformed
 
@@ -203,7 +205,7 @@ public class ManageService extends javax.swing.JFrame {
     private javax.swing.JButton exit_program;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton main_menu;
+    private javax.swing.JButton search_service;
     private javax.swing.JButton update_service;
-    private javax.swing.JButton view_service;
     // End of variables declaration//GEN-END:variables
 }

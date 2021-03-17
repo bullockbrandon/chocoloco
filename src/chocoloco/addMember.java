@@ -214,7 +214,7 @@ public class addMember extends javax.swing.JFrame {
 
     private void addMemberBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMemberBtnActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
             
             String addData = "insert into members values (?, ?, ? , ?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(addData);

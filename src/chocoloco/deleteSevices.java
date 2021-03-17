@@ -10,25 +10,24 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-
 /**
  *
- * @author bullock.brandon
+ * @author salazar.abraham
  */
-public class confirmDelete extends javax.swing.JFrame {
+public class deleteSevices extends javax.swing.JFrame {
 
     /**
-     * Creates new form confirmDelete
+     * Creates new form deleteSevices
      */
-    public confirmDelete() {
+    public deleteSevices() {
         initComponents();
-    }
-    public confirmDelete(String a) {
-        initComponents();
-        
-        memberIDBox.setText(a);
     }
 
+    public deleteSevices(String a) {
+        initComponents();
+        
+        service_number.setText(a);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,21 +38,21 @@ public class confirmDelete extends javax.swing.JFrame {
     private void initComponents() {
 
         system_name = new javax.swing.JLabel();
-        jBtnconDelete = new javax.swing.JButton();
+        confirmDelete = new javax.swing.JButton();
         jBtnCancel = new javax.swing.JButton();
         jLabelConfirm = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        memberIDBox = new javax.swing.JTextField();
+        service_number = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         system_name.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         system_name.setText("ChocAn Information System");
 
-        jBtnconDelete.setText("Confirm Delete");
-        jBtnconDelete.addActionListener(new java.awt.event.ActionListener() {
+        confirmDelete.setText("Confirm Delete");
+        confirmDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnconDeleteActionPerformed(evt);
+                confirmDeleteActionPerformed(evt);
             }
         });
 
@@ -66,9 +65,9 @@ public class confirmDelete extends javax.swing.JFrame {
 
         jLabelConfirm.setForeground(new java.awt.Color(255, 0, 0));
 
-        jLabel1.setText("Member ID: ");
+        jLabel1.setText("Service Number:");
 
-        memberIDBox.setEditable(false);
+        service_number.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,7 +75,7 @@ public class confirmDelete extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addComponent(jBtnconDelete)
+                .addComponent(confirmDelete)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65))
@@ -93,7 +92,7 @@ public class confirmDelete extends javax.swing.JFrame {
                         .addGap(150, 150, 150)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(memberIDBox, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(service_number, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -104,10 +103,10 @@ public class confirmDelete extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(memberIDBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(service_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnconDelete)
+                    .addComponent(confirmDelete)
                     .addComponent(jBtnCancel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -117,48 +116,44 @@ public class confirmDelete extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBtnconDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnconDeleteActionPerformed
+    private void confirmDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmDeleteActionPerformed
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
-            
-            String deleteData = "delete from members where memberID = ?";
+
+            String deleteData = "delete from services where service_number = ?";
             PreparedStatement pstmt = conn.prepareStatement(deleteData);
-            pstmt.setInt(1, Integer.parseInt(memberIDBox.getText()));
+            pstmt.setInt(1, Integer.parseInt(service_number.getText()));
             pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Member Deleted");
+            JOptionPane.showMessageDialog(null, "Service Deleted");
             conn.close();
-            
-            new manageMembers().setVisible(true);
+
+            new ManageService().setVisible(true);
             this.dispose();
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
-    }//GEN-LAST:event_jBtnconDeleteActionPerformed
+    }//GEN-LAST:event_confirmDeleteActionPerformed
 
     private void jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelActionPerformed
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
-            
-            String getData = "select * from members where memberID = ?";
+
+            String getData = "select * from services where service_number = ?";
             PreparedStatement pstmt = conn.prepareStatement(getData);
-            pstmt.setInt(1, Integer.parseInt(memberIDBox.getText()));
-            
-            ResultSet rs = pstmt.executeQuery();   
+            pstmt.setInt(1, Integer.parseInt(service_number.getText()));
+
+            ResultSet rs = pstmt.executeQuery();
             if (rs.next()){
-                String memberID = rs.getString("memberID");
-                String memberName = rs.getString("memberName");
-                String memberAddress = rs.getString("memberAddress");
-                String memberCity = rs.getString("memberCity");
-                String memberState = rs.getString ("memberState");
-                String memberZip = rs.getString("memberZip");
-                String memberStatus = rs.getString("memberStatus");
+                String service_number = rs.getString("service_number");
+                String service_fee = rs.getString("service_fee");
+                String service_name = rs.getString("service_name");
                 
-                new viewMembers(memberID, memberName, memberAddress, memberCity, memberState, memberZip, memberStatus).setVisible(true);
+                new ViewService(service_number, service_fee,service_name).setVisible(true);
                 this.dispose();
-                
-            } else JOptionPane.showMessageDialog(null, "Member not found!");
-            
+
+            } else JOptionPane.showMessageDialog(null, "Service not found!");
+
             conn.close();
         }
         catch(Exception e){
@@ -183,30 +178,30 @@ public class confirmDelete extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(confirmDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(deleteSevices.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(confirmDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(deleteSevices.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(confirmDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(deleteSevices.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(confirmDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(deleteSevices.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new confirmDelete().setVisible(true);
+                new deleteSevices().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton confirmDelete;
     private javax.swing.JButton jBtnCancel;
-    private javax.swing.JButton jBtnconDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelConfirm;
-    private javax.swing.JTextField memberIDBox;
+    private javax.swing.JTextField service_number;
     private javax.swing.JLabel system_name;
     // End of variables declaration//GEN-END:variables
 }

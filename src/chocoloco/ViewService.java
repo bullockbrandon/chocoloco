@@ -5,6 +5,12 @@
  */
 package chocoloco;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ispre
@@ -18,7 +24,15 @@ public class ViewService extends javax.swing.JFrame {
     public ViewService() {
         initComponents();
     }
-
+    
+    public ViewService(String a, String b, String c) {
+        initComponents();
+        
+        service_number.setText(a);
+        service_fee.setText(b);
+        service_name.setText(c);
+               
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,16 +45,13 @@ public class ViewService extends javax.swing.JFrame {
         number = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
         fee = new javax.swing.JLabel();
-        provider = new javax.swing.JLabel();
-        id = new javax.swing.JLabel();
         update = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
         view_service = new javax.swing.JLabel();
-        phone = new javax.swing.JTextField();
+        service_number = new javax.swing.JTextField();
         service_fee = new javax.swing.JTextField();
         service_name = new javax.swing.JTextField();
-        provider_name = new javax.swing.JTextField();
-        service_id = new javax.swing.JTextField();
+        deleteBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,10 +60,6 @@ public class ViewService extends javax.swing.JFrame {
         name.setText("Name:");
 
         fee.setText("Fee:");
-
-        provider.setText("Provider:");
-
-        id.setText("ID:");
 
         update.setText("Update");
         update.addActionListener(new java.awt.event.ActionListener() {
@@ -71,9 +78,28 @@ public class ViewService extends javax.swing.JFrame {
         view_service.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         view_service.setText("View Service");
 
-        phone.addActionListener(new java.awt.event.ActionListener() {
+        service_number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phoneActionPerformed(evt);
+                service_numberActionPerformed(evt);
+            }
+        });
+
+        service_fee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                service_feeActionPerformed(evt);
+            }
+        });
+
+        service_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                service_nameActionPerformed(evt);
+            }
+        });
+
+        deleteBtn.setText("Delete");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
             }
         });
 
@@ -83,25 +109,21 @@ public class ViewService extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(update)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(number)
+                            .addGap(7, 7, 7)
+                            .addComponent(service_number, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(name)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(service_name)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(provider)
-                            .addComponent(number, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(phone)
-                            .addComponent(provider_name, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(name)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(service_name))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(id)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(service_id)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                        .addComponent(update)
+                        .addGap(52, 52, 52)
+                        .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cancel)
                     .addGroup(layout.createSequentialGroup()
@@ -123,24 +145,17 @@ public class ViewService extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(number)
                     .addComponent(fee)
-                    .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(service_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(service_fee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(name)
                     .addComponent(service_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(provider)
-                    .addComponent(provider_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(id)
-                    .addComponent(service_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(update)
-                    .addComponent(cancel))
+                    .addComponent(cancel)
+                    .addComponent(deleteBtn))
                 .addContainerGap())
         );
 
@@ -152,13 +167,69 @@ public class ViewService extends javax.swing.JFrame {
         new ManageService().setVisible(true);
     }//GEN-LAST:event_cancelActionPerformed
 
-    private void phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneActionPerformed
+    private void service_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_service_numberActionPerformed
 
-    }//GEN-LAST:event_phoneActionPerformed
+    }//GEN-LAST:event_service_numberActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-        
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
+            
+            String getData = "select * from services where service_number = ?";
+            PreparedStatement pstmt = conn.prepareStatement(getData);
+            pstmt.setInt(1, Integer.parseInt(service_number.getText()));
+            
+            ResultSet rs = pstmt.executeQuery();   
+            if (rs.next()){
+                String service_number = rs.getString("service_number");
+                String service_fee = rs.getString("service_fee");
+                String service_name = rs.getString("service_name");
+                
+                
+                new UpdateService(service_number, service_fee, service_name).setVisible(true);
+                this.dispose();
+                
+            } else JOptionPane.showMessageDialog(null, "Service not found!");
+            
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }    
+      
     }//GEN-LAST:event_updateActionPerformed
+
+    private void service_feeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_service_feeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_service_feeActionPerformed
+
+    private void service_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_service_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_service_nameActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
+
+            String getData = "select * from services where service_number = ?";
+            PreparedStatement pstmt = conn.prepareStatement(getData);
+            pstmt.setInt(1, Integer.parseInt(service_number.getText()));
+
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()){
+                String service_number = rs.getString("service_number");
+
+                new deleteSevices(service_number).setVisible(true);
+                this.dispose();
+
+            } else JOptionPane.showMessageDialog(null, "Service not found!");
+
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,16 +270,13 @@ public class ViewService extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel;
+    private javax.swing.JButton deleteBtn;
     private javax.swing.JLabel fee;
-    private javax.swing.JLabel id;
     private javax.swing.JLabel name;
     private javax.swing.JLabel number;
-    private javax.swing.JTextField phone;
-    private javax.swing.JLabel provider;
-    private javax.swing.JTextField provider_name;
     private javax.swing.JTextField service_fee;
-    private javax.swing.JTextField service_id;
     private javax.swing.JTextField service_name;
+    private javax.swing.JTextField service_number;
     private javax.swing.JButton update;
     private javax.swing.JLabel view_service;
     // End of variables declaration//GEN-END:variables
