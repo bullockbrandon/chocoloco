@@ -206,7 +206,7 @@ public class addProviders extends javax.swing.JFrame {
 
     private void addProviderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProviderBtnActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
 
             String addData = "insert into providers values (?, ?, ? , ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(addData);

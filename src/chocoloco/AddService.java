@@ -146,7 +146,7 @@ public class AddService extends javax.swing.JFrame {
         //code on example GUI sheet for saving entered text to variables
         //do for all fields.
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
             
             String addData = "insert into services values (?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(addData);

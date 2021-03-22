@@ -28,7 +28,7 @@ public class printProviders extends javax.swing.JFrame {
     
     private void DisplayTable() {
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
             String displayData = "select * from providers";
             PreparedStatement pstmt = conn.prepareStatement(displayData);
             ResultSet rs = pstmt.executeQuery();

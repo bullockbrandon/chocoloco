@@ -121,7 +121,7 @@ public class SearchService extends javax.swing.JFrame {
 
     private void jBtnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSearchActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
 
             String getData = "select * from services where service_number = ?";
             PreparedStatement pstmt = conn.prepareStatement(getData);

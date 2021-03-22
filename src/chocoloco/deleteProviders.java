@@ -119,7 +119,7 @@ public class deleteProviders extends javax.swing.JFrame {
 
     private void jBtnconDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnconDeleteActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
 
             String deleteData = "delete from providers where providerID = ?";
             PreparedStatement pstmt = conn.prepareStatement(deleteData);
@@ -138,7 +138,7 @@ public class deleteProviders extends javax.swing.JFrame {
 
     private void jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
 
             String getData = "select * from providers where providerID = ?";
             PreparedStatement pstmt = conn.prepareStatement(getData);

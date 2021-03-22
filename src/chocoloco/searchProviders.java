@@ -120,7 +120,7 @@ public class searchProviders extends javax.swing.JFrame {
 
     private void jBtnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSearchActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
 
             String getData = "select * from providers where providerID = ?";
             PreparedStatement pstmt = conn.prepareStatement(getData);
