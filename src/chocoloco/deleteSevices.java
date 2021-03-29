@@ -26,7 +26,7 @@ public class deleteSevices extends javax.swing.JFrame {
     public deleteSevices(String a) {
         initComponents();
         
-        service_number.setText(a);
+        serviceIDBox.setText(a);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,7 +42,7 @@ public class deleteSevices extends javax.swing.JFrame {
         jBtnCancel = new javax.swing.JButton();
         jLabelConfirm = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        service_number = new javax.swing.JTextField();
+        serviceIDBox = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,9 +65,9 @@ public class deleteSevices extends javax.swing.JFrame {
 
         jLabelConfirm.setForeground(new java.awt.Color(255, 0, 0));
 
-        jLabel1.setText("Service Number:");
+        jLabel1.setText("Service ID:");
 
-        service_number.setEditable(false);
+        serviceIDBox.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,7 +92,7 @@ public class deleteSevices extends javax.swing.JFrame {
                         .addGap(150, 150, 150)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(service_number, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(serviceIDBox, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -103,7 +103,7 @@ public class deleteSevices extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(service_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(serviceIDBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirmDelete)
@@ -118,11 +118,11 @@ public class deleteSevices extends javax.swing.JFrame {
 
     private void confirmDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmDeleteActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
 
-            String deleteData = "delete from services where service_number = ?";
+            String deleteData = "delete from services where serviceID = ?";
             PreparedStatement pstmt = conn.prepareStatement(deleteData);
-            pstmt.setInt(1, Integer.parseInt(service_number.getText()));
+            pstmt.setInt(1, Integer.parseInt(serviceIDBox.getText()));
             pstmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Service Deleted");
             conn.close();
@@ -137,19 +137,19 @@ public class deleteSevices extends javax.swing.JFrame {
 
     private void jBtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
 
-            String getData = "select * from services where service_number = ?";
+            String getData = "select * from services where serviceID = ?";
             PreparedStatement pstmt = conn.prepareStatement(getData);
-            pstmt.setInt(1, Integer.parseInt(service_number.getText()));
+            pstmt.setInt(1, Integer.parseInt(serviceIDBox.getText()));
 
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()){
-                String service_number = rs.getString("service_number");
-                String service_fee = rs.getString("service_fee");
-                String service_name = rs.getString("service_name");
+                String service_number = rs.getString("serviceID");
+                String service_name = rs.getString("serviceName");
+                String service_fee = rs.getString("serviceFee");
                 
-                new ViewService(service_number, service_fee,service_name).setVisible(true);
+                new ViewService(service_number, service_name, service_fee).setVisible(true);
                 this.dispose();
 
             } else JOptionPane.showMessageDialog(null, "Service not found!");
@@ -201,7 +201,7 @@ public class deleteSevices extends javax.swing.JFrame {
     private javax.swing.JButton jBtnCancel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelConfirm;
-    private javax.swing.JTextField service_number;
+    private javax.swing.JTextField serviceIDBox;
     private javax.swing.JLabel system_name;
     // End of variables declaration//GEN-END:variables
 }

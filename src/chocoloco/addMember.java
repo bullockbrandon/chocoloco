@@ -219,11 +219,19 @@ public class addMember extends javax.swing.JFrame {
             String addData = "insert into members values (?, ?, ? , ?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(addData);
             
-            String checkData = "select * from members where memberID = '"+ memberID.getText() +"'";
-            ResultSet rs = pstmt.executeQuery(checkData);
-            if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "memberID already exist");
-            } else {
+            String checkID = "select * from members where memberID = '"+ memberID.getText() +"'";
+            ResultSet id = pstmt.executeQuery(checkID);
+            
+            if (id.next()) {
+                JOptionPane.showMessageDialog(null, "Member ID already exist");
+            }else if (! memberID.getText().matches("[0-9]{9}")) {
+                JOptionPane.showMessageDialog(null, "Invalid Member ID");
+            }else if (! memberZip.getText().matches("[0-9]{5}")) {
+                JOptionPane.showMessageDialog(null, "Invalid Zip Code");
+            }else if (! memberCity.getText().matches(".*[A-Za-z].*")) {
+                JOptionPane.showMessageDialog(null, "Invalid City Name");
+            }
+            else {
                 pstmt.setInt(1, Integer.parseInt(memberID.getText()));
                 pstmt.setString(2, memberName.getText());
                 pstmt.setString(3, memberAddress.getText());

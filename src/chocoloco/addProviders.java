@@ -214,8 +214,15 @@ public class addProviders extends javax.swing.JFrame {
             String checkData = "select * from providers where providerID = '"+ providerID.getText() +"'";
             ResultSet rs = pstmt.executeQuery(checkData);
             if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "memberID already exist");
-            } else {
+                JOptionPane.showMessageDialog(null, "Provider ID already exist");
+            }else if (! providerID.getText().matches("[0-9]{9}")) {
+                JOptionPane.showMessageDialog(null, "Invalid Provider ID");
+            }else if (! providerZip.getText().matches("[0-9]{5}")) {
+                JOptionPane.showMessageDialog(null, "Invalid Zip Code");
+            }else if (! providerCity.getText().matches(".*[A-Za-z].*")) {
+                JOptionPane.showMessageDialog(null, "Invalid City Name");
+            } 
+            else {
                 pstmt.setInt(1, Integer.parseInt(providerID.getText()));
                 pstmt.setString(2, providerName.getText());
                 pstmt.setString(3, providerAddress.getText());

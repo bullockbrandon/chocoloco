@@ -240,7 +240,7 @@ public class updateProviders extends javax.swing.JFrame {
 
     private void confirmUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmUpdateActionPerformed
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "brandonbullock", "borderlands");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
 
             String updateData = "update providers set providerName = ?, providerAddress = ?, providerCity = ?, providerState = ?, providerZip = ? where providerID = ?";
             PreparedStatement pstmt = conn.prepareStatement(updateData);
