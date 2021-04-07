@@ -5,6 +5,34 @@
  */
 package chocoloco;
 
+import com.github.lgooddatepicker.components.DatePicker;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
+import com.github.lgooddatepicker.components.DateTimePicker;
+import com.github.lgooddatepicker.zinternaltools.InternalUtilities;
+import com.itextpdf.text.List;
+import com.itextpdf.text.ListItem;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import javax.swing.JFrame;
 /**
  *
  * @author ispre
@@ -122,8 +150,78 @@ public class ViewReports extends javax.swing.JFrame {
     }//GEN-LAST:event_main_menuActionPerformed
 
     private void print_memberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_memberActionPerformed
-        new printMembers().setVisible(true);
-        this.dispose();
+        DatePicker startdate = new DatePicker();
+        DatePicker enddate = new DatePicker();
+        String s = "Start Date:\n";
+        String end = "End Date:\n";
+        Object[] params = {s,startdate,end,enddate};
+        JOptionPane.showConfirmDialog(null,params, "Members Report" , JOptionPane.PLAIN_MESSAGE);
+        
+        System.out.println("" + startdate);
+        System.out.println("" + enddate);
+        
+        Document document = new Document();
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
+            DateFormat df = new SimpleDateFormat("MM-dd-yy");
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("src/reports/members/Report " + df.format(new Date()) + ".pdf"));
+            document.open();
+            
+            Paragraph title = new Paragraph("Member Report\nWeek: " + startdate + " - " + enddate + "\n=====================================================================================\n");
+            title.setAlignment(Paragraph.ALIGN_CENTER);
+            document.add(title);
+            
+            String vData = "select * from {vistdatabasename} where date between = '"+ startdate +"' and '" + enddate +"'";
+            PreparedStatement vpstmt = conn.prepareStatement(vData);
+            ResultSet vrs = vpstmt.executeQuery();
+            
+            if (vrs.next()) {
+                String visitMID = vrs.getString("visitmemberID");
+                String visitPID = vrs.getString("visitproviderID");
+                String visitSID = vrs.getString("visitserviceID");
+                String visitdate = vrs.getString("date");
+                
+                String mData = "select * from members where memberID = '"+ visitMID +"'";
+                PreparedStatement mpstmt = conn.prepareStatement(mData);
+                ResultSet mrs = mpstmt.executeQuery();
+                if (mrs.next()) {
+                    String memberID = mrs.getString("memberID");
+                    String memberName = mrs.getString("memberName");
+                    String memberAddress = mrs.getString("memberAddress");
+                    String memberCity = mrs.getString("memberCity");
+                    String memberState = mrs.getString ("memberState");
+                    String memberZip = mrs.getString("memberZip");
+
+                    document.add(new Paragraph("Member: "+ memberID + "\n" + memberName + "\n" + memberAddress + "\n" + memberCity + "," + memberState + memberZip));
+
+                    String pData = "select * from providers where providerID = '"+ visitPID +"'";
+                    PreparedStatement ppstmt = conn.prepareStatement(pData);
+                    ResultSet prs = ppstmt.executeQuery();
+                    if (prs.next()) {
+                        String providerName = prs.getString("providerName");
+                        
+                        document.add(new Paragraph("\t\t Date of Service: " + visitdate + "\t\t Provider: " + providerName));
+                        
+                        String sData = "select * from services where serviceID = '"+ visitSID +"'";
+                        PreparedStatement spstmt = conn.prepareStatement(sData);
+                        ResultSet srs = spstmt.executeQuery();
+                        if (srs.next()) {
+                            String serviceName = srs.getString("serviceName");
+                            
+                            document.add(new Paragraph("\t\t Service: " + serviceName + "\n=====================================================================================\n"));
+                        }
+                    }
+                }             
+            } else JOptionPane.showMessageDialog(null, "No data found!");
+            
+            
+            conn.close();
+            document.close();
+            writer.close(); 
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_print_memberActionPerformed
 
     private void print_providerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_providerActionPerformed
@@ -132,8 +230,60 @@ public class ViewReports extends javax.swing.JFrame {
     }//GEN-LAST:event_print_providerActionPerformed
 
     private void print_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_serviceActionPerformed
-        new printServices().setVisible(true);
-        this.dispose();
+      Document document = new Document();
+      try
+      {
+        DateFormat df = new SimpleDateFormat("MM-dd-yy");
+        PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("src/reports/services/Report " + df.format(new Date()) + ".pdf"));
+         
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
+        String getService = "select * from services order by serviceName ASC";
+        PreparedStatement pstmt = conn.prepareStatement(getService);
+        ResultSet rs = pstmt.executeQuery();       
+        document.open();
+	
+        DateFormat df2 = new SimpleDateFormat("EEEE, MMMM dd, yyyy  HH:mm:ss");
+        Paragraph title = new Paragraph("Provider Directory\n" + df2.format(new Date()) + "\n\n");
+        title.setAlignment(Paragraph.ALIGN_CENTER);
+        document.add(title);
+        
+        PdfPTable table = new PdfPTable(3);
+        PdfPCell cell = new PdfPCell(new Paragraph("SERVICES"));
+        cell.setColspan(8);
+        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell.setBackgroundColor(BaseColor.LIGHT_GRAY);
+        cell.setPadding(10.0f);
+
+        table.addCell(cell);
+        table.addCell("Name: ");
+        table.addCell("ID: ");
+        table.addCell("Fee: ");
+        
+        while (rs.next()){
+            String serviceID = rs.getString("serviceID");
+            String serviceName = rs.getString("serviceName");
+            String serviceFee = rs.getString("serviceFee");
+            
+            table.addCell(serviceName);
+            table.addCell(serviceID);
+            table.addCell("$" + serviceFee);
+        }
+        
+        document.add(table);
+        document.close();
+        writer.close();         
+        JOptionPane.showMessageDialog(null, "Service Report Printed");
+      } catch (DocumentException e)
+      {
+         e.printStackTrace();
+      } catch (FileNotFoundException e)
+      {
+         e.printStackTrace();
+      } catch (Exception e)
+      {
+          JOptionPane.showMessageDialog(null, e);
+      }
+      
     }//GEN-LAST:event_print_serviceActionPerformed
 
     /**
