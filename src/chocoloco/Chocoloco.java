@@ -81,15 +81,12 @@ public class Chocoloco extends javax.swing.JFrame {
                     .addComponent(system_name, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(coursenum)
                     .addComponent(startprogram)
-
                     .addComponent(exitprogram))
-                .addContainerGap(19, Short.MAX_VALUE))
-
+                .addGap(8, 8, 8))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-
                 .addContainerGap()
                 .addComponent(system_name, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
@@ -97,8 +94,8 @@ public class Chocoloco extends javax.swing.JFrame {
                 .addGap(107, 107, 107)
                 .addComponent(startprogram)
                 .addGap(18, 18, 18)
-                .addComponent(exitprogram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(34, 34, 34))
+                .addComponent(exitprogram)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
