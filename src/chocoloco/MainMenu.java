@@ -38,14 +38,15 @@ public class MainMenu extends javax.swing.JFrame {
         view_reports = new javax.swing.JButton();
         directory_options = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-
+        test_visit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItemDirectory = new javax.swing.JMenuItem();
+        jMenuItemViewReports = new javax.swing.JMenuItem();
+        jMenuItemMainMenu = new javax.swing.JMenuItem();
+        jMenuItemExit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-
-        test_visit = new javax.swing.JButton();
-
 
         jButton3.setText("jButton3");
 
@@ -97,8 +98,47 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Main Menu");
 
+        test_visit.setText("Test Visit");
+        test_visit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                test_visitActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
+
+        jMenuItemDirectory.setText("Directory Options");
+        jMenuItemDirectory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDirectoryActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemDirectory);
+
+        jMenuItemViewReports.setText("View Reports");
+        jMenuItemViewReports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemViewReportsActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemViewReports);
+
+        jMenuItemMainMenu.setText("Start");
+        jMenuItemMainMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemMainMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemMainMenu);
+
+        jMenuItemExit.setText("Exit");
+        jMenuItemExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemExitActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemExit);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Help");
@@ -114,14 +154,6 @@ public class MainMenu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
-
-        test_visit.setText("Test Visit");
-        test_visit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                test_visitActionPerformed(evt);
-            }
-        });
-
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -169,12 +201,10 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(view_reports))
                 .addGap(26, 26, 26)
-
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(directory_options)
                     .addComponent(test_visit))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-
                 .addComponent(exitprogram)
                 .addGap(32, 32, 32))
         );
@@ -224,6 +254,30 @@ public class MainMenu extends javax.swing.JFrame {
         new Test_Visit().setVisible(true);
     }//GEN-LAST:event_test_visitActionPerformed
 
+    private void jMenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExitActionPerformed
+        // TODO add your handling code here:
+                System.out.println("\nProgram Exited\n");
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItemExitActionPerformed
+
+    private void jMenuItemDirectoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDirectoryActionPerformed
+        // TODO add your handling code here:
+               this.dispose();
+        new SetDirectory().setVisible(true);
+    }//GEN-LAST:event_jMenuItemDirectoryActionPerformed
+
+    private void jMenuItemViewReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemViewReportsActionPerformed
+        // TODO add your handling code here:
+               this.dispose();
+        new ViewReports().setVisible(true);
+    }//GEN-LAST:event_jMenuItemViewReportsActionPerformed
+
+    private void jMenuItemMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMainMenuActionPerformed
+        // TODO add your handling code here:
+                this.dispose();
+        new Chocoloco().setVisible(true);
+    }//GEN-LAST:event_jMenuItemMainMenuActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -270,6 +324,10 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItemDirectory;
+    private javax.swing.JMenuItem jMenuItemExit;
+    private javax.swing.JMenuItem jMenuItemMainMenu;
+    private javax.swing.JMenuItem jMenuItemViewReports;
     private javax.swing.JButton manage_member;
     private javax.swing.JButton manage_service;
     private javax.swing.JButton test_visit;
