@@ -167,11 +167,11 @@ public class ViewReports extends javax.swing.JFrame {
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("src/reports/members/Report " + df.format(new Date()) + ".pdf"));
             document.open();
             
-            Paragraph title = new Paragraph("Member Report\nWeek: " + startdate + " - " + enddate + "\n=====================================================================================\n");
+            Paragraph title = new Paragraph("Member Report\nWeek: " + startdate + " - " + enddate + "\n==========================================================================\n");
             title.setAlignment(Paragraph.ALIGN_CENTER);
             document.add(title);
             
-            String vData = "select * from {vistdatabasename} where date between = '"+ startdate +"' and '" + enddate +"'";
+            String vData = "SELECT * FROM visits WHERE visitdate BETWEEN '"+startdate+"' AND '"+enddate+"'";
             PreparedStatement vpstmt = conn.prepareStatement(vData);
             ResultSet vrs = vpstmt.executeQuery();
             
@@ -179,7 +179,7 @@ public class ViewReports extends javax.swing.JFrame {
                 String visitMID = vrs.getString("visitmemberID");
                 String visitPID = vrs.getString("visitproviderID");
                 String visitSID = vrs.getString("visitserviceID");
-                String visitdate = vrs.getString("date");
+                String visitdate = vrs.getString("visitdate");
                 
                 String mData = "select * from members where memberID = '"+ visitMID +"'";
                 PreparedStatement mpstmt = conn.prepareStatement(mData);
@@ -192,7 +192,7 @@ public class ViewReports extends javax.swing.JFrame {
                     String memberState = mrs.getString ("memberState");
                     String memberZip = mrs.getString("memberZip");
 
-                    document.add(new Paragraph("Member: "+ memberID + "\n" + memberName + "\n" + memberAddress + "\n" + memberCity + "," + memberState + memberZip));
+                    document.add(new Paragraph("Member: "+ memberID + "\n" + memberName + "\n" + memberAddress + "\n" + memberCity + "," + memberState + " " + memberZip));
 
                     String pData = "select * from providers where providerID = '"+ visitPID +"'";
                     PreparedStatement ppstmt = conn.prepareStatement(pData);
@@ -200,7 +200,7 @@ public class ViewReports extends javax.swing.JFrame {
                     if (prs.next()) {
                         String providerName = prs.getString("providerName");
                         
-                        document.add(new Paragraph("\t\t Date of Service: " + visitdate + "\t\t Provider: " + providerName));
+                        document.add(new Paragraph("     Date of Service: " + visitdate + "\n     Provider: " + providerName));
                         
                         String sData = "select * from services where serviceID = '"+ visitSID +"'";
                         PreparedStatement spstmt = conn.prepareStatement(sData);
@@ -208,7 +208,7 @@ public class ViewReports extends javax.swing.JFrame {
                         if (srs.next()) {
                             String serviceName = srs.getString("serviceName");
                             
-                            document.add(new Paragraph("\t\t Service: " + serviceName + "\n=====================================================================================\n"));
+                            document.add(new Paragraph("     Service: " + serviceName + "\n==========================================================================\n"));
                         }
                     }
                 }             
@@ -226,8 +226,8 @@ public class ViewReports extends javax.swing.JFrame {
     }//GEN-LAST:event_print_memberActionPerformed
 
     private void print_providerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_providerActionPerformed
-        new printProviders().setVisible(true);
-        this.dispose();
+
+       this.dispose();
     }//GEN-LAST:event_print_providerActionPerformed
 
     private void print_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_serviceActionPerformed
