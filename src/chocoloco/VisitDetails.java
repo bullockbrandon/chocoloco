@@ -5,7 +5,15 @@
  */
 package chocoloco;
 
-import com.github.lgooddatepicker.components.DateTimePicker;
+import com.github.lgooddatepicker.components.DatePicker;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,6 +27,13 @@ public class VisitDetails extends javax.swing.JFrame {
     public VisitDetails() {
         initComponents();
     }
+    
+        public VisitDetails(String a, String b) {
+        initComponents();
+        
+        memberIDBox.setText(a);
+        //memberStatusBox.setText(b);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,17 +45,19 @@ public class VisitDetails extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        enter_memberID = new javax.swing.JTextField();
         member_ID = new javax.swing.JLabel();
         enter_serviceID = new javax.swing.JTextField();
         service_ID = new javax.swing.JLabel();
-        visit_datetime = new com.github.lgooddatepicker.components.DateTimePicker();
         date_time = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         enter_comments = new javax.swing.JTextArea();
         visit_comments = new javax.swing.JLabel();
         cancel = new javax.swing.JButton();
         submit_visit = new javax.swing.JButton();
+        memberIDBox = new javax.swing.JTextField();
+        ProviderID = new javax.swing.JLabel();
+        enterProviderID = new javax.swing.JTextField();
+        visit_date = new com.github.lgooddatepicker.components.DatePicker();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,7 +74,7 @@ public class VisitDetails extends javax.swing.JFrame {
 
         service_ID.setText("Service ID");
 
-        date_time.setText("Date/Time");
+        date_time.setText("Date");
 
         enter_comments.setColumns(20);
         enter_comments.setRows(5);
@@ -79,35 +96,51 @@ public class VisitDetails extends javax.swing.JFrame {
             }
         });
 
+        memberIDBox.setEditable(false);
+        memberIDBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                memberIDBoxActionPerformed(evt);
+            }
+        });
+
+        ProviderID.setText("Provider ID");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(visit_comments)
-                        .addGap(104, 104, 104))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(member_ID)
-                            .addComponent(date_time))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ProviderID)
+                                .addComponent(date_time)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 74, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(20, 20, 20))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(visit_comments)
+                                        .addGap(94, 94, 94))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(enter_memberID, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(service_ID)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(enter_serviceID, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(visit_datetime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(enterProviderID, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(memberIDBox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(service_ID)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(enter_serviceID, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(visit_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -125,19 +158,22 @@ public class VisitDetails extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jLabel1)
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(member_ID)
+                    .addComponent(enter_serviceID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(service_ID)
+                    .addComponent(memberIDBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ProviderID)
+                    .addComponent(enterProviderID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(date_time)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(enter_memberID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(member_ID)
-                            .addComponent(enter_serviceID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(service_ID))
-                        .addGap(30, 30, 30)
-                        .addComponent(visit_datetime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                    .addComponent(visit_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(visit_comments)
@@ -165,12 +201,60 @@ public class VisitDetails extends javax.swing.JFrame {
 
     private void submit_visitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_visitActionPerformed
         // TODO add your handling code here:
-                DateTimePicker visit_datetimevar;
-        visit_datetimevar = visit_datetime;
-      DateTimePicker entered_date;
-      entered_date = visit_datetimevar;
-       System.out.println("\n visit_datetime = " +visit_datetimevar);
+                DatePicker visit_datevar;
+        visit_datevar = visit_date;
+        
+        //ADD IN TIME SELECTOR
+
+       System.out.println("\n visit_date = " +visit_datevar);
+       
+       try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
+            
+            String addData = "insert into visits values (?, ?, ? , ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(addData);
+            
+           // String checkID = "select * from members where memberID = '"+ memberIDBox.getText() +"'";
+            //ResultSet id = pstmt.executeQuery(checkID);
+            
+            //if (id.next()) {
+            //    JOptionPane.showMessageDialog(null, "Member ID already exist");
+            //}else if (! memberIDBox.getText().matches("[0-9]{9}")) {
+            //    JOptionPane.showMessageDialog(null, "Invalid Member ID");
+            if (! enter_serviceID.getText().matches("[0-9]{5}")) {
+                JOptionPane.showMessageDialog(null, "Invalid Service Code");
+            }else if (! enterProviderID.getText().matches("[0-9]{9}")) {
+                JOptionPane.showMessageDialog(null, "Invalid Provider Number");
+            }
+            else {
+                pstmt.setInt(1, Integer.parseInt(memberIDBox.getText()));
+                pstmt.setString(2, enter_serviceID.getText());
+                pstmt.setString(3, enterProviderID.getText());
+                pstmt.setDate(4, new java.sql.Date.valueOf(visit_date));
+               // Convert.ToDateTime(dateString.ToString)));
+                pstmt.setString(5, enter_comments.getText());
+            
+                pstmt.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Visit Added");
+                conn.close();
+            
+                memberIDBox.setText("");
+                enter_serviceID.setText("");
+                enterProviderID.setText("");
+                visit_date.setText("");
+                //visit_time.setText("");
+                enter_comments.setText("");
+                
+            }
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_submit_visitActionPerformed
+
+    private void memberIDBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberIDBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_memberIDBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,19 +292,21 @@ public class VisitDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ProviderID;
     private javax.swing.JButton cancel;
     private javax.swing.JLabel date_time;
+    private javax.swing.JTextField enterProviderID;
     private javax.swing.JTextArea enter_comments;
-    private javax.swing.JTextField enter_memberID;
     private javax.swing.JTextField enter_serviceID;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField memberIDBox;
     private javax.swing.JLabel member_ID;
     private javax.swing.JLabel service_ID;
     private javax.swing.JButton submit_visit;
     private javax.swing.JLabel visit_comments;
-    private com.github.lgooddatepicker.components.DateTimePicker visit_datetime;
+    private com.github.lgooddatepicker.components.DatePicker visit_date;
     // End of variables declaration//GEN-END:variables
 
-    public static DateTimePicker visit_datetimevar = null; //global variable for use by app
+    public static DatePicker visit_datevar = null; //global variable for use by app
 }

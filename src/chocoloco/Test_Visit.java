@@ -5,6 +5,12 @@
  */
 package chocoloco;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ispre
@@ -109,9 +115,30 @@ public class Test_Visit extends javax.swing.JFrame {
     }//GEN-LAST:event_cardswipe_memberIDActionPerformed
 
     private void submit_memberIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_memberIDActionPerformed
-        // TODO add your handling code here:
-                        this.dispose();
-        new VisitDetails().setVisible(true);
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
+            
+            String getData = "select * from members where memberID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(getData);
+            pstmt.setInt(1, Integer.parseInt(cardswipe_memberID.getText()));
+            
+            ResultSet rs = pstmt.executeQuery();   
+            if (rs.next()){
+                String memberID = rs.getString("memberID");
+                String memberStatus = rs.getString("memberStatus");
+                
+                new VisitDetails(memberID, memberStatus).setVisible(true);
+                this.dispose();
+                
+            } else JOptionPane.showMessageDialog(null, "Member not found!");
+            
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+                     //   this.dispose();
+      //  new VisitDetails().setVisible(true);
     }//GEN-LAST:event_submit_memberIDActionPerformed
 
     /**
