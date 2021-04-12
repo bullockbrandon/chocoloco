@@ -226,8 +226,75 @@ public class ViewReports extends javax.swing.JFrame {
     }//GEN-LAST:event_print_memberActionPerformed
 
     private void print_providerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_providerActionPerformed
+        DatePicker startdate = new DatePicker();
+        DatePicker enddate = new DatePicker();
+        String s = "Start Date:\n";
+        String end = "End Date:\n";
+        Object[] params = {s,startdate,end,enddate};
+        JOptionPane.showConfirmDialog(null,params, "Members Report" , JOptionPane.PLAIN_MESSAGE);
+        
+        System.out.println("" + startdate);
+        System.out.println("" + enddate);
+        
+        Document document = new Document();
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
+            DateFormat df = new SimpleDateFormat("MM-dd-yy");
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("src/reports/providers/Report " + df.format(new Date()) + ".pdf"));
+            document.open();
+            
+            Paragraph title = new Paragraph("Provider Report\nWeek: " + startdate + " - " + enddate + "\n==========================================================================\n");
+            title.setAlignment(Paragraph.ALIGN_CENTER);
+            document.add(title);
+            
+            String vData = "SELECT * FROM visits WHERE visitdate BETWEEN '"+startdate+"' AND '"+enddate+"'";
+            PreparedStatement vpstmt = conn.prepareStatement(vData);
+            ResultSet vrs = vpstmt.executeQuery();
+            
+            
+            while (vrs.next()) {
+                String visitMID = vrs.getString("visitmemberID");
+                String visitPID = vrs.getString("visitproviderID");
+                String visitSID = vrs.getString("visitserviceID");
+                String visitdate = vrs.getString("visitdate");
+                
+                String pData = "select * from providers where providerID = '"+ visitPID +"'";
+                PreparedStatement ppstmt = conn.prepareStatement(pData);
+                ResultSet prs = ppstmt.executeQuery();
+                
+                if (prs.next()) {
+                    String providerID = prs.getString("providerID");
+                    String providerName = prs.getString("providerName");
+                    String providerAddress = prs.getString("providerAddress");
+                    String providerCity = prs.getString("providerCity");
+                    String providerState = prs.getString ("providerState");
+                    String providerZip = prs.getString("providerZip");
 
-       this.dispose();
+                    document.add(new Paragraph("Provider: "+ providerID + "\n" + providerName + "\n" + providerAddress + "\n" + providerCity + "," + providerState + " " + providerZip));
+                    
+                    DateFormat compdf = new SimpleDateFormat("MM-DD-YYYY HH:MM:SS");
+                    document.add(new Paragraph("Date of Service: " + visitdate + "\n Date Received"));
+                    
+                }             
+            }            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_print_providerActionPerformed
 
     private void print_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_serviceActionPerformed
