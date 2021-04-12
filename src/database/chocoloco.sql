@@ -106,8 +106,10 @@ CREATE TABLE `visits` (
   `visitmemberID` int DEFAULT NULL,
   `visitserviceID` int DEFAULT NULL,
   `visitproviderID` int DEFAULT NULL,
-  `visitdate` int DEFAULT NULL,
-  `visitcomment` varchar(100) DEFAULT NULL
+  `visitdate` date DEFAULT NULL,
+  `visitcomment` varchar(100) DEFAULT NULL,
+  `visitcompdate` date DEFAULT NULL,
+  `visitcomptime` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -117,11 +119,9 @@ CREATE TABLE `visits` (
 
 LOCK TABLES `visits` WRITE;
 /*!40000 ALTER TABLE `visits` DISABLE KEYS */;
-INSERT INTO `visits` VALUES (1234566789, 123456789, 123456789, 05031991, 'comment'),(1234566780, 123456780, 123456780, 05031992, 'comment2');
+INSERT INTO `visits` VALUES (123456789,340507,203737240,'2021-04-01','April Fool\'s Service Day! HaHaHa','2021-04-12','17:15:30'),(123456789,383387,277967705,'2021-04-04','Needs more therapy','2021-04-12','17:16:31'),(118995385,340507,203737240,'2021-04-06','Member is dechocified','2021-04-12','17:17:52');
 /*!40000 ALTER TABLE `visits` ENABLE KEYS */;
 UNLOCK TABLES;
-
-
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -132,4 +132,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-29 11:47:05
+-- Dump completed on 2021-04-12 17:42:26
