@@ -175,7 +175,7 @@ public class ViewReports extends javax.swing.JFrame {
             PreparedStatement vpstmt = conn.prepareStatement(vData);
             ResultSet vrs = vpstmt.executeQuery();
             
-            if (vrs.next()) {
+            while (vrs.next()) {
                 String visitMID = vrs.getString("visitmemberID");
                 String visitPID = vrs.getString("visitproviderID");
                 String visitSID = vrs.getString("visitserviceID");
@@ -212,12 +212,13 @@ public class ViewReports extends javax.swing.JFrame {
                         }
                     }
                 }             
-            } else JOptionPane.showMessageDialog(null, "No data found!");
+            }
             
             
             conn.close();
             document.close();
-            writer.close(); 
+            writer.close();
+            JOptionPane.showMessageDialog(null, "Member's Report Printed");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
