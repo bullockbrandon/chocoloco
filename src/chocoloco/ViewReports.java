@@ -218,7 +218,7 @@ public class ViewReports extends javax.swing.JFrame {
             conn.close();
             document.close();
             writer.close();
-            JOptionPane.showMessageDialog(null, "Member's Report Printed");
+            JOptionPane.showMessageDialog(null, "Members Report Printed");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
@@ -235,6 +235,9 @@ public class ViewReports extends javax.swing.JFrame {
         
         System.out.println("" + startdate);
         System.out.println("" + enddate);
+        
+        int totalcons = 0;
+        float totalfee = 0;   
         
         Document document = new Document();
         try {
@@ -257,6 +260,11 @@ public class ViewReports extends javax.swing.JFrame {
                 String visitPID = vrs.getString("visitproviderID");
                 String visitSID = vrs.getString("visitserviceID");
                 String visitdate = vrs.getString("visitdate");
+                String visitcompdate = vrs.getString("visitcompdate");
+                String visitcomptime = vrs.getString("visitcomptime");
+                
+                System.out.println("" + visitcompdate);
+                System.out.println("" + visitcomptime);
                 
                 String pData = "select * from providers where providerID = '"+ visitPID +"'";
                 PreparedStatement ppstmt = conn.prepareStatement(pData);
@@ -270,28 +278,42 @@ public class ViewReports extends javax.swing.JFrame {
                     String providerState = prs.getString ("providerState");
                     String providerZip = prs.getString("providerZip");
 
-                    document.add(new Paragraph("Provider: "+ providerID + "\n" + providerName + "\n" + providerAddress + "\n" + providerCity + "," + providerState + " " + providerZip));
+                    document.add(new Paragraph("Provider: "+ providerID + "\n" + providerName + "\n" + providerAddress + "\n" + providerCity + ", " + providerState + " " + providerZip));
                     
-                    DateFormat compdf = new SimpleDateFormat("MM-DD-YYYY HH:MM:SS");
-                    document.add(new Paragraph("Date of Service: " + visitdate + "\n Date Received"));
+                    document.add(new Paragraph("    Date of Service: " + visitdate + "\n    Date Received: " + visitcompdate + "  " + visitcomptime));
                     
-                }             
+                    String mData = "select * from members where memberID = '"+ visitMID +"'";
+                    PreparedStatement mpstmt = conn.prepareStatement(mData);
+                    ResultSet mrs = mpstmt.executeQuery();
+                    
+                    if (mrs.next()){
+                        String memberID = mrs.getString("memberID");
+                        String memberName = mrs.getString("memberName");
+                        
+                        document.add(new Paragraph("    Member Name: " + memberName + "\n    Member ID: " + memberID));
+                        
+                        String sData = "select * from services where serviceID = '"+ visitSID +"'";
+                        PreparedStatement spstmt = conn.prepareStatement(sData);
+                        ResultSet srs = spstmt.executeQuery();
+                        
+                        if (srs.next()){
+                            String serviceFee = srs.getString("serviceFee");
+                            
+                            document.add(new Paragraph("    Service ID: " + visitSID + "\n    Fee: $" + serviceFee + "\n==========================================================================\n"));
+                            
+                            float fee = Float.parseFloat(serviceFee);
+                            totalfee = totalfee + fee;
+                            totalcons++;
+                        }                  
+                    }                 
+                } 
             }            
+            document.add(new Paragraph("\n\n\nTotal Consultations: " + totalcons + "\nTotal Fee: $" + totalfee));
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            conn.close();
+            document.close();
+            writer.close();
+            JOptionPane.showMessageDialog(null, "Providers Report Printed");      
         } catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
