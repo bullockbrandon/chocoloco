@@ -91,7 +91,7 @@ CREATE TABLE `services` (
 
 LOCK TABLES `services` WRITE;
 /*!40000 ALTER TABLE `services` DISABLE KEYS */;
-INSERT INTO `services` VALUES (340507,'De-Chocolatification',459),(383387,'Choc-Shock Therapy',90);
+INSERT INTO `services` VALUES (34050,'De-Chocolatification',459),(383387,'Choc-Shock Therapy',90);
 /*!40000 ALTER TABLE `services` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +106,7 @@ CREATE TABLE `visits` (
   `visitmemberID` int DEFAULT NULL,
   `visitserviceID` int DEFAULT NULL,
   `visitproviderID` int DEFAULT NULL,
-  `visitdate` int DEFAULT NULL,
+  `visitdate` date DEFAULT NULL,
   `visitcomment` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

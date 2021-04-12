@@ -23,37 +23,48 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="visit_comments" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="193" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-          </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="member_ID" min="-2" max="-2" attributes="0"/>
-                          <Component id="date_time" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="enter_memberID" min="-2" pref="108" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="service_ID" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="enter_serviceID" min="-2" pref="89" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="ProviderID" min="-2" max="-2" attributes="0"/>
+                              <Component id="date_time" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="visit_datetime" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="13" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="74" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jScrollPane1" min="-2" pref="193" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="visit_comments" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="enterProviderID" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="memberIDBox" alignment="0" pref="108" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="service_ID" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="enter_serviceID" min="-2" pref="89" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="visit_date" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
@@ -81,22 +92,25 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="date_time" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="enter_memberID" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="member_ID" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="enter_serviceID" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="service_ID" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="visit_datetime" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="member_ID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="enter_serviceID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="service_ID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="memberIDBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="8" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="ProviderID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="enterProviderID" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="date_time" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="visit_date" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="7" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="visit_comments" min="-2" max="-2" attributes="0"/>
@@ -123,8 +137,6 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="enter_memberID">
-    </Component>
     <Component class="javax.swing.JLabel" name="member_ID">
       <Properties>
         <Property name="text" type="java.lang.String" value="Member ID"/>
@@ -140,11 +152,9 @@
         <Property name="text" type="java.lang.String" value="Service ID"/>
       </Properties>
     </Component>
-    <Component class="com.github.lgooddatepicker.components.DateTimePicker" name="visit_datetime">
-    </Component>
     <Component class="javax.swing.JLabel" name="date_time">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Date/Time"/>
+        <Property name="text" type="java.lang.String" value="Date"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -182,6 +192,20 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submit_visitActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="memberIDBox">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="memberIDBoxActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="ProviderID">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Provider ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="enterProviderID">
+    </Component>
+    <Component class="com.github.lgooddatepicker.components.DatePicker" name="visit_date">
     </Component>
   </SubComponents>
 </Form>
