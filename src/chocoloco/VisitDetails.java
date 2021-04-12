@@ -9,10 +9,7 @@ import com.github.lgooddatepicker.components.DatePicker;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -96,7 +93,6 @@ public class VisitDetails extends javax.swing.JFrame {
             }
         });
 
-        memberIDBox.setEditable(false);
         memberIDBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 memberIDBoxActionPerformed(evt);
@@ -201,8 +197,9 @@ public class VisitDetails extends javax.swing.JFrame {
 
     private void submit_visitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_visitActionPerformed
         // TODO add your handling code here:
-                DatePicker visit_datevar;
+        DatePicker visit_datevar;
         visit_datevar = visit_date;
+        
         
         //ADD IN TIME SELECTOR
 
@@ -211,7 +208,7 @@ public class VisitDetails extends javax.swing.JFrame {
        try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
             
-            String addData = "insert into visits values (?, ?, ? , ?, ?)";
+            String addData = "insert into visits values (?, ?, ? , ?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(addData);
             
            // String checkID = "select * from members where memberID = '"+ memberIDBox.getText() +"'";
@@ -221,7 +218,7 @@ public class VisitDetails extends javax.swing.JFrame {
             //    JOptionPane.showMessageDialog(null, "Member ID already exist");
             //}else if (! memberIDBox.getText().matches("[0-9]{9}")) {
             //    JOptionPane.showMessageDialog(null, "Invalid Member ID");
-            if (! enter_serviceID.getText().matches("[0-9]{5}")) {
+            if (! enter_serviceID.getText().matches("[0-9]{6}")) {
                 JOptionPane.showMessageDialog(null, "Invalid Service Code");
             }else if (! enterProviderID.getText().matches("[0-9]{9}")) {
                 JOptionPane.showMessageDialog(null, "Invalid Provider Number");
@@ -230,9 +227,14 @@ public class VisitDetails extends javax.swing.JFrame {
                 pstmt.setInt(1, Integer.parseInt(memberIDBox.getText()));
                 pstmt.setString(2, enter_serviceID.getText());
                 pstmt.setString(3, enterProviderID.getText());
-                pstmt.setDate(4, new java.sql.Date.valueOf(visit_date));
-               // Convert.ToDateTime(dateString.ToString)));
+                pstmt.setDate(4, java.sql.Date.valueOf(visit_date.getDate()));
                 pstmt.setString(5, enter_comments.getText());
+                
+                java.util.Date date=new java.util.Date();	
+		java.sql.Date sqlDate=new java.sql.Date(date.getTime());
+		java.sql.Timestamp sqlTime=new java.sql.Timestamp(date.getTime());
+                pstmt.setDate(6,sqlDate);
+		pstmt.setTimestamp(7,sqlTime);
             
                 pstmt.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Visit Added");
