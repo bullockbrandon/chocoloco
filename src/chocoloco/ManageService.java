@@ -30,7 +30,6 @@ public class ManageService extends javax.swing.JFrame {
         add_service = new javax.swing.JButton();
         delete_service = new javax.swing.JButton();
         main_menu = new javax.swing.JButton();
-        exit_program = new javax.swing.JButton();
         search_service = new javax.swing.JButton();
         update_service = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -55,13 +54,6 @@ public class ManageService extends javax.swing.JFrame {
         main_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 main_menuActionPerformed(evt);
-            }
-        });
-
-        exit_program.setText("Exit");
-        exit_program.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exit_programActionPerformed(evt);
             }
         });
 
@@ -92,17 +84,16 @@ public class ManageService extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(main_menu)
-                                .addGap(119, 119, 119)
-                                .addComponent(exit_program))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(delete_service)
                                 .addGap(75, 75, 75)
                                 .addComponent(search_service))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(add_service)
                                 .addGap(87, 87, 87)
-                                .addComponent(update_service))))
+                                .addComponent(update_service))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(106, 106, 106)
+                                .addComponent(main_menu))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(121, 121, 121)
                         .addComponent(jLabel1)))
@@ -121,20 +112,13 @@ public class ManageService extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(delete_service)
                     .addComponent(search_service))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(main_menu)
-                    .addComponent(exit_program))
-                .addGap(43, 43, 43))
+                .addGap(54, 54, 54)
+                .addComponent(main_menu)
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void exit_programActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_programActionPerformed
-        System.out.println("\nProgram Exited\n");
-        System.exit(0);
-    }//GEN-LAST:event_exit_programActionPerformed
 
     private void main_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_main_menuActionPerformed
        this.dispose();
@@ -202,7 +186,6 @@ public class ManageService extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add_service;
     private javax.swing.JButton delete_service;
-    private javax.swing.JButton exit_program;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton main_menu;
     private javax.swing.JButton search_service;

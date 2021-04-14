@@ -29,11 +29,6 @@
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
                           <Group type="102" alignment="2" attributes="0">
-                              <Component id="main_menu" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="119" pref="119" max="119" attributes="0"/>
-                              <Component id="exit_program" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="2" attributes="0">
                               <Component id="delete_service" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="75" pref="75" max="75" attributes="0"/>
                               <Component id="search_service" min="-2" max="-2" attributes="0"/>
@@ -42,6 +37,10 @@
                               <Component id="add_service" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="87" pref="87" max="87" attributes="0"/>
                               <Component id="update_service" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                              <Component id="main_menu" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -69,12 +68,9 @@
                   <Component id="delete_service" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="search_service" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="74" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="main_menu" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="exit_program" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <Component id="main_menu" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="63" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -102,14 +98,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="main_menuActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="exit_program">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Exit"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exit_programActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="search_service">
