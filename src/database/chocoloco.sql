@@ -57,7 +57,8 @@ CREATE TABLE `providers` (
   `providerAddress` varchar(25) DEFAULT NULL,
   `providerCity` varchar(25) DEFAULT NULL,
   `providerState` varchar(2) DEFAULT NULL,
-  `providerZip` int DEFAULT NULL
+  `providerZip` int DEFAULT NULL,
+  `sms` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -67,7 +68,7 @@ CREATE TABLE `providers` (
 
 LOCK TABLES `providers` WRITE;
 /*!40000 ALTER TABLE `providers` DISABLE KEYS */;
-INSERT INTO `providers` VALUES (203737240,'Navi Gill','33844 King Road','Tampa','FL',33602),(277967705,'Alton Haynes','4761 Clousson Road','Bluff','IA',51054);
+INSERT INTO `providers` VALUES (203737240,'Navi Gill','33844 King Road','Tampa','FL',33602,0),(277967705,'Alton Haynes','4761 Clousson Road','Bluff','IA',51054,0);
 /*!40000 ALTER TABLE `providers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,4 +133,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-12 17:42:26
+-- Dump completed on 2021-04-14 13:07:19

@@ -65,6 +65,11 @@ public class ViewReports extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         print_accounting.setText("Print Accounting Report");
+        print_accounting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                print_accountingActionPerformed(evt);
+            }
+        });
 
         print_member.setText("Print Member Report");
         print_member.addActionListener(new java.awt.event.ActionListener() {
@@ -231,7 +236,7 @@ public class ViewReports extends javax.swing.JFrame {
         String s = "Start Date:\n";
         String end = "End Date:\n";
         Object[] params = {s,startdate,end,enddate};
-        JOptionPane.showConfirmDialog(null,params, "Members Report" , JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showConfirmDialog(null,params, "Providers Report" , JOptionPane.PLAIN_MESSAGE);
         
         System.out.println("" + startdate);
         System.out.println("" + enddate);
@@ -263,8 +268,6 @@ public class ViewReports extends javax.swing.JFrame {
                 String visitcompdate = vrs.getString("visitcompdate");
                 String visitcomptime = vrs.getString("visitcomptime");
                 
-                System.out.println("" + visitcompdate);
-                System.out.println("" + visitcomptime);
                 
                 String pData = "select * from providers where providerID = '"+ visitPID +"'";
                 PreparedStatement ppstmt = conn.prepareStatement(pData);
@@ -375,6 +378,98 @@ public class ViewReports extends javax.swing.JFrame {
       }
       
     }//GEN-LAST:event_print_serviceActionPerformed
+
+    private void print_accountingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_accountingActionPerformed
+        DatePicker startdate = new DatePicker();
+        DatePicker enddate = new DatePicker();
+        String s = "Start Date:\n";
+        String end = "End Date:\n";
+        Object[] params = {s,startdate,end,enddate};
+        JOptionPane.showConfirmDialog(null,params, "Accounting Report" , JOptionPane.PLAIN_MESSAGE);
+        
+        System.out.println("" + startdate);
+        System.out.println("" + enddate);
+        
+        int totalcons = 0;
+        int totalpov = 0;
+        int numcons = 0;
+        float weekfee = 0;
+        float totalfee = 0;   
+        
+        Document document = new Document();
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
+            DateFormat df = new SimpleDateFormat("MM-dd-yy");
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("src/reports/accounting/Report " + df.format(new Date()) + ".pdf"));
+            document.open();
+            
+            Paragraph title = new Paragraph("Accounting Report\nWeek: " + startdate + " - " + enddate + "\n==========================================================================\n");
+            title.setAlignment(Paragraph.ALIGN_CENTER);
+            document.add(title);
+            
+            String vData = "SELECT * FROM visits WHERE visitdate BETWEEN '"+startdate+"' AND '"+enddate+"'";
+            PreparedStatement vpstmt = conn.prepareStatement(vData);
+            ResultSet vrs = vpstmt.executeQuery();
+            
+            while (vrs.next()) {
+                String visitPID = vrs.getString("visitproviderID");
+                String visitSID = vrs.getString("visitserviceID");
+                
+                String pData = "select * from providers where providerID = '"+ visitPID +"' AND sms = 0" ;
+                PreparedStatement ppstmt = conn.prepareStatement(pData);
+                ResultSet prs = ppstmt.executeQuery();
+                
+                String cons = "select * from visits where visitproviderID = '"+ visitPID +"'";
+                PreparedStatement conps = conn.prepareStatement(cons);
+                ResultSet conrs = conps.executeQuery();
+                while (conrs.next()) {
+                    numcons++;
+                    
+                    String sData = "select * from services where serviceID = '"+ visitSID +"'";
+                    PreparedStatement spstmt = conn.prepareStatement(sData);
+                    ResultSet srs = spstmt.executeQuery();
+                    if (srs.next()){
+                        String serviceFee = srs.getString("serviceFee");
+                        float fee = Float.parseFloat(serviceFee);
+                        weekfee = weekfee + fee;
+                    }
+                }
+              
+                if (prs.next()) {
+                    String providerID = prs.getString("providerID");
+                    String providerName = prs.getString("providerName");
+
+                    document.add(new Paragraph("Provider: " + providerID + "\n" + providerName));
+                    
+                    String updateData = "update providers set sms = 1 where providerID = '"+ visitPID +"'";
+                    PreparedStatement upstmt = conn.prepareStatement(updateData);
+                    upstmt.executeUpdate();
+                    
+                    document.add(new Paragraph("\nConsultations: " + numcons));
+                    totalcons = totalcons + numcons;
+                    numcons = 0;
+                    
+                    document.add(new Paragraph("Total fee: $" + weekfee + "\n==========================================================================\n"));
+                    totalfee = totalfee + weekfee;
+                    weekfee = 0;
+                    
+                    totalpov++;
+                }
+            }
+            String updateData = "update providers set sms = 0";
+            PreparedStatement upstmt = conn.prepareStatement(updateData);
+            upstmt.executeUpdate();
+            
+            document.add(new Paragraph("\n\n\nTotal Providers: " + totalpov + "\nTotal Consultations: " + totalcons + "\nOverall Fee: $" + totalfee));
+            
+            conn.close();
+            document.close();
+            writer.close();
+            JOptionPane.showMessageDialog(null, "Accounting Report Printed");      
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_print_accountingActionPerformed
 
     /**
      * @param args the command line arguments

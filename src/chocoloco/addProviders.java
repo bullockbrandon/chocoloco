@@ -208,7 +208,7 @@ public class addProviders extends javax.swing.JFrame {
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/chocoloco", "choco", "loco");
 
-            String addData = "insert into providers values (?, ?, ? , ?, ?, ?)";
+            String addData = "insert into providers values (?, ?, ? , ?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(addData);
 
             String checkData = "select * from providers where providerID = '"+ providerID.getText() +"'";
@@ -229,6 +229,7 @@ public class addProviders extends javax.swing.JFrame {
                 pstmt.setString(4, providerCity.getText());
                 pstmt.setString(5, stateBox.getSelectedItem().toString());
                 pstmt.setInt(6, Integer.parseInt(providerZip.getText()));
+                pstmt.setInt(7, 0);
 
                 pstmt.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Provider Added");
