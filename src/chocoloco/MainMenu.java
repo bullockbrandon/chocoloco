@@ -43,7 +43,6 @@ public class MainMenu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItemDirectory = new javax.swing.JMenuItem();
         jMenuItemViewReports = new javax.swing.JMenuItem();
-        jMenuItemMainMenu = new javax.swing.JMenuItem();
         jMenuItemExit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -122,14 +121,6 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItemViewReports);
-
-        jMenuItemMainMenu.setText("Start");
-        jMenuItemMainMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemMainMenuActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItemMainMenu);
 
         jMenuItemExit.setText("Exit");
         jMenuItemExit.addActionListener(new java.awt.event.ActionListener() {
@@ -256,27 +247,21 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void jMenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExitActionPerformed
         // TODO add your handling code here:
-                System.out.println("\nProgram Exited\n");
-        System.exit(0);
+                        this.dispose();
+        new Chocoloco().setVisible(true);
     }//GEN-LAST:event_jMenuItemExitActionPerformed
-
-    private void jMenuItemDirectoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDirectoryActionPerformed
-        // TODO add your handling code here:
-               this.dispose();
-        new SetDirectory().setVisible(true);
-    }//GEN-LAST:event_jMenuItemDirectoryActionPerformed
 
     private void jMenuItemViewReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemViewReportsActionPerformed
         // TODO add your handling code here:
-               this.dispose();
+        this.dispose();
         new ViewReports().setVisible(true);
     }//GEN-LAST:event_jMenuItemViewReportsActionPerformed
 
-    private void jMenuItemMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMainMenuActionPerformed
+    private void jMenuItemDirectoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDirectoryActionPerformed
         // TODO add your handling code here:
-                this.dispose();
-        new Chocoloco().setVisible(true);
-    }//GEN-LAST:event_jMenuItemMainMenuActionPerformed
+        this.dispose();
+        new SetDirectory().setVisible(true);
+    }//GEN-LAST:event_jMenuItemDirectoryActionPerformed
 
 
     /**
@@ -326,7 +311,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemDirectory;
     private javax.swing.JMenuItem jMenuItemExit;
-    private javax.swing.JMenuItem jMenuItemMainMenu;
     private javax.swing.JMenuItem jMenuItemViewReports;
     private javax.swing.JButton manage_member;
     private javax.swing.JButton manage_service;

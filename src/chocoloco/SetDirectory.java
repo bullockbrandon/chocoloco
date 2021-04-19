@@ -150,7 +150,7 @@ public class SetDirectory extends javax.swing.JFrame {
 
     private void tomainmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tomainmenuActionPerformed
         this.dispose();
-        new MainMenu().setVisible(true);
+        new AreYouSure().setVisible(true);
     }//GEN-LAST:event_tomainmenuActionPerformed
 
     private void changedateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changedateActionPerformed
