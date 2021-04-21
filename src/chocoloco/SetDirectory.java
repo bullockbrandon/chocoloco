@@ -7,6 +7,7 @@ package chocoloco;
 
 import com.github.lgooddatepicker.components.DatePicker;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -149,8 +150,13 @@ public class SetDirectory extends javax.swing.JFrame {
     }//GEN-LAST:event_exitprogramActionPerformed
 
     private void tomainmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tomainmenuActionPerformed
-        this.dispose();
-        new AreYouSure().setVisible(true);
+        if (JOptionPane.showConfirmDialog(null, "Are you sure?", "" , JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) 
+        {
+            this.dispose();
+            new MainMenu().setVisible(true);
+        } else {
+             // no option
+        }
     }//GEN-LAST:event_tomainmenuActionPerformed
 
     private void changedateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changedateActionPerformed
