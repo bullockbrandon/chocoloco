@@ -1,4 +1,4 @@
-About:
+# About:
 For this project at McMurry, in a team of 4 including myself, we developed a software for Chocoholics Anonymous (ChocAn), an organization dedicated to helping people addicted to chocolate in all its glorious forms. We Designed and implemented a software that acts like a terminal for the company.
 
 
